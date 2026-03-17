@@ -13,17 +13,23 @@ window.OSINT_DATA = {
             {
               "name": "WhatsMyName",
               "type": "url",
-              "url": "https://whatsmyname.app/"
+              "url": "https://whatsmyname.app/?q={target}",
+              "description": "Comprehensive username enumeration across hundreds of websites.",
+              "tags": ["username", "enumeration", "social-media"],
+              "last_verified": "2024-03-15"
             },
             {
               "name": "Namechk",
               "type": "url",
-              "url": "https://namechk.com/"
+              "url": "https://namechk.com/?q={target}",
+              "description": "Check username and domain availability across multiple platforms.",
+              "tags": ["username", "domain", "availability"],
+              "last_verified": "2024-03-12"
             },
             {
               "name": "UserSearch.org",
               "type": "url",
-              "url": "https://usersearch.org/"
+              "url": "https://usersearch.org/?q={target}"
             },
             {
               "name": "Thats Them",
@@ -64,7 +70,7 @@ window.OSINT_DATA = {
             {
               "name": "Tinder Usernames (M)",
               "type": "url",
-              "url": "https://www.gotinder.com/@%3Cusername%3E"
+              "url": "https://www.gotinder.com/@{target}"
             },
             {
               "name": "Keybase",

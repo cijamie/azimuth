@@ -48,13 +48,34 @@
 
             <nav class="sidebar-nav">
                 <div class="nav-group">
+                    <p class="group-label">SECURITY OPS</p>
+                    <div class="opsec-widget" id="opsec-widget">
+                        <div style="display:flex; justify-content:space-between; font-size:0.6rem; color:var(--text-dim); margin-bottom:4px;">
+                            <span>IP ADDR:</span>
+                            <span id="opsec-ip" style="color:#fff;">LOADING...</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.6rem; color:var(--text-dim);">
+                            <span>STATUS:</span>
+                            <span id="opsec-status" style="color:var(--warning);">VERIFYING...</span>
+                        </div>
+                    </div>
+                    <button id="purge-session-btn" class="nav-item">[!] PURGE SESSION [!]</button>
+                </div>
+
+                <div class="nav-group">
                     <p class="group-label">OMNI-SEARCH</p>
-                    <input type="text" id="omni-search" placeholder="Search all registries..." style="width:100%; background:#000; border:1px solid #1a1a1a; padding:0.4rem; color:#fff; font-size:0.7rem; border-radius:4px; margin-bottom:1rem; outline:none;">
+                    <input type="text" id="omni-search" placeholder="Search all registries..." style="width:100%; background:rgba(0,0,0,0.3); border:1px solid var(--border); padding:0.6rem; color:#fff; font-size:0.75rem; border-radius:6px; margin-bottom:0.5rem; outline:none; transition:var(--transition);" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                </div>
+
+                <div class="nav-group">
+                    <p class="group-label">GLOBAL TARGET</p>
+                    <input type="text" id="global-target" placeholder="Enter Username/IP/Domain..." style="width:100%; background:rgba(0,0,0,0.4); border:1px solid var(--border); padding:0.6rem; color:var(--accent); font-size:0.75rem; border-radius:6px; margin-bottom:1rem; outline:none; font-family: 'Roboto Mono', monospace; transition:var(--transition);" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
                 </div>
 
                 <div class="nav-group">
                     <p class="group-label">OPERATIONS</p>
                     <div class="nav-item active" id="nav-dashboard">Operational Guidance</div>
+                    <div class="nav-item" id="nav-dorks">Dork Generator</div>
                     <div class="nav-item" id="nav-board">Report Builder</div>
                 </div>
 
@@ -89,6 +110,50 @@
                 <div id="results-grid" class="node-grid"></div>
             </section>
 
+            <!-- Dork Generator View -->
+            <section id="view-dorks" class="view-pane hidden">
+                <div class="report-header-compact" style="max-width: 800px; margin: 0 auto;">
+                    <h2 style="font-family: 'Roboto Mono', monospace; font-size: 1.2rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 2rem;">[ DORK GENERATOR ]</h2>
+                    
+                    <div class="field-group">
+                        <label>TARGET DOMAIN / ENTITY</label>
+                        <input type="text" id="dork-target" placeholder="example.com or \"John Doe\"" style="font-family: 'Roboto Mono', monospace;">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div class="field-group">
+                            <label>DORK TEMPLATE</label>
+                            <select id="dork-template">
+                                <option value="docs">Public Documents (PDF, DOCX)</option>
+                                <option value="login">Login Pages & Portals</option>
+                                <option value="config">Config / Backup Files</option>
+                                <option value="social">Social Media Profiles</option>
+                                <option value="index">Directory Indexing</option>
+                                <option value="paste">Pastebin & Leaks</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label>SEARCH ENGINE</label>
+                            <select id="dork-engine">
+                                <option value="google">Google</option>
+                                <option value="bing">Bing</option>
+                                <option value="duck">DuckDuckGo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--accent); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <label style="color: var(--accent); font-size: 0.65rem; letter-spacing: 2px; margin-bottom: 12px; display: block; font-weight: 800; text-transform: uppercase;">GENERATED SYNTAX</label>
+                        <div id="dork-result" style="color: #fff; font-family: 'Roboto Mono', monospace; font-size: 0.95rem; word-break: break-all; min-height: 1.5rem;">Enter target to generate dork...</div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <button id="launch-dork-btn" class="btn-action btn-confirm" style="flex: 2;">LAUNCH INVESTIGATION</button>
+                        <button id="copy-dork-btn" class="btn-action" style="flex: 1; background: var(--sidebar-bg); border: 1px solid var(--border); color: #fff;">COPY</button>
+                    </div>
+                </div>
+            </section>
+
             <!-- Report Builder View -->
             <section id="view-board" class="view-pane hidden">
                 <div class="report-header-compact">
@@ -106,12 +171,15 @@
                             <input type="text" id="utilized-tool-name" placeholder="Tool used...">
                         </div>
                     </div>
-                    <div id="utilized-tools-tags" class="utilized-tools-list"></div>
+                    <div id="utilized-tools-tags" class="utilized-tools-list" style="margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 8px;"></div>
                     
                     <div class="action-bar desktop-only-actions">
                         <button id="export-report-btn" class="btn-action btn-confirm">GENERATE PDF REPORT</button>
+                        <button id="export-case-btn" class="btn-action" style="background: var(--sidebar-bg); border: 1px solid var(--border); color: #fff;">EXPORT CASE</button>
+                        <button id="import-case-btn" class="btn-action" style="background: var(--sidebar-bg); border: 1px solid var(--border); color: #fff;">IMPORT CASE</button>
+                        <input type="file" id="import-case-input" style="display:none;" accept=".json">
                         <button id="clear-links-btn" class="btn-action btn-ghost-danger">PURGE NOTES</button>
-                        <button id="add-note-btn" class="btn-action" style="background:#333; color:#fff; border:none;">+ NEW EVIDENCE</button>
+                        <button id="add-note-btn" class="btn-action" style="background: var(--card-bg); border: 1px solid var(--border); color: #fff;">+ NEW EVIDENCE</button>
                     </div>
                 </div>
                 
@@ -127,6 +195,10 @@
                 <div class="mobile-nav-item active" id="m-nav-dashboard">
                     <span class="nav-icon">📊</span>
                     <span class="nav-label">GUIDANCE</span>
+                </div>
+                <div class="mobile-nav-item" id="m-nav-dorks">
+                    <span class="nav-icon">🔍</span>
+                    <span class="nav-label">DORKS</span>
                 </div>
                 <div class="mobile-nav-item" id="m-nav-registries">
                     <span class="nav-icon">📂</span>
@@ -153,8 +225,17 @@
                 <textarea id="note-text" placeholder="Intelligence findings..."></textarea>
             </div>
             <div class="field-group">
-                <label>IMAGE URL (OPTIONAL)</label>
-                <input type="text" id="note-image" placeholder="https://image-link.com/photo.jpg">
+                <label>EVIDENCE SNAPSHOT (PASTE IMAGE OR URL)</label>
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <input type="text" id="note-image" placeholder="https://image-link.com/photo.jpg" style="flex: 1;">
+                    <button id="upload-snapshot-btn" class="btn-action" style="background:#222; font-size: 0.6rem; padding: 0 1rem;">UPLOAD</button>
+                    <input type="file" id="note-image-file" style="display:none;" accept="image/*">
+                </div>
+                <div id="snapshot-preview-container" style="display:none; margin-top: 10px; border: 1px dashed #333; padding: 10px; text-align: center; position: relative;">
+                    <img id="snapshot-preview" style="max-width: 100%; max-height: 150px; border: 1px solid #1a1a1a;">
+                    <button id="remove-snapshot-btn" style="position: absolute; top: 0; right: 0; background: red; color: white; border: none; cursor: pointer; padding: 2px 5px; font-size: 10px;">X</button>
+                </div>
+                <p style="font-size: 0.6rem; color: #666; margin-top: 5px;">TIP: You can paste a screenshot (Ctrl+V) directly while this modal is open.</p>
             </div>
             <div style="display:flex; justify-content:flex-end; gap:10px;">
                 <button id="close-modal" class="btn-action" style="background:transparent; border:1px solid #333; color:#fff;">CANCEL</button>
@@ -163,6 +244,7 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="js/data.js"></script>
     <script src="js/arf.js"></script>
