@@ -80,10 +80,12 @@
                     <span></span>
                 </button>
                 <h1 id="current-view-name">Dashboard</h1>
+                <div class="mobile-search-trigger" id="mobile-search-btn">🔍</div>
             </header>
 
             <!-- Dashboard View -->
             <section id="view-tools" class="view-pane">
+                <div class="mobile-category-scroller" id="mobile-category-list"></div>
                 <div id="results-grid" class="node-grid"></div>
             </section>
 
@@ -106,7 +108,7 @@
                     </div>
                     <div id="utilized-tools-tags" class="utilized-tools-list"></div>
                     
-                    <div class="action-bar">
+                    <div class="action-bar desktop-only-actions">
                         <button id="export-report-btn" class="btn-action btn-confirm">GENERATE PDF REPORT</button>
                         <button id="clear-links-btn" class="btn-action btn-ghost-danger">PURGE NOTES</button>
                         <button id="add-note-btn" class="btn-action" style="background:#333; color:#fff; border:none;">+ NEW EVIDENCE</button>
@@ -116,7 +118,25 @@
                 <div id="pin-board" class="note-grid">
                     <!-- Sticky notes here -->
                 </div>
+
+                <button id="mobile-add-note-btn" class="mobile-fab">+</button>
             </section>
+
+            <!-- Mobile Bottom Nav -->
+            <nav class="mobile-bottom-nav">
+                <div class="mobile-nav-item active" id="m-nav-dashboard">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-label">GUIDANCE</span>
+                </div>
+                <div class="mobile-nav-item" id="m-nav-registries">
+                    <span class="nav-icon">📂</span>
+                    <span class="nav-label">REGISTRY</span>
+                </div>
+                <div class="mobile-nav-item" id="m-nav-board">
+                    <span class="nav-icon">📝</span>
+                    <span class="nav-label">REPORT</span>
+                </div>
+            </nav>
         </main>
     </div>
 

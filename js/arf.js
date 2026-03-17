@@ -21,7 +21,57 @@ function initDashboard() {
     setupToolLogger();
     setupOmniSearch();
     setupMobileNav();
+    setupMobileBottomNav();
     showLandingPage(); // Show guide on start
+}
+
+function setupMobileBottomNav() {
+    const mDash = document.getElementById('m-nav-dashboard');
+    const mReg = document.getElementById('m-nav-registries');
+    const mBoard = document.getElementById('m-nav-board');
+    
+    const dashLink = document.getElementById('nav-dashboard');
+    const boardLink = document.getElementById('nav-board');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const toggleBtn = document.getElementById('sidebar-toggle');
+    const searchTrigger = document.getElementById('mobile-search-btn');
+
+    const updateActiveMobileTab = (id) => {
+        document.querySelectorAll('.mobile-nav-item').forEach(el => el.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    };
+
+    mDash.onclick = () => {
+        dashLink.click();
+        updateActiveMobileTab('m-nav-dashboard');
+        window.scrollTo(0,0);
+    };
+
+    mReg.onclick = () => {
+        sidebar.classList.add('active');
+        overlay.classList.add('active');
+        toggleBtn.classList.add('active');
+        updateActiveMobileTab('m-nav-registries');
+    };
+
+    mBoard.onclick = () => {
+        boardLink.click();
+        updateActiveMobileTab('m-nav-board');
+        window.scrollTo(0,0);
+    };
+
+    searchTrigger.onclick = () => {
+        sidebar.classList.add('active');
+        overlay.classList.add('active');
+        toggleBtn.classList.add('active');
+        document.getElementById('omni-search').focus();
+    };
+
+    // FAB for mobile notes
+    document.getElementById('mobile-add-note-btn').onclick = () => {
+        document.getElementById('add-note-btn').click();
+    };
 }
 
 function setupMobileNav() {
@@ -98,6 +148,10 @@ function setupNav() {
         dashLink.classList.add('active');
         boardLink.classList.remove('active');
         viewTitle.textContent = 'Dashboard';
+        if (window.innerWidth <= 768) {
+            document.querySelectorAll('.mobile-nav-item').forEach(el => el.classList.remove('active'));
+            document.getElementById('m-nav-dashboard').classList.add('active');
+        }
         if (!currentCategory && !document.getElementById('omni-search').value) showLandingPage();
     };
 
@@ -107,6 +161,10 @@ function setupNav() {
         dashLink.classList.remove('active');
         boardLink.classList.add('active');
         viewTitle.textContent = 'Report Builder';
+        if (window.innerWidth <= 768) {
+            document.querySelectorAll('.mobile-nav-item').forEach(el => el.classList.remove('active'));
+            document.getElementById('m-nav-board').classList.add('active');
+        }
     };
 
     document.getElementById('export-report-btn').onclick = generateReport;
@@ -228,19 +286,34 @@ function generateReport() {
 
 function renderSidebarCategories() {
     const list = document.getElementById('category-list');
+    const mobileList = document.getElementById('mobile-category-list');
     list.innerHTML = '';
+    mobileList.innerHTML = '';
     const sorted = [...arfData.children].sort((a, b) => a.name.localeCompare(b.name));
+    
     sorted.forEach(cat => {
+        // Desktop/Sidebar
         const div = document.createElement('div');
         div.className = 'nav-link';
         div.textContent = cat.name;
         div.onclick = () => {
             currentCategory = cat.name;
             document.querySelectorAll('#category-list .nav-link').forEach(el => el.classList.toggle('active', el.textContent === cat.name));
+            document.querySelectorAll('.mobile-cat-item').forEach(el => el.classList.toggle('active', el.textContent === cat.name));
             document.getElementById('nav-dashboard').click();
             renderTools();
         };
         list.appendChild(div);
+
+        // Mobile Scroller
+        const mDiv = document.createElement('div');
+        mDiv.className = 'mobile-cat-item';
+        mDiv.textContent = cat.name;
+        mDiv.onclick = () => {
+            div.click();
+            mDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        };
+        mobileList.appendChild(mDiv);
     });
 }
 
