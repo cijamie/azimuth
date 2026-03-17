@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZIMUTH | Intelligence Management System</title>
+    <meta name="description" content="AZIMUTH is a professional OSINT and Intelligence Management System for rapid asset discovery and evidence logging.">
+    <meta name="keywords" content="OSINT, Intelligence, Investigation, Cyber Security, Registry, Report Builder">
+    <meta name="author" content="AZIMUTH IMS">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/Azimuth/">
+    <meta property="og:title" content="AZIMUTH | Intelligence Management System">
+    <meta property="og:description" content="Secure, rapid intelligence node discovery and investigation report builder.">
+    <meta property="og:image" content="logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourusername.github.io/Azimuth/">
+    <meta property="twitter:title" content="AZIMUTH | Intelligence Management System">
+    <meta property="twitter:description" content="Secure, rapid intelligence node discovery and investigation report builder.">
+    <meta property="twitter:image" content="logo.png">
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Mono:wght@400;500&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/arf.css">
+</head>
+<body class="enterprise-theme">
+    <div class="app-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <img src="logo.png" alt="AZIMUTH" class="brand-logo-img">
+                    <span class="brand-name">AZIMUTH</span>
+                </div>
+                <div class="user-profile">
+                    <div class="user-avatar">AZ</div>
+                    <div class="user-info">
+                        <span class="user-role">ANALYST</span>
+                        <span class="user-status">SECURE SESSION</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-group">
+                    <p class="group-label">OMNI-SEARCH</p>
+                    <input type="text" id="omni-search" placeholder="Search all registries..." style="width:100%; background:#000; border:1px solid #1a1a1a; padding:0.4rem; color:#fff; font-size:0.7rem; border-radius:4px; margin-bottom:1rem; outline:none;">
+                </div>
+
+                <div class="nav-group">
+                    <p class="group-label">OPERATIONS</p>
+                    <div class="nav-item active" id="nav-dashboard">Operational Guidance</div>
+                    <div class="nav-item" id="nav-board">Report Builder</div>
+                </div>
+
+                <div class="nav-group">
+                    <p class="group-label">PRIORITIZED</p>
+                    <div id="favorites-list" class="nav-links">
+                        <span class="no-assets">None</span>
+                    </div>
+                </div>
+
+                <div class="nav-group">
+                    <p class="group-label">REGISTRIES</p>
+                    <div id="category-list" class="nav-links"></div>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="workspace">
+            <header class="workspace-header">
+                <h1 id="current-view-name">Dashboard</h1>
+            </header>
+
+            <!-- Dashboard View -->
+            <section id="view-tools" class="view-pane">
+                <div id="results-grid" class="node-grid"></div>
+            </section>
+
+            <!-- Report Builder View -->
+            <section id="view-board" class="view-pane hidden">
+                <div class="report-header-compact">
+                    <div class="meta-row">
+                        <div class="meta-input-group">
+                            <label>ANALYST NAME</label>
+                            <input type="text" id="report-analyst-name" placeholder="Analyst Identity">
+                        </div>
+                        <div class="meta-input-group">
+                            <label>CASE SUBJECT</label>
+                            <input type="text" id="report-case-subject" placeholder="Target/Case ID">
+                        </div>
+                        <div class="meta-input-group">
+                            <label>LOG RESOURCE</label>
+                            <input type="text" id="utilized-tool-name" placeholder="Tool used...">
+                        </div>
+                    </div>
+                    <div id="utilized-tools-tags" class="utilized-tools-list"></div>
+                    
+                    <div class="action-bar">
+                        <button id="export-report-btn" class="btn-action btn-confirm">GENERATE PDF REPORT</button>
+                        <button id="clear-links-btn" class="btn-action btn-ghost-danger">PURGE NOTES</button>
+                        <button id="add-note-btn" class="btn-action" style="background:#333; color:#fff; border:none;">+ NEW EVIDENCE</button>
+                    </div>
+                </div>
+                
+                <div id="pin-board" class="note-grid">
+                    <!-- Sticky notes here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Note Modal -->
+    <div id="note-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <h3 id="modal-title">LOG EVIDENCE</h3>
+            <div class="field-group">
+                <label>IDENTIFIER</label>
+                <input type="text" id="note-title" placeholder="Record ID">
+            </div>
+            <div class="field-group">
+                <label>SUMMARY</label>
+                <textarea id="note-text" placeholder="Intelligence findings..."></textarea>
+            </div>
+            <div class="field-group">
+                <label>IMAGE URL (OPTIONAL)</label>
+                <input type="text" id="note-image" placeholder="https://image-link.com/photo.jpg">
+            </div>
+            <div style="display:flex; justify-content:flex-end; gap:10px;">
+                <button id="close-modal" class="btn-action" style="background:transparent; border:1px solid #333; color:#fff;">CANCEL</button>
+                <button id="save-note" class="btn-action btn-confirm">SAVE RECORD</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/arf.js"></script>
+</body>
+</html>
