@@ -20,7 +20,34 @@ function initDashboard() {
     setupModal();
     setupToolLogger();
     setupOmniSearch();
+    setupMobileNav();
     showLandingPage(); // Show guide on start
+}
+
+function setupMobileNav() {
+    const toggleBtn = document.getElementById('sidebar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    const toggleSidebar = () => {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        toggleBtn.classList.toggle('active');
+    };
+
+    toggleBtn.onclick = toggleSidebar;
+    overlay.onclick = toggleSidebar;
+
+    // Close sidebar when clicking any navigation link on mobile
+    document.querySelectorAll('.nav-link, .nav-item').forEach(el => {
+        el.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+                toggleBtn.classList.remove('active');
+            }
+        });
+    });
 }
 
 function showLandingPage() {
@@ -32,7 +59,7 @@ function showLandingPage() {
                 <p style="color: #888; font-family: monospace; font-size: 0.8rem;">SYSTEM VERSION: AZIMUTH_IMS_v2.4</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+            <div class="guide-steps">
                 <div>
                     <h3 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 1rem; color: #fff;">01 // ASSET DISCOVERY</h3>
                     <p style="font-size: 0.85rem; color: #aaa; line-height: 1.6;">Use the <strong>REGISTRIES</strong> section in the sidebar to browse categorized intelligence nodes. For rapid discovery, use the <strong>OMNI-SEARCH</strong> bar to search all modules simultaneously.</p>
