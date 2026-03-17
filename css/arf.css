@@ -152,14 +152,16 @@ body {
 .field-group input, .field-group textarea { width: 100%; background: #000; border: 1px solid var(--border); color: #fff; padding: 0.5rem; font-size: 0.8rem; }
 .field-group textarea { height: 100px; }
 
-.guide-steps {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+/* Mobile Defaults - Hidden on Desktop */
+.mobile-bottom-nav, 
+.mobile-category-scroller, 
+.mobile-fab, 
+.mobile-search-trigger {
+    display: none !important;
 }
 
-.mobile-bottom-nav, .mobile-category-scroller, .mobile-fab, .mobile-search-trigger {
-    display: none;
+@media screen and (min-width: 769px) {
+    .menu-toggle { display: none !important; }
 }
 
 /* Responsive Mobile Styles */
@@ -205,7 +207,7 @@ body {
     }
 
     .menu-toggle {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         justify-content: space-around;
         width: 24px;
@@ -399,10 +401,6 @@ body {
         padding: 1rem;
         padding-bottom: 80px;
     }
-}
-
-@media screen and (min-width: 769px) {
-    .menu-toggle { display: none; }
 }
 
 .hidden { display: none !important; }
