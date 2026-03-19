@@ -1,8 +1,8 @@
 # 📡 AZIMUTH | Intelligence Management System (IMS)
 
 [![Status](https://img.shields.io/badge/Status-Operational-10b981?style=flat-square&logo=statuspage)](https://cijamie.github.io/Azimuth/)
-[![Version](https://img.shields.io/badge/Version-2.4.0-white?style=flat-square&logo=github)](https://github.com/cijamie/Azimuth/)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
+[![Version](https://img.shields.io/badge/Version-2.5.0-white?style=flat-square&logo=github)](https://github.com/cijamie/Azimuth/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](https://github.com/cijamie/azimuth/blob/542581d7a39efb56eab3588420be44bf0b6a4d7a/LICENSE.txt)
 
 **AZIMUTH** is a high-performance, browser-based Intelligence Management System (IMS) designed for rapid OSINT discovery, evidence logging, and automated reporting. It provides a centralized, enterprise-grade interface for intelligence analysts to navigate complex registries and compile findings into standardized documentation.
 
