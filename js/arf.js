@@ -281,19 +281,33 @@ function setupMobileBottomNav() {
 
     const updateActiveMobileTab = (id) => {
         document.querySelectorAll('.mobile-nav-item').forEach(el => el.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
+        const tab = document.getElementById(id);
+        if (tab) tab.classList.add('active');
+    };
+
+    const scrollActiveViewToTop = () => {
+        const activeView = document.querySelector('.view-pane:not(.hidden)');
+        if (activeView) activeView.scrollTop = 0;
+    };
+
+    const closeSidebar = () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        toggleBtn.classList.remove('active');
     };
 
     mDash.onclick = () => {
+        closeSidebar();
         dashLink.click();
         updateActiveMobileTab('m-nav-dashboard');
-        window.scrollTo(0,0);
+        scrollActiveViewToTop();
     };
 
     mDorks.onclick = () => {
+        closeSidebar();
         dorksLink.click();
         updateActiveMobileTab('m-nav-dorks');
-        window.scrollTo(0,0);
+        scrollActiveViewToTop();
     };
 
     mReg.onclick = () => {
@@ -304,9 +318,10 @@ function setupMobileBottomNav() {
     };
 
     mBoard.onclick = () => {
+        closeSidebar();
         boardLink.click();
         updateActiveMobileTab('m-nav-board');
-        window.scrollTo(0,0);
+        scrollActiveViewToTop();
     };
 
     searchTrigger.onclick = () => {
@@ -351,33 +366,33 @@ function setupMobileNav() {
 function showLandingPage() {
     const grid = document.getElementById('results-grid');
     grid.innerHTML = `
-        <div class="guide-container" style="grid-column: 1/-1; padding: 2rem; max-width: 900px; margin: 0 auto; color: var(--text-main);">
-            <div style="border-left: 4px solid var(--accent); padding-left: 2rem; margin-bottom: 4rem; background: linear-gradient(90deg, var(--accent-dim) 0%, transparent 100%); padding-top: 1.5rem; padding-bottom: 1.5rem; border-radius: 0 8px 8px 0;">
-                <h2 style="font-size: 2.5rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 0.5rem; color: #fff;">OPERATIONAL GUIDANCE</h2>
-                <p style="color: var(--text-dim); font-family: 'Roboto Mono', monospace; font-size: 0.85rem; letter-spacing: 1px;">SYSTEM VERSION: AZIMUTH_IMS_v2.5 // SECURE_NODE</p>
+        <div class="guide-container">
+            <div style="border-left: 4px solid var(--accent); padding-left: 1.5rem; margin-bottom: 3rem; background: linear-gradient(90deg, var(--accent-dim) 0%, transparent 100%); padding-top: 1rem; padding-bottom: 1rem; border-radius: 0 8px 8px 0;">
+                <h2 style="font-size: 2.2rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 0.5rem; color: #fff; line-height: 1.2;">OPERATIONAL GUIDANCE</h2>
+                <p style="color: var(--text-dim); font-family: 'Roboto Mono', monospace; font-size: 0.75rem; letter-spacing: 1px;">SYSTEM VERSION: AZIMUTH_IMS_v2.5 // SECURE_NODE</p>
             </div>
 
-            <div class="guide-steps" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
-                <div style="background: #050505; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); transition: var(--transition);" onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';">
-                    <h3 style="font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem; color: var(--accent); letter-spacing: 1px;">01 // ASSET DISCOVERY</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-dim); line-height: 1.7;">Use the <strong style="color: #fff;">REGISTRIES</strong> section in the sidebar to browse categorized intelligence nodes. For rapid discovery, use the <strong style="color: #fff;">OMNI-SEARCH</strong> bar to search all modules simultaneously with fuzzy-matching technology.</p>
+            <div class="guide-steps">
+                <div style="background: #050505; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: var(--transition);" onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';">
+                    <h3 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 1rem; color: var(--accent); letter-spacing: 1px;">01 // ASSET DISCOVERY</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">Use the <strong style="color: #fff;">REGISTRIES</strong> section in the sidebar to browse categorized intelligence nodes. For rapid discovery, use the <strong style="color: #fff;">OMNI-SEARCH</strong> bar to search all modules simultaneously with fuzzy-matching technology.</p>
                 </div>
-                <div style="background: #050505; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); transition: var(--transition);" onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';">
-                    <h3 style="font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem; color: var(--accent); letter-spacing: 1px;">02 // TARGET INJECTION</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-dim); line-height: 1.7;">Enter a <strong style="color: #fff;">GLOBAL TARGET</strong> (Username, IP, or Email) in the sidebar. Supported nodes will automatically inject this target into their search parameters upon launch, accelerating your workflow.</p>
+                <div style="background: #050505; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: var(--transition);" onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';">
+                    <h3 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 1rem; color: var(--accent); letter-spacing: 1px;">02 // TARGET INJECTION</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">Enter a <strong style="color: #fff;">GLOBAL TARGET</strong> (Username, IP, or Email) in the sidebar. Supported nodes will automatically inject this target into their search parameters upon launch, accelerating your workflow.</p>
                 </div>
-                <div style="background: #050505; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); transition: var(--transition);" onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';">
-                    <h3 style="font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem; color: var(--accent); letter-spacing: 1px;">03 // EVIDENCE CAPTURE</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-dim); line-height: 1.7;">Navigate to the <strong style="color: #fff;">REPORT BUILDER</strong> to log findings. Capture text and visual snapshots using the <strong style="color: #fff;">BASE64 SNAPSHOT</strong> system. You can paste screenshots directly into the evidence modal.</p>
+                <div style="background: #050505; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: var(--transition);" onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';">
+                    <h3 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 1rem; color: var(--accent); letter-spacing: 1px;">03 // EVIDENCE CAPTURE</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">Navigate to the <strong style="color: #fff;">REPORT BUILDER</strong> to log findings. Capture text and visual snapshots using the <strong style="color: #fff;">BASE64 SNAPSHOT</strong> system. You can paste screenshots directly into the evidence modal.</p>
                 </div>
-                <div style="background: #050505; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); transition: var(--transition);" onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';">
-                    <h3 style="font-size: 1rem; font-weight: 800; margin-bottom: 1.25rem; color: var(--accent); letter-spacing: 1px;">04 // DOCUMENT COMPILATION</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-dim); line-height: 1.7;">Finalize your investigation by generating a <strong style="color: #fff;">FORMAL PDF REPORT</strong>. The system compiles your logs, utilized resources, and case identity into a standardized, professional intelligence document.</p>
+                <div style="background: #050505; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: var(--transition);" onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';">
+                    <h3 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 1rem; color: var(--accent); letter-spacing: 1px;">04 // DOCUMENT COMPILATION</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">Finalize your investigation by generating a <strong style="color: #fff;">FORMAL PDF REPORT</strong>. The system compiles your logs, utilized resources, and case identity into a standardized, professional intelligence document.</p>
                 </div>
             </div>
 
-            <div style="margin-top: 5rem; padding: 2rem; background: #050505; border: 1px solid var(--border); border-radius: 12px; text-align: center;">
-                <p style="font-size: 0.8rem; color: var(--text-dim); font-family: 'Roboto Mono', monospace; letter-spacing: 2px;">[ STATUS: AWAITING INPUT // SELECT REGISTRY OR SEARCH ]</p>
+            <div style="margin-top: 3rem; padding: 1.5rem; background: #050505; border: 1px solid var(--border); border-radius: 12px; text-align: center;">
+                <p style="font-size: 0.75rem; color: var(--text-dim); font-family: 'Roboto Mono', monospace; letter-spacing: 1px; word-break: break-all;">[ STATUS: AWAITING INPUT // SELECT REGISTRY OR SEARCH ]</p>
             </div>
         </div>
     `;
@@ -401,8 +416,8 @@ function setupNav() {
         dorksLink.classList.remove('active');
         viewTitle.textContent = 'Dashboard';
         if (window.innerWidth <= 768) {
-            document.querySelectorAll('.mobile-nav-item').forEach(el => el.classList.remove('active'));
-            document.getElementById('m-nav-dashboard').classList.add('active');
+            updateActiveMobileTab('m-nav-dashboard');
+            scrollActiveViewToTop();
         }
         if (!currentCategory && !document.getElementById('omni-search').value) showLandingPage();
     };
@@ -416,8 +431,8 @@ function setupNav() {
         dorksLink.classList.remove('active');
         viewTitle.textContent = 'Report Builder';
         if (window.innerWidth <= 768) {
-            document.querySelectorAll('.mobile-nav-item').forEach(el => el.classList.remove('active'));
-            document.getElementById('m-nav-board').classList.add('active');
+            updateActiveMobileTab('m-nav-board');
+            scrollActiveViewToTop();
         }
     };
 
@@ -429,6 +444,10 @@ function setupNav() {
         boardLink.classList.remove('active');
         dorksLink.classList.add('active');
         viewTitle.textContent = 'Dork Generator';
+        if (window.innerWidth <= 768) {
+            updateActiveMobileTab('m-nav-dorks');
+            scrollActiveViewToTop();
+        }
     };
 
     document.getElementById('export-report-btn').onclick = generateReport;
