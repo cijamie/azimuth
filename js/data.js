@@ -15,7 +15,11 @@ window.OSINT_DATA = {
               "type": "url",
               "url": "https://whatsmyname.app/?q={target}",
               "description": "Comprehensive username enumeration across hundreds of websites.",
-              "tags": ["username", "enumeration", "social-media"],
+              "tags": [
+                "username",
+                "enumeration",
+                "social-media"
+              ],
               "last_verified": "2024-03-15"
             },
             {
@@ -23,7 +27,11 @@ window.OSINT_DATA = {
               "type": "url",
               "url": "https://namechk.com/?q={target}",
               "description": "Check username and domain availability across multiple platforms.",
-              "tags": ["username", "domain", "availability"],
+              "tags": [
+                "username",
+                "domain",
+                "availability"
+              ],
               "last_verified": "2024-03-12"
             },
             {
@@ -266,11 +274,6 @@ window.OSINT_DATA = {
               "url": "https://whoisology.com/#advanced"
             },
             {
-              "name": "Whois ARIN",
-              "type": "url",
-              "url": "https://whois.arin.net/ui/advanced.jsp"
-            },
-            {
               "name": "DNSstuff",
               "type": "url",
               "url": "https://tools.dnsstuff.com/"
@@ -419,11 +422,6 @@ window.OSINT_DATA = {
               "url": "https://www.certificate-transparency.org/known-logs"
             },
             {
-              "name": "Spyse",
-              "type": "url",
-              "url": "https://spyse.com/search/certificate"
-            },
-            {
               "name": "Censys",
               "type": "url",
               "url": "https://censys.io/"
@@ -491,11 +489,6 @@ window.OSINT_DATA = {
               "url": "http://www.urlvoid.com/"
             },
             {
-              "name": "Threat Crowd",
-              "type": "url",
-              "url": "https://www.threatcrowd.org/"
-            },
-            {
               "name": "FortiGuard Reputation Service",
               "type": "url",
               "url": "http://fortiguard.com/iprep"
@@ -541,11 +534,6 @@ window.OSINT_DATA = {
               "url": "https://www.url-analyzer.net/"
             },
             {
-              "name": "Deepviz Domain Search",
-              "type": "url",
-              "url": "https://search.deepviz.com/"
-            },
-            {
               "name": "Cisco SenderBase",
               "type": "url",
               "url": "http://www.senderbase.org/"
@@ -559,11 +547,6 @@ window.OSINT_DATA = {
               "name": "Webroot BrightCloud URL/IP Lookup",
               "type": "url",
               "url": "http://www.brightcloud.com/tools/url-ip-lookup.php"
-            },
-            {
-              "name": "vURL Online",
-              "type": "url",
-              "url": "https://vurldissect.co.uk/"
             },
             {
               "name": "AlienVault Open Threat Exchange",
@@ -607,26 +590,6 @@ window.OSINT_DATA = {
               "url": "http://www.networksec.org/grabbho/block.txt"
             },
             {
-              "name": "Zeus C2 Tracker",
-              "type": "url",
-              "url": "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist"
-            },
-            {
-              "name": "Malware Domains Blacklist",
-              "type": "url",
-              "url": "http://mirror1.malwaredomains.com/files/domains.txt"
-            },
-            {
-              "name": "DNS Sinkhole",
-              "type": "url",
-              "url": "http://malc0de.com/bl/"
-            },
-            {
-              "name": "DNS-BH Malware Domain Blocklist",
-              "type": "url",
-              "url": "http://www.malwaredomains.com/wordpress/?page_id=66"
-            },
-            {
               "name": "Malware Domain List",
               "type": "url",
               "url": "http://www.malwaredomainlist.com/hostslist/hosts.txt"
@@ -635,11 +598,6 @@ window.OSINT_DATA = {
               "name": "scumware.org",
               "type": "url",
               "url": "https://www.scumware.org/"
-            },
-            {
-              "name": "ZeuS Tracker",
-              "type": "url",
-              "url": "https://zeustracker.abuse.ch/blocklist.php"
             },
             {
               "name": "Shadowserver Foundation",
@@ -805,11 +763,6 @@ window.OSINT_DATA = {
           "type": "folder",
           "children": [
             {
-              "name": "Link Expander",
-              "type": "url",
-              "url": "http://www.linkexpander.com/"
-            },
-            {
               "name": "GetLinkInfo",
               "type": "url",
               "url": "http://www.getlinkinfo.com/"
@@ -890,11 +843,6 @@ window.OSINT_DATA = {
               "name": "Google Trends",
               "type": "url",
               "url": "https://www.google.com/trends/"
-            },
-            {
-              "name": "Reddit (M)",
-              "type": "url",
-              "url": "https://www.reddit.com/domain/%3CURLhere%3E"
             }
           ]
         },
@@ -1050,11 +998,6 @@ window.OSINT_DATA = {
           "name": "Host / Port Discovery",
           "type": "folder",
           "children": [
-            {
-              "name": "Spyse",
-              "type": "url",
-              "url": "https://spyse.com/search/ip"
-            },
             {
               "name": "Netlas.io",
               "type": "url",
@@ -1278,11 +1221,6 @@ window.OSINT_DATA = {
               "name": "NetworkMiner",
               "type": "url",
               "url": "https://www.netresec.com/?page=Networkminer"
-            },
-            {
-              "name": "Packet Total",
-              "type": "url",
-              "url": "http://www.packettotal.com/"
             },
             {
               "name": "NetworkTotal",
@@ -1569,11 +1507,6 @@ window.OSINT_DATA = {
                   "name": "FotoForensics",
                   "type": "url",
                   "url": "http://fotoforensics.com/"
-                },
-                {
-                  "name": "Camera Trace",
-                  "type": "url",
-                  "url": "http://www.cameratrace.com/trace"
                 }
               ]
             },
@@ -1758,11 +1691,6 @@ window.OSINT_DATA = {
                   "url": "https://search.wikileaks.org/advanced"
                 },
                 {
-                  "name": "RECAP Court Doc Repo",
-                  "type": "url",
-                  "url": "http://archive.recapthelaw.org/"
-                },
-                {
                   "name": "filessoo.com",
                   "type": "url",
                   "url": "http://filessoo.com/"
@@ -1846,11 +1774,6 @@ window.OSINT_DATA = {
                   "name": "Recover FB Account",
                   "type": "url",
                   "url": "https://www.facebook.com/login/identify?ctx=recover"
-                },
-                {
-                  "name": "Facebook Photos by ID (M)",
-                  "type": "url",
-                  "url": "https://www.facebook.com/photo.php?fbid=PHOTO-ID-HERE"
                 },
                 {
                   "name": "FB Lookup ID",
@@ -2001,11 +1924,6 @@ window.OSINT_DATA = {
               "type": "folder",
               "children": [
                 {
-                  "name": "All My Tweets",
-                  "type": "url",
-                  "url": "https://www.allmytweets.net/connect/"
-                },
-                {
                   "name": "Spoonbill",
                   "type": "url",
                   "url": "https://spoonbill.io"
@@ -2056,11 +1974,6 @@ window.OSINT_DATA = {
           "type": "folder",
           "children": [
             {
-              "name": "Ask FM",
-              "type": "url",
-              "url": "https://ask.fm/%3Cusername%3E"
-            },
-            {
               "name": "Myspace",
               "type": "url",
               "url": "https://myspace.com/"
@@ -2094,11 +2007,6 @@ window.OSINT_DATA = {
               "name": "Asian Avenue",
               "type": "url",
               "url": "http://www.asianave.com/user_search/index.html"
-            },
-            {
-              "name": "Orkut (Brazil)",
-              "type": "url",
-              "url": "https://orkut.google.com/"
             },
             {
               "name": "Odnoklassniki",
@@ -2264,11 +2172,6 @@ window.OSINT_DATA = {
               "url": "https://www.advancedbackgroundchecks.com/"
             },
             {
-              "name": "SalesMaple Contact Search",
-              "type": "url",
-              "url": "https://www.salesmaple.com/contacts/#!/"
-            },
-            {
               "name": "PeekYou",
               "type": "url",
               "url": "http://www.peekyou.com/"
@@ -2408,16 +2311,6 @@ window.OSINT_DATA = {
               "name": "My Registry",
               "type": "url",
               "url": "https://www.myregistry.com/"
-            },
-            {
-              "name": "Amazon Registry Search",
-              "type": "url",
-              "url": "https://www.amazon.com/gp/registry/search"
-            },
-            {
-              "name": "Bed, Bath, & Beyond Gift Registry",
-              "type": "url",
-              "url": "https://www.bedbathandbeyond.com/store/giftregistry/registry_search_guest.jsp"
             },
             {
               "name": "The Bump",
@@ -2624,11 +2517,6 @@ window.OSINT_DATA = {
           "name": "USPhoneBook",
           "type": "url",
           "url": "https://www.usphonebook.com"
-        },
-        {
-          "name": "Numspy-Api",
-          "type": "url",
-          "url": "https://numspy.pythonanywhere.com/"
         },
         {
           "name": "Family Tree Now (M)",
@@ -2930,11 +2818,6 @@ window.OSINT_DATA = {
               "url": "http://www.melissadata.com/lookups/fec.asp"
             },
             {
-              "name": "Influence Explorer",
-              "type": "url",
-              "url": "http://data.influenceexplorer.com/#"
-            },
-            {
               "name": "US Federal Election Commission",
               "type": "url",
               "url": "http://www.fec.gov/finance/disclosure/norindsea.shtml"
@@ -3164,11 +3047,6 @@ window.OSINT_DATA = {
               "url": "http://ukdata.com/"
             },
             {
-              "name": "Orbis Directory",
-              "type": "url",
-              "url": "https://orbisdirectory.bvdinfo.com/version-2016121/OrbisDirectory/Companies"
-            },
-            {
               "name": "Manta Small Business Directory",
               "type": "url",
               "url": "https://www.manta.com/business-directory"
@@ -3246,11 +3124,6 @@ window.OSINT_DATA = {
               "name": "That's Them VIN Search",
               "type": "url",
               "url": "https://thatsthem.com/vin-search"
-            },
-            {
-              "name": "VinCheck",
-              "type": "url",
-              "url": "https://www.nicb.org/theft_and_fraud_awareness/vincheck"
             },
             {
               "name": "TRAVIC - Public Transportation Tracking",
@@ -3508,11 +3381,6 @@ window.OSINT_DATA = {
           "url": "http://www.historicaerials.com/?javascript=&"
         },
         {
-          "name": "Google Maps Update Alerts",
-          "type": "url",
-          "url": "https://followyourworld.appspot.com/"
-        },
-        {
           "name": "Google Earth Overlays",
           "type": "url",
           "url": "http://www.mgmaps.com/kml/#view"
@@ -3688,11 +3556,6 @@ window.OSINT_DATA = {
               "url": "http://bvsg.org/"
             },
             {
-              "name": "Ixquick Search Engine",
-              "type": "url",
-              "url": "https://www.ixquick.com/"
-            },
-            {
               "name": "Advangle",
               "type": "url",
               "url": "http://advangle.com/"
@@ -3733,21 +3596,6 @@ window.OSINT_DATA = {
           "name": "Meta Search",
           "type": "folder",
           "children": [
-            {
-              "name": "Shuriken",
-              "type": "url",
-              "url": "http://shuriken.pm"
-            },
-            {
-              "name": "iSEEK",
-              "type": "url",
-              "url": "http://iseek.com/iseek/home.page"
-            },
-            {
-              "name": "Biznar",
-              "type": "url",
-              "url": "http://biznar.com/biznar/desktop/en/search.html"
-            },
             {
               "name": "eTools.ch",
               "type": "url",
@@ -3842,11 +3690,6 @@ window.OSINT_DATA = {
               "url": "https://www.wdl.org/en/"
             },
             {
-              "name": "JURN",
-              "type": "url",
-              "url": "http://jurn.org/#gsc.tab=0"
-            },
-            {
               "name": "HathiTrust Digital Library",
               "type": "url",
               "url": "https://www.hathitrust.org/"
@@ -3865,11 +3708,6 @@ window.OSINT_DATA = {
               "name": "US Gov Publishing Office - FDsys",
               "type": "url",
               "url": "https://www.gpo.gov/fdsys/"
-            },
-            {
-              "name": "OpenDOAR",
-              "type": "url",
-              "url": "http://www.opendoar.org/search.php"
             },
             {
               "name": "Microsoft Academic",
@@ -3991,11 +3829,6 @@ window.OSINT_DATA = {
               "name": "Inshorts",
               "type": "url",
               "url": "https://www.inshorts.com/en/read"
-            },
-            {
-              "name": "NewsBot",
-              "type": "url",
-              "url": "https://getnewsbot.com/"
             }
           ]
         },
@@ -4017,16 +3850,6 @@ window.OSINT_DATA = {
               "name": "Zenodo",
               "type": "url",
               "url": "https://zenodo.org/"
-            },
-            {
-              "name": "EntityCube",
-              "type": "url",
-              "url": "http://entitycube.research.microsoft.com/"
-            },
-            {
-              "name": "FindTheData A Research Engine",
-              "type": "url",
-              "url": "http://www.findthedata.com/"
             }
           ]
         },
@@ -4086,11 +3909,6 @@ window.OSINT_DATA = {
           "name": "Fact Checking",
           "type": "folder",
           "children": [
-            {
-              "name": "Hoaxy",
-              "type": "url",
-              "url": "https://hoaxy.iuni.iu.edu/"
-            },
             {
               "name": "Africa Check",
               "type": "url",
@@ -4258,11 +4076,6 @@ window.OSINT_DATA = {
               "url": "http://www.webarchive.org.uk/ukwa/"
             },
             {
-              "name": "Screenshots.com",
-              "type": "url",
-              "url": "http://www.screenshots.com/"
-            },
-            {
               "name": "Wayback Machine - Beta Search",
               "type": "url",
               "url": "https://web-beta.archive.org/#/"
@@ -4281,11 +4094,6 @@ window.OSINT_DATA = {
               "name": "PDF My URL",
               "type": "url",
               "url": "http://pdfmyurl.com/"
-            },
-            {
-              "name": "Anna's Archive",
-              "type": "url",
-              "url": "https://annas-archive.org/"
             },
             {
               "name": "Browsershots",
@@ -4324,11 +4132,6 @@ window.OSINT_DATA = {
           "name": "Public Datasets",
           "type": "folder",
           "children": [
-            {
-              "name": "Labled Faces in the Wild DB",
-              "type": "url",
-              "url": "http://vis-www.cs.umass.edu/lfw/"
-            },
             {
               "name": "VisualGenome",
               "type": "url",
@@ -4403,16 +4206,6 @@ window.OSINT_DATA = {
               "url": "https://www.wordreference.com/"
             },
             {
-              "name": "Dictionary.com Translator",
-              "type": "url",
-              "url": "http://translate.reference.com/"
-            },
-            {
-              "name": "Free Translation",
-              "type": "url",
-              "url": "https://www.freetranslation.com/"
-            },
-            {
               "name": "Free Online Translation",
               "type": "url",
               "url": "http://www.worldlingo.com/en/products_services/worldlingo_translator.html"
@@ -4468,11 +4261,6 @@ window.OSINT_DATA = {
                   "name": "Nox App Player",
                   "type": "url",
                   "url": "https://www.bignox.com/"
-                },
-                {
-                  "name": "Apk Online",
-                  "type": "url",
-                  "url": "https://www.apkonline.net/"
                 }
               ]
             }
@@ -4524,16 +4312,6 @@ window.OSINT_DATA = {
               "name": "Tor Scan",
               "type": "url",
               "url": "http://www.torscan.io/"
-            },
-            {
-              "name": "Hunchly Hidden Services Report",
-              "type": "url",
-              "url": "https://darkweb.hunch.ly/"
-            },
-            {
-              "name": "Onion Investigator",
-              "type": "url",
-              "url": "https://oint.ctrlbox.com/"
             }
           ]
         },
@@ -4633,11 +4411,6 @@ window.OSINT_DATA = {
               "name": "Block Explorer",
               "type": "url",
               "url": "https://blockexplorer.com/"
-            },
-            {
-              "name": "Blockr.io",
-              "type": "url",
-              "url": "http://blockr.io/"
             },
             {
               "name": "BitRef",
@@ -4740,11 +4513,6 @@ window.OSINT_DATA = {
           "url": "https://offerup.com/"
         },
         {
-          "name": "Goofbid",
-          "type": "url",
-          "url": "http://www.goofbid.com/"
-        },
-        {
           "name": "Flippity",
           "type": "url",
           "url": "http://www.flippity.com/"
@@ -4844,11 +4612,6 @@ window.OSINT_DATA = {
               "url": "https://ifttt.com/"
             },
             {
-              "name": "Stringify",
-              "type": "url",
-              "url": "https://www.stringify.com/"
-            },
-            {
               "name": "Microsoft Flow",
               "type": "url",
               "url": "https://flow.microsoft.com/en-us/"
@@ -4908,11 +4671,6 @@ window.OSINT_DATA = {
               "url": "https://labs.inquest.net/dfi"
             },
             {
-              "name": "Decalage Malware Search",
-              "type": "url",
-              "url": "http://decalage.info/en/mwsearch"
-            },
-            {
               "name": "VirusShare.com",
               "type": "url",
               "url": "https://virusshare.com/"
@@ -4931,11 +4689,6 @@ window.OSINT_DATA = {
               "name": "ID Ransomware",
               "type": "url",
               "url": "https://id-ransomware.malwarehunterteam.com/"
-            },
-            {
-              "name": "National Software Reference Library",
-              "type": "url",
-              "url": "http://nsrl.hashsets.com/national_software_reference_library1_search.php"
             }
           ]
         },
@@ -4989,11 +4742,6 @@ window.OSINT_DATA = {
               "name": "Hybrid Analysis",
               "type": "url",
               "url": "https://www.hybrid-analysis.com/"
-            },
-            {
-              "name": "Malware Config",
-              "type": "url",
-              "url": "https://malwareconfig.com/"
             },
             {
               "name": "MetaDefender",
@@ -5112,11 +4860,6 @@ window.OSINT_DATA = {
               "name": "Open Sez Me Default Passwords",
               "type": "url",
               "url": "http://open-sez.me/"
-            },
-            {
-              "name": "Hashes.org",
-              "type": "url",
-              "url": "https://hashes.org/"
             }
           ]
         },
@@ -5219,22 +4962,6 @@ window.OSINT_DATA = {
               "name": "PhishStats",
               "type": "url",
               "url": "https://phishstats.info/"
-            }
-          ]
-        },
-        {
-          "name": "TTPs",
-          "type": "folder",
-          "children": [
-            {
-              "name": "Malware Exploit TTP Database",
-              "type": "url",
-              "url": "https://www.pwnmalw.re/"
-            },
-            {
-              "name": "Mitre TTPs",
-              "type": "url",
-              "url": "https://attack.mitre.org/wiki/All_Techniques"
             }
           ]
         },

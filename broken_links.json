@@ -1,0 +1,962 @@
+[
+  {
+    "url": "https://whatsmyname.app/?q={target}",
+    "status": 464
+  },
+  {
+    "url": "https://whois.arin.net/ui/advanced.jsp",
+    "status": 404
+  },
+  {
+    "url": "https://whoisamped.com/",
+    "err": "Hostname/IP does not match certificate's altnames: Host: whoisamped.com. is not in the cert's altnames: DNS:*.dnspod.cn, DNS:dnspod.cn"
+  },
+  {
+    "url": "https://spyse.com/search/certificate",
+    "err": "getaddrinfo ENOTFOUND spyse.com"
+  },
+  {
+    "url": "http://dnshistory.org/",
+    "status": 403
+  },
+  {
+    "url": "https://www.abuseipdb.com/",
+    "status": 403
+  },
+  {
+    "url": "https://www.threatcrowd.org/",
+    "err": "getaddrinfo ENOTFOUND www.threatcrowd.org"
+  },
+  {
+    "url": "https://sitecheck.sucuri.net/",
+    "status": 403
+  },
+  {
+    "url": "https://search.deepviz.com/",
+    "err": "getaddrinfo ENOTFOUND search.deepviz.com"
+  },
+  {
+    "url": "http://www.senderbase.org/",
+    "status": 503
+  },
+  {
+    "url": "http://www.reputationauthority.org/",
+    "err": "getaddrinfo EAI_AGAIN www.reputationauthority.org"
+  },
+  {
+    "url": "https://vurldissect.co.uk/",
+    "status": 410
+  },
+  {
+    "url": "https://www.passivetotal.org/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.trustedsource.org/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://hosts-file.net/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist",
+    "err": "getaddrinfo ENOTFOUND zeustracker.abuse.ch"
+  },
+  {
+    "url": "http://mirror1.malwaredomains.com/files/domains.txt",
+    "status": 404
+  },
+  {
+    "url": "https://zeustracker.abuse.ch/blocklist.php",
+    "err": "getaddrinfo ENOTFOUND zeustracker.abuse.ch"
+  },
+  {
+    "url": "http://malc0de.com/bl/",
+    "status": 404
+  },
+  {
+    "url": "http://www.malwaredomains.com/wordpress/?page_id=66",
+    "status": 404
+  },
+  {
+    "url": "https://stackshare.io/",
+    "status": 429
+  },
+  {
+    "url": "https://www.semrush.com/",
+    "status": 403
+  },
+  {
+    "url": "http://www.linkexpander.com/",
+    "err": "getaddrinfo ENOTFOUND www.linkexpander.com"
+  },
+  {
+    "url": "https://w3dt.net/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.getlinkinfo.com/",
+    "status": 403
+  },
+  {
+    "url": "https://www.webpagetest.org/",
+    "status": 403
+  },
+  {
+    "url": "https://w3bin.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://upcheck.online/",
+    "status": 521
+  },
+  {
+    "url": "http://urlex.org/",
+    "err": "getaddrinfo EAI_AGAIN urlex.org"
+  },
+  {
+    "url": "https://topgainers.net/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.spyonweb.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://websiteoutlook.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://lengthen.me/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.reddit.com/domain/%3CURLhere%3E",
+    "status": 404
+  },
+  {
+    "url": "https://www.xssposed.org/",
+    "err": "write EPROTO EC090000:error:0A0000C6:SSL routines:tls_get_more_records:packet length too long:openssl\\ssl\\record\\methods\\tls_common.c:661:\n"
+  },
+  {
+    "url": "https://spyse.com/search/ip",
+    "err": "getaddrinfo ENOTFOUND spyse.com"
+  },
+  {
+    "url": "https://www.ipaddress.my/",
+    "status": 403
+  },
+  {
+    "url": "https://www.zoomeye.org/",
+    "status": 521
+  },
+  {
+    "url": "http://www.bgp4.as/tools",
+    "err": "getaddrinfo EAI_AGAIN www.bgp4.as"
+  },
+  {
+    "url": "https://www.liveipmap.com/",
+    "status": 403
+  },
+  {
+    "url": "https://portscanner.online/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://bgpstream.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.packettotal.com/",
+    "status": 404
+  },
+  {
+    "url": "https://ki.tc",
+    "err": "Hostname/IP does not match certificate's altnames: Host: ki.tc. is not in the cert's altnames: DNS:portal.chemicalmethods.com"
+  },
+  {
+    "url": "http://www.lakako.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://current-location.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://places2.csail.mit.edu/explore.html",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://image-net.org/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.smugmug.com/search",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://camfindapp.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://ccsearch.creativecommons.org/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.imageidentify.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://exif.regex.info/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://exifeditor.io",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://flickrhivemind.net/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://idgettr.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.mypicsmap.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.flickr.com/map/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.flickr.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://tofo.me/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://imgrab.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://mininsta.net/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.instagram.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://websta.me/search",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://faceseek.online",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://picarta.ai/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://saucenao.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.networktotal.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://karmadecay.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://vimeo.com/search?",
+    "status": 403
+  },
+  {
+    "url": "http://www.cameratrace.com/trace",
+    "status": 404
+  },
+  {
+    "url": "https://www.liveleak.com/",
+    "err": "unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca"
+  },
+  {
+    "url": "http://archive.recapthelaw.org/",
+    "err": "getaddrinfo ENOTFOUND archive.recapthelaw.org"
+  },
+  {
+    "url": "http://andrewmohawk.com/pasteLert/",
+    "status": 522
+  },
+  {
+    "url": "https://www.fontspring.com/matcherator",
+    "status": 403
+  },
+  {
+    "url": "http://filessoo.com/",
+    "status": 403
+  },
+  {
+    "url": "https://www.facebook.com/photo.php?fbid=PHOTO-ID-HERE",
+    "status": 404
+  },
+  {
+    "url": "http://twopcharts.com/",
+    "err": "getaddrinfo EAI_AGAIN twopcharts.com"
+  },
+  {
+    "url": "https://www.heavy.ai/demos/tweetmap",
+    "err": "write EPROTO EC090000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\\ssl\\record\\rec_layer_s3.c:918:SSL alert number 80\n"
+  },
+  {
+    "url": "https://ask.fm/%3Cusername%3E",
+    "err": "getaddrinfo ENOTFOUND ask.fm"
+  },
+  {
+    "url": "https://myspace.com/",
+    "err": "unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca"
+  },
+  {
+    "url": "https://orkut.google.com/",
+    "err": "getaddrinfo ENOTFOUND orkut.google.com"
+  },
+  {
+    "url": "https://del.icio.us/",
+    "err": "certificate has expired"
+  },
+  {
+    "url": "https://www.allmytweets.net/connect/",
+    "status": 404
+  },
+  {
+    "url": "http://backtweets.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.cyberbackgroundchecks.com/",
+    "status": 403
+  },
+  {
+    "url": "https://www.salesmaple.com/contacts/#!/",
+    "err": "getaddrinfo ENOTFOUND www.salesmaple.com"
+  },
+  {
+    "url": "https://www.advancedbackgroundchecks.com/",
+    "status": 403
+  },
+  {
+    "url": "http://www.genealogy.com/",
+    "status": 403
+  },
+  {
+    "url": "https://nuwber.com/",
+    "status": 403
+  },
+  {
+    "url": "https://www.fastpeoplesearch.com/",
+    "status": 403
+  },
+  {
+    "url": "https://www.theknot.com/registry/couplesearch",
+    "status": 403
+  },
+  {
+    "url": "https://www.truepeoplesearch.com/",
+    "status": 403
+  },
+  {
+    "url": "https://www.bedbathandbeyond.com/store/giftregistry/registry_search_guest.jsp",
+    "status": 404
+  },
+  {
+    "url": "https://www.zoosk.com/",
+    "status": 403
+  },
+  {
+    "url": "https://www.amazon.com/gp/registry/search",
+    "status": 404
+  },
+  {
+    "url": "https://www.beautifulpeople.com/en-US",
+    "err": "unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca"
+  },
+  {
+    "url": "http://howmanyofme.com/search/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://cubib.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.usphonebook.com",
+    "status": 403
+  },
+  {
+    "url": "https://www.familytreenow.com/search/genealogy/results?phoneno=(555)555-5555",
+    "status": 403
+  },
+  {
+    "url": "https://numspy.pythonanywhere.com/",
+    "status": 404
+  },
+  {
+    "url": "https://www.homefacts.com/",
+    "status": 403
+  },
+  {
+    "url": "http://www.canlii.org/en/",
+    "status": 403
+  },
+  {
+    "url": "https://www.emporis.com/",
+    "err": "Hostname/IP does not match certificate's altnames: Host: www.emporis.com. is not in the cert's altnames: DNS:*.businessimmo.com, DNS:businessimmo.com"
+  },
+  {
+    "url": "http://api.opencnam.com/v2/phone/+19073372323",
+    "err": ""
+  },
+  {
+    "url": "http://mugshots.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.nsopw.gov/en/Search",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.criminalsearches.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.theinmatelocator.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.felonspy.com/search.html",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.familywatchdog.us/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.crimereports.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.blackbookonline.info/criminalsearch.aspx",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://ancestorhunt.com/most-wanted-criminals-and-fugitives.htm",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://case.law/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.judyrecords.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.courtlistener.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.courtlistener.com/recap/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://pacer.uscourts.gov/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://scholar.google.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.docketalarm.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://data.influenceexplorer.com/#",
+    "err": "getaddrinfo ENOTFOUND data.influenceexplorer.com"
+  },
+  {
+    "url": "http://www.followthemoney.org/",
+    "status": 400
+  },
+  {
+    "url": "http://www.sec.gov/edgar.shtml",
+    "status": 403
+  },
+  {
+    "url": "http://www.infobel.com/en/world/",
+    "status": 403
+  },
+  {
+    "url": "http://www.newsobserver.com/news/databases/state-pay/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.sacbee.com/site-services/databases/state-pay/article2642161.html",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://fccid.io/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://connect.data.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.glassdoor.com/Reviews/index.htm",
+    "status": 403
+  },
+  {
+    "url": "https://orbisdirectory.bvdinfo.com/version-2016121/OrbisDirectory/Companies",
+    "err": "getaddrinfo ENOTFOUND orbisdirectory.bvdinfo.com"
+  },
+  {
+    "url": "https://www.companieslist.co.uk/",
+    "status": 403
+  },
+  {
+    "url": "https://www.manta.com/business-directory",
+    "status": 403
+  },
+  {
+    "url": "https://www.nicb.org/theft_and_fraud_awareness/vincheck",
+    "status": 404
+  },
+  {
+    "url": "https://www.plonked.com/",
+    "err": "connect ECONNREFUSED 207.148.248.143:443"
+  },
+  {
+    "url": "https://shiptracker.shodan.io/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://data.deutschebahn.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://batchgeo.com/",
+    "status": 403
+  },
+  {
+    "url": "https://followyourworld.appspot.com/",
+    "status": 404
+  },
+  {
+    "url": "https://landsatlook.usgs.gov/sentinel2/",
+    "status": 403
+  },
+  {
+    "url": "http://www.iboogie.com/",
+    "status": 503
+  },
+  {
+    "url": "http://www.yournavigation.org/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.ixquick.com/",
+    "err": "getaddrinfo ENOTFOUND www.ixquick.com"
+  },
+  {
+    "url": "http://shuriken.pm",
+    "err": "getaddrinfo ENOTFOUND shuriken.pm"
+  },
+  {
+    "url": "http://iseek.com/iseek/home.page",
+    "status": 404
+  },
+  {
+    "url": "http://biznar.com/biznar/desktop/en/search.html",
+    "status": 404
+  },
+  {
+    "url": "http://jurn.org/#gsc.tab=0",
+    "err": "getaddrinfo ENOTFOUND jurn.org"
+  },
+  {
+    "url": "https://www.hathitrust.org/",
+    "status": 403
+  },
+  {
+    "url": "http://www.opendoar.org/search.php",
+    "err": "getaddrinfo ENOTFOUND www.opendoar.org"
+  },
+  {
+    "url": "http://www.whostalkin.com/",
+    "status": 403
+  },
+  {
+    "url": "https://searx.me/",
+    "err": "connect ECONNREFUSED 194.150.168.104:443"
+  },
+  {
+    "url": "https://getnewsbot.com/",
+    "err": "getaddrinfo ENOTFOUND getnewsbot.com"
+  },
+  {
+    "url": "http://www.findthedata.com/",
+    "err": "getaddrinfo ENOTFOUND www.findthedata.com"
+  },
+  {
+    "url": "http://entitycube.research.microsoft.com/",
+    "err": "getaddrinfo ENOTFOUND entitycube.research.microsoft.com"
+  },
+  {
+    "url": "http://hubii.com/",
+    "status": 403
+  },
+  {
+    "url": "https://africacheck.org/",
+    "status": 403
+  },
+  {
+    "url": "https://hoaxy.iuni.iu.edu/",
+    "err": "getaddrinfo ENOTFOUND hoaxy.iuni.iu.edu"
+  },
+  {
+    "url": "https://zenodo.org/",
+    "status": 403
+  },
+  {
+    "url": "http://mediabugs.org/",
+    "status": 500
+  },
+  {
+    "url": "http://www.screenshots.com/",
+    "err": "getaddrinfo ENOTFOUND www.screenshots.com"
+  },
+  {
+    "url": "https://web-beta.archive.org/#/",
+    "status": 403
+  },
+  {
+    "url": "https://annas-archive.org/",
+    "err": "getaddrinfo ENOTFOUND annas-archive.org"
+  },
+  {
+    "url": "http://browsershots.org/",
+    "err": "getaddrinfo EAI_AGAIN browsershots.org"
+  },
+  {
+    "url": "http://vis-www.cs.umass.edu/lfw/",
+    "err": "getaddrinfo ENOTFOUND vis-www.cs.umass.edu"
+  },
+  {
+    "url": "http://translate.reference.com/",
+    "err": "getaddrinfo ENOTFOUND translate.reference.com"
+  },
+  {
+    "url": "https://www.freetranslation.com/",
+    "err": "getaddrinfo ENOTFOUND www.freetranslation.com"
+  },
+  {
+    "url": "https://archive.ics.uci.edu/ml/datasets/Spambase",
+    "status": 502
+  },
+  {
+    "url": "https://www.apkonline.net/",
+    "err": "getaddrinfo ENOTFOUND www.apkonline.net"
+  },
+  {
+    "url": "https://darkweb.hunch.ly/",
+    "err": "getaddrinfo ENOTFOUND darkweb.hunch.ly"
+  },
+  {
+    "url": "https://oint.ctrlbox.com/",
+    "err": "getaddrinfo ENOTFOUND oint.ctrlbox.com"
+  },
+  {
+    "url": "http://gjobqjj7wyczbqie.onion/",
+    "err": "getaddrinfo ENOTFOUND gjobqjj7wyczbqie.onion"
+  },
+  {
+    "url": "http://hss3uro2hsxfogfq.onion/",
+    "err": "getaddrinfo ENOTFOUND hss3uro2hsxfogfq.onion"
+  },
+  {
+    "url": "http://tor66sezptuu2nta.onion/",
+    "err": "getaddrinfo ENOTFOUND tor66sezptuu2nta.onion"
+  },
+  {
+    "url": "http://darkfailllnkf4vf.onion/",
+    "err": "getaddrinfo ENOTFOUND darkfailllnkf4vf.onion"
+  },
+  {
+    "url": "http://eqt5g4fuenphqinx.onion/",
+    "err": "getaddrinfo ENOTFOUND eqt5g4fuenphqinx.onion"
+  },
+  {
+    "url": "https://onion.cab/",
+    "err": "connect ECONNREFUSED 62.138.11.6:443"
+  },
+  {
+    "url": "http://www.onion.link/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://oxt.me",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://blockr.io/",
+    "err": "getaddrinfo ENOTFOUND blockr.io"
+  },
+  {
+    "url": "https://blockexplorer.com/",
+    "status": 403
+  },
+  {
+    "url": "http://www.goofbid.com/",
+    "err": "getaddrinfo ENOTFOUND www.goofbid.com"
+  },
+  {
+    "url": "https://graphsense.info/",
+    "status": 500
+  },
+  {
+    "url": "https://www.stringify.com/",
+    "err": "getaddrinfo ENOTFOUND www.stringify.com"
+  },
+  {
+    "url": "https://chainradar.com/xmr/blocks",
+    "err": "certificate has expired"
+  },
+  {
+    "url": "http://nsrl.hashsets.com/national_software_reference_library1_search.php",
+    "err": "getaddrinfo ENOTFOUND nsrl.hashsets.com"
+  },
+  {
+    "url": "http://decalage.info/en/mwsearch",
+    "status": 404
+  },
+  {
+    "url": "http://bitcoinwhoswho.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.flippity.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://malwareconfig.com/",
+    "err": "getaddrinfo ENOTFOUND malwareconfig.com"
+  },
+  {
+    "url": "https://www.uncoverit.org/",
+    "status": 429
+  },
+  {
+    "url": "http://phenoelit.org/dpl/dpl.html",
+    "err": "getaddrinfo EAI_AGAIN phenoelit.org"
+  },
+  {
+    "url": "https://hashes.org/",
+    "err": "getaddrinfo ENOTFOUND hashes.org"
+  },
+  {
+    "url": "https://www.exploit-db.com/",
+    "status": 403
+  },
+  {
+    "url": "https://attack.mitre.org/wiki/All_Techniques",
+    "status": 404
+  },
+  {
+    "url": "https://www.pwnmalw.re/",
+    "err": "getaddrinfo ENOTFOUND www.pwnmalw.re"
+  },
+  {
+    "url": "https://consumer.valkyrie.comodo.com/",
+    "err": "connect ECONNREFUSED 192.186.145.43:443"
+  },
+  {
+    "url": "https://community.blueliv.com/#!/sandbox",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.cyber.gov.au/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://cymon.io/",
+    "err": "getaddrinfo EAI_AGAIN cymon.io"
+  },
+  {
+    "url": "https://www.pexels.com/",
+    "status": 403
+  },
+  {
+    "url": "https://torguard.net/vpn-dns-leak-test.php",
+    "status": 403
+  },
+  {
+    "url": "http://www.browserscope.org/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://browserspy.dk/browser.php",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://whatbrowser.org/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.whatbrowseramiusing.co/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.whatsmybrowser.org/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.w3schools.com/browsers/default.asp",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.tracemyip.org/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://letmecheck.it/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.perfect-privacy.com/webrtc-leaktest/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.perfect-privacy.com/check-ip/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.ip2proxy.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://proxycheck.haschek.at/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://panopticlick.eff.org/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.privacytools.io/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://xdd2.org/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://inteltechniques.com/blog/2018/09/28/complete-credit-freeze-tutorial-update/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.optoutprescreen.com/?rf=t",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.safeshepherd.com/handbook",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://backgroundchecks.org/justdeleteme/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.privacyguides.org/en/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.locabrowser.com",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://browserspy.dk/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://browserleaks.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://www.catb.org/esr/faqs/smart-questions.html",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.sans.org/sec487",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.theosintion.com/courses",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://plessas.net/online-training",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://inteltechniques.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.forensicosint.com/osint-guide",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://twitter.com/quiztime",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://geoguessr.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://timeline.knightlab.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.zeemaps.com/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://www.magnetforensics.com/free-tool-web-page-saver/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "http://archive.is/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://anonymousplanet.org/guide/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://themanyhats.club/centralised-place-for-privacy-resources/",
+    "err": "socket hang up"
+  },
+  {
+    "url": "https://inteltechniques.com/data/workbook.pdf",
+    "err": "socket hang up"
+  }
+]
