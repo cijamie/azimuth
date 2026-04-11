@@ -60,7 +60,7 @@ C:\Users\jamie\Desktop\Azimuth\
 ## ⚖️ Disclaimer
 
 **AZIMUTH is intended for ethical research, security auditing, and professional intelligence gathering only.** The developers assume no liability and are not responsible for any misuse or damage caused by this program. Users are responsible for complying with all local, state, and federal laws regarding digital privacy and data collection.
-
+ 
 ---
 
 <p align="center">
