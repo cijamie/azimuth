@@ -341,6 +341,28 @@ const LOOKUPS = {
 
 // Which lookups run for which selector type. Keyed lookups are added only when a key is set.
 const withKey = (name, fn) => (Settings.key(name) ? [fn()] : []);
+LOOKUPS.gleif = async q => {
+    const j = await fetchJSON(`https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=${encodeURIComponent(q)}&page%5Bsize%5D=8`);
+    const recs = j.data || [];
+    const rows = [];
+    for (const r of recs) {
+        const e = r.attributes?.entity || {};
+        const addr = e.legalAddress || {};
+        rows.push([e.legalName?.name || r.id, `${[addr.city, addr.country].filter(Boolean).join(', ')} · ${e.status || ''} · LEI ${r.id}`, `https://search.gleif.org/#/record/${r.id}`]);
+    }
+    // Parent companies of the top match (direct and ultimate).
+    if (recs[0]) {
+        for (const rel of ['direct-parent', 'ultimate-parent']) {
+            try {
+                const p = await fetchJSON(`https://api.gleif.org/api/v1/lei-records/${recs[0].id}/${rel}`);
+                const pe = p.data?.attributes?.entity;
+                if (pe) rows.push([`↑ ${rel.replace('-', ' ')} of ${recs[0].attributes.entity.legalName.name}`, `${pe.legalName.name} (${pe.legalAddress?.country || ''}) · LEI ${p.data.id}`, `https://search.gleif.org/#/record/${p.data.id}`]);
+            } catch { /* no parent reported */ }
+        }
+    }
+    return { title: 'Companies (GLEIF LEI register)', status: rows.length ? 'hit' : 'miss', rows, link: `https://search.gleif.org/#/search/simpleSearch=${encodeURIComponent(q)}`, note: rows.length ? 'Legal entities with this name, with reported parent companies of the best match.' : 'No legal entities with that name in the LEI register.' };
+};
+
 const LOOKUP_PLAN = {
     domain: s => [LOOKUPS.dns(s.value), LOOKUPS.rdapDomain(s.value), LOOKUPS.certs(s.value), LOOKUPS.wayback(s.value), LOOKUPS.otx('domain', s.value), LOOKUPS.hibpDomain(s.value), ...withKey('virustotal', () => LOOKUPS.virustotal('domain', s.value))],
     email: s => [LOOKUPS.gravatar(s.value), LOOKUPS.dns(s.meta.domain), LOOKUPS.hibpDomain(s.meta.domain).then(r => ({ ...r, title: `Breaches of ${s.meta.domain} (HIBP)` })), LOOKUPS.github(s.meta.local).then(r => ({ ...r, title: `GitHub "${s.meta.local}" (from the email name)` }))],
@@ -351,7 +373,7 @@ const LOOKUP_PLAN = {
     crypto: s => [s.meta.chain === 'ethereum' ? LOOKUPS.eth(s.value) : s.meta.chain === 'bitcoin' ? LOOKUPS.btc(s.value) : Promise.resolve({ title: 'Wallet', status: 'info', rows: [['Chain', s.meta.chain]], note: 'No free API for this chain. Use the explorer links.' })],
     hash: s => [LOOKUPS.hashInfo(s), LOOKUPS.otx('file', s.value), ...withKey('virustotal', () => LOOKUPS.virustotal('hash', s.value))],
     phone: s => [LOOKUPS.phone(s)],
-    name: s => [LOOKUPS.wikipedia(s.value), LOOKUPS.wikidata(s.value)],
+    name: s => [LOOKUPS.wikipedia(s.value), LOOKUPS.wikidata(s.value), LOOKUPS.gleif(s.value)],
 };
 
 // ---- phone library (loaded on first use) ----

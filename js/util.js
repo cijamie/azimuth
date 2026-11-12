@@ -115,11 +115,16 @@ const blobStore = (() => {
             t.onerror = () => rej(t.error);
         });
     };
+    const rawGet = k => tx('readonly', s => s.get(k));
+    const rawSet = (k, v) => tx('readwrite', s => s.put(v, k));
     return {
-        get: k => tx('readonly', s => s.get(k)),
-        set: (k, v) => tx('readwrite', s => s.put(v, k)),
+        // Values are transparently encrypted when a passphrase lock is set (see vault.js).
+        get: async k => { const v = await rawGet(k); return typeof v === 'string' && typeof Vault !== 'undefined' && Vault.isEnc(v) ? Vault.decrypt(v) : v; },
+        set: async (k, v) => rawSet(k, typeof v === 'string' && typeof Vault !== 'undefined' && Vault.enabled() ? await Vault.encrypt(v) : v),
         del: k => tx('readwrite', s => s.delete(k)),
         clear: () => tx('readwrite', s => s.clear()),
+        keys: () => tx('readonly', s => s.getAllKeys()),
+        rawGet, rawSet,
     };
 })();
 
@@ -172,7 +177,10 @@ function md5(input) {
     return [a0, b0, c0, d0].map(v => [0, 8, 16, 24].map(s => ((v >>> s) & 255).toString(16).padStart(2, '0')).join('')).join('');
 }
 
+function privacyOn() { return typeof Settings !== 'undefined' && Settings.get('privacy'); }
+
 async function fetchJSON(url, opts = {}) {
+    if (privacyOn() && !opts.allowInPrivacy) throw new Error('Privacy mode is on (Settings): no services are contacted');
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), opts.timeout || 12000);
     try {

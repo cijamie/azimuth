@@ -4,9 +4,9 @@
 
 const Watch = (() => {
     const KEY = 'azimuth_watch';
-    let items = store.get(KEY, []);
+    let items = [];
     let running = false;
-    const save = () => { store.set(KEY, items); badge(); };
+    const save = () => { Secure.set(KEY, items); badge(); };
 
     function badge() {
         const unseen = items.reduce((n, i) => n + (i.changes || []).filter(c => !c.seen).length, 0);
@@ -70,7 +70,7 @@ const Watch = (() => {
     }
 
     async function runDue(force = false) {
-        if (running) return;
+        if (running || privacyOn()) return;
         running = true;
         const ms = Settings.get('watchHours') * 3600e3;
         try {
@@ -99,6 +99,7 @@ const Watch = (() => {
     }
 
     function setup() {
+        items = Secure.get(KEY, []);
         $('#watch-list').addEventListener('click', e => {
             const t = e.target.closest('[data-wcheck],[data-wdel],[data-wseen]');
             if (!t) return;

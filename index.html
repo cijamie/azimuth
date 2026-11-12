@@ -11,10 +11,14 @@
     <meta property="og:description" content="Paste a selector, get live lookups, pivots, a link chart, timeline and a case report. All in your browser.">
     <meta property="og:image" content="logo.png">
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <meta name="theme-color" content="#0a0b0d">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/arf.css?v=3.1">
+    <link rel="stylesheet" href="css/arf.css?v=3.2">
     <script>try { const t = JSON.parse(localStorage.getItem('azimuth_settings') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch {}</script>
 </head>
 <body>
@@ -40,16 +44,20 @@
         <button class="rail-item active" data-view="investigate"><span class="ri">◎</span><span>Investigate</span></button>
         <button class="rail-item" data-view="graph"><span class="ri">⟡</span><span>Link chart &amp; timeline</span></button>
         <button class="rail-item" data-view="case"><span class="ri">▣</span><span>Case file</span><span class="badge" id="evidence-count">0</span></button>
+        <button class="rail-item" data-view="analysis"><span class="ri">⚖</span><span>Analysis &amp; review</span></button>
         <button class="rail-item" data-view="watch"><span class="ri">◷</span><span>Watchlist</span><span class="badge" id="watch-count">0</span></button>
+        <button class="rail-item" data-view="bulk"><span class="ri">☰</span><span>Bulk check</span></button>
         <div class="rail-sep"></div>
         <button class="rail-item" data-view="registry"><span class="ri">▤</span><span>Tool directory</span></button>
         <button class="rail-item" data-view="dorks"><span class="ri">⌕</span><span>Search dorks</span></button>
         <button class="rail-item" data-view="toolkit"><span class="ri">⚒</span><span>Toolkit</span></button>
         <div class="rail-foot">
-            <div class="case-chip" id="case-chip" title="Active case (open the Case file to rename)">
-                <span class="tiny muted">Case</span>
+            <div class="privacy-pill hidden" id="privacy-pill" title="Privacy mode: no live lookups are sent. Turn off in Settings.">🛡 Privacy mode</div>
+            <button class="case-chip" id="case-chip" title="Switch, create or search cases">
+                <span class="tiny muted">Case ▾</span>
                 <span id="case-chip-name">Untitled case</span>
-            </div>
+            </button>
+            <button class="opsec-line hidden" id="lock-now" title="Lock Azimuth (requires your passphrase to reopen)">🔒 Lock now</button>
             <button class="opsec-line" id="opsec-check" title="Check the IP address that websites and lookups see">
                 <span class="dot" id="opsec-dot"></span><span id="opsec-text">Check my IP</span>
             </button>
@@ -115,6 +123,8 @@
                     <button class="tab active" data-tab="findings">Findings <span class="count" id="tab-findings-count"></span></button>
                     <button class="tab" data-tab="links">More places to look <span class="count" id="tab-links-count"></span></button>
                     <button class="tab hidden" data-tab="sweep" id="tab-sweep">Username sweep</button>
+                    <button class="tab hidden" data-tab="match" id="tab-match">Same person?</button>
+                    <button class="tab hidden" data-tab="lookalikes" id="tab-lookalikes">Lookalike domains</button>
                 </div>
                 <div class="tabpane" data-pane="findings">
                     <div id="lookup-results" class="lookup-grid"></div>
@@ -125,6 +135,12 @@
                 </div>
                 <div class="tabpane hidden" data-pane="sweep">
                     <div id="sweep-panel"></div>
+                </div>
+                <div class="tabpane hidden" data-pane="match">
+                    <div id="match-panel"></div>
+                </div>
+                <div class="tabpane hidden" data-pane="lookalikes">
+                    <div id="lookalike-panel"></div>
                 </div>
             </div>
         </section>
@@ -142,6 +158,11 @@
                 </div>
                 <div class="graph-wrap" id="graph-wrap"><svg id="graph" role="img" aria-label="Link chart"></svg><div class="graph-empty muted" id="graph-empty">Investigate something to start the chart.</div></div>
                 <div class="legend" id="graph-legend"></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h2>Map</h2><span class="muted small">Every location in the case: IP locations, photo GPS and places you add. Click the map to add a point.</span><span class="spacer"></span><button class="btn" id="map-fit">Fit all</button></div>
+                <div id="map" class="map-wrap"></div>
+                <div id="map-list" class="small muted" style="margin-top:.5rem"></div>
             </div>
             <div class="card">
                 <div class="card-head"><h2>Timeline</h2><span class="muted small">Dates found by the checks (registrations, account creation, archive captures, photo dates) plus your evidence.</span></div>
@@ -187,6 +208,27 @@
                         <button class="btn danger" id="new-case-btn">Start a new case</button>
                     </div>
                 </details>
+                <details class="more-box">
+                    <summary>Export to other tools</summary>
+                    <p class="muted small">Entities, links and evidence in the formats professional tools import.</p>
+                    <div class="btn-row">
+                        <button class="btn" data-export="maltego-csv">Maltego (CSV)</button>
+                        <button class="btn" data-export="graphml">Maltego / Gephi (GraphML)</button>
+                        <button class="btn" data-export="i2">i2 Analyst’s Notebook (CSV)</button>
+                        <button class="btn" data-export="stix">STIX 2.1 bundle</button>
+                        <button class="btn" data-export="misp">MISP event</button>
+                        <button class="btn" data-export="case-uco">CASE/UCO (forensics)</button>
+                        <button class="btn" data-export="csv">Evidence (CSV)</button>
+                    </div>
+                </details>
+                <details class="more-box">
+                    <summary>Import results from other tools</summary>
+                    <p class="muted small">Sherlock, Maigret, SpiderFoot, theHarvester, Holehe, or an Azimuth username sweep. Findings become leads on the chart and a piece of evidence.</p>
+                    <div class="btn-row">
+                        <label class="btn">Choose result file…<input type="file" id="import-tool-input" accept=".json,.csv,.txt,.ndjson" hidden></label>
+                        <span class="muted small" id="import-tool-status"></span>
+                    </div>
+                </details>
             </div>
 
             <div class="card">
@@ -204,6 +246,84 @@
                 <div class="btn-row"><button class="btn small" id="clear-activity">Clear log</button></div>
                 <div id="activity-log" class="activity-log"></div>
             </details>
+        </section>
+
+        <!-- ================= ANALYSIS ================= -->
+        <section id="view-analysis" class="view hidden">
+            <div class="card">
+                <div class="card-head"><h2>Intelligence requirements</h2><span class="muted small">The questions this case must answer. Link evidence to them and track progress.</span></div>
+                <div id="req-list"></div>
+                <form class="omni-inline" id="req-form"><input class="input" id="req-text" placeholder="e.g. Who controls the domain example-shop.com?"><button class="btn primary">Add</button></form>
+            </div>
+
+            <div class="card">
+                <div class="card-head"><h2>Key judgments</h2><span class="muted small">Conclusions in standard probability language (ICD 203). They lead the report.</span></div>
+                <div id="judgment-list"></div>
+                <form class="judgment-form" id="judgment-form">
+                    <input class="input" id="jd-text" placeholder="e.g. The account is operated by the subject">
+                    <select class="input" id="jd-prob"></select>
+                    <select class="input" id="jd-conf"><option>Low confidence</option><option selected>Moderate confidence</option><option>High confidence</option></select>
+                    <button class="btn primary">Add</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <div class="card-head"><h2>Competing hypotheses (ACH)</h2><span class="muted small">Score each piece of evidence against each explanation. The hypothesis with the <b>fewest inconsistencies</b> survives, not the one with most support.</span></div>
+                <div id="ach"></div>
+                <div class="btn-row"><form class="omni-inline" id="ach-h-form" style="flex:1"><input class="input" id="ach-h" placeholder="Add a hypothesis, e.g. “Impersonator account”"><button class="btn">Add hypothesis</button></form><button class="btn" id="ach-add-evidence">Add all case evidence as rows</button></div>
+            </div>
+
+            <div class="card">
+                <div class="card-head"><h2>Authority, necessity &amp; proportionality</h2><span class="muted small">Record why this investigation is justified (required by many police forces and regulated firms). Included in law-enforcement reports.</span></div>
+                <div class="grid-2">
+                    <label class="field"><span>Authority / legal basis</span><input class="input" data-legal="basis" placeholder="e.g. RIPA 2000 s.28 / GDPR Art. 6(1)(f) / client engagement letter"></label>
+                    <label class="field"><span>Approved by &amp; date</span><input class="input" data-legal="approved" placeholder="Name, role, date"></label>
+                    <label class="field span-2"><span>Necessity: why open-source research is needed</span><textarea class="input" data-legal="necessity"></textarea></label>
+                    <label class="field span-2"><span>Proportionality &amp; collateral intrusion: how intrusion into others’ privacy is limited</span><textarea class="input" data-legal="proportionality"></textarea></label>
+                    <label class="field"><span>Scope / limits</span><input class="input" data-legal="scope" placeholder="What is in and out of scope"></label>
+                    <label class="field"><span>Delete case data after</span><input class="input" type="date" data-legal="retention"></label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-head"><h2>Peer review</h2><span class="muted small">A second analyst checks the findings before the report goes out.</span></div>
+                <div id="review-status"></div>
+                <div class="grid-3">
+                    <label class="field"><span>Reviewer</span><input class="input" id="rv-name"></label>
+                    <label class="field"><span>Outcome</span><select class="input" id="rv-outcome"><option>Approved</option><option>Approved with changes</option><option>Returned for more work</option></select></label>
+                    <label class="field"><span>&nbsp;</span><button class="btn primary" id="rv-sign">Sign off</button></label>
+                </div>
+                <label class="field"><span>Reviewer notes</span><textarea class="input" id="rv-notes"></textarea></label>
+            </div>
+
+            <div class="card">
+                <div class="card-head"><h2>AI assistant</h2><span class="muted small" id="ai-hint"></span></div>
+                <div class="btn-row">
+                    <button class="btn" data-ai="summary">Draft case summary</button>
+                    <button class="btn" data-ai="next">Suggest next steps</button>
+                    <button class="btn" data-ai="gaps">Review for gaps &amp; weak claims</button>
+                    <button class="btn" data-ai="judgments">Propose key judgments</button>
+                </div>
+                <form class="omni-inline" id="ai-form" style="margin-top:.6rem"><input class="input" id="ai-q" placeholder="Ask about this case…"><button class="btn primary">Ask</button></form>
+                <div id="ai-output" class="ai-output"></div>
+            </div>
+        </section>
+
+        <!-- ================= BULK ================= -->
+        <section id="view-bulk" class="view hidden">
+            <div class="card">
+                <div class="card-head"><h2>Bulk check</h2><span class="muted small">Paste up to 500 selectors (one per line, or any text: indicators are extracted). Live checks run three at a time.</span></div>
+                <textarea id="bulk-input" class="input mono tall" placeholder="one per line…"></textarea>
+                <div class="btn-row">
+                    <button class="btn primary" id="bulk-run">Check all</button>
+                    <button class="btn" id="bulk-stop" disabled>Stop</button>
+                    <button class="btn" id="bulk-csv" disabled>Download CSV</button>
+                    <button class="btn" id="bulk-to-case" disabled>Add all to case</button>
+                    <input type="search" id="bulk-filter" class="input input-sm" placeholder="Filter results">
+                    <span class="muted small" id="bulk-status"></span>
+                </div>
+            </div>
+            <div class="card"><div id="bulk-table" class="bulk-table"></div></div>
         </section>
 
         <!-- ================= WATCHLIST ================= -->
@@ -260,6 +380,13 @@
         <section id="view-toolkit" class="view hidden">
             <div class="tabs" id="toolkit-tabs">
                 <button class="tab active" data-tab="ioc">Extract indicators</button>
+                <button class="tab" data-tab="headers">Email headers</button>
+                <button class="tab" data-tab="variants">Name &amp; email variants</button>
+                <button class="tab" data-tab="docs">Document metadata</button>
+                <button class="tab" data-tab="video">Video frames</button>
+                <button class="tab" data-tab="bigfile">Search a big file</button>
+                <button class="tab" data-tab="telegram">Telegram channel</button>
+                <button class="tab" data-tab="personas">Research personas</button>
                 <button class="tab" data-tab="image">Photo check</button>
                 <button class="tab" data-tab="sun">Sun &amp; shadows</button>
                 <button class="tab" data-tab="wayback">Compare archived pages</button>
@@ -273,6 +400,72 @@
                 <textarea id="ioc-input" class="input mono tall" placeholder="Paste text here…"></textarea>
                 <div class="btn-row"><button class="btn" id="ioc-copy">Copy as list</button><button class="btn" id="ioc-defang">Copy defanged</button></div>
                 <div id="ioc-output"></div>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="headers">
+                <p class="hint">Paste the full headers of a suspicious email (Gmail: ⋮ → Show original; Outlook: File → Properties → Internet headers). You get the route it took, the real sending servers, authentication results and spoofing warnings. Nothing leaves your browser.</p>
+                <textarea id="hdr-input" class="input mono tall" placeholder="Received: from …&#10;Authentication-Results: …&#10;From: …"></textarea>
+                <div id="hdr-output"></div>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="variants">
+                <p class="hint">Turn a name into the usernames and email addresses a person is likely to use, including transliterations and nicknames. Click any result to investigate it, or send the lot to Bulk check.</p>
+                <div class="grid-3">
+                    <label class="field"><span>Full name</span><input id="var-name" class="input" placeholder="Aleksandr Ivanov"></label>
+                    <label class="field"><span>Email domain (optional)</span><input id="var-domain" class="input" placeholder="acme.com or gmail.com"></label>
+                    <label class="field"><span>Birth year / number (optional)</span><input id="var-year" class="input" placeholder="1987"></label>
+                </div>
+                <div id="var-output"></div>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="docs">
+                <p class="hint">Reads hidden metadata from PDF, Word, Excel, PowerPoint and OpenDocument files: author, company, editing software, creation and edit dates, revision count, comment authors. Files stay on your computer.</p>
+                <label class="dropzone" id="doc-drop"><input type="file" id="doc-file" accept=".pdf,.docx,.xlsx,.pptx,.odt,.ods,.odp,.docm,.xlsm,.pptm" multiple hidden><span>Drop documents here or click to choose (several at once is fine)</span></label>
+                <div id="doc-output"></div>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="video">
+                <p class="hint">Pulls keyframes out of a video so you can reverse-search them, and reads the file’s recorded creation time. Runs locally.</p>
+                <div class="grid-3">
+                    <label class="field"><span>Video file</span><input type="file" id="vid-file" accept="video/*" class="input"></label>
+                    <label class="field"><span>Take a frame every</span><select id="vid-step" class="input"><option value="auto">scene change (auto)</option><option value="1">1 second</option><option value="2">2 seconds</option><option value="5">5 seconds</option><option value="10">10 seconds</option></select></label>
+                    <label class="field"><span>Maximum frames</span><input id="vid-max" type="number" class="input" value="24" min="4" max="120"></label>
+                </div>
+                <div id="vid-output"></div>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="bigfile">
+                <p class="hint">Search inside a large text file (a leak, a log, a CSV dump, several GB is fine) without uploading it anywhere. The file is read in pieces in your browser.</p>
+                <div class="grid-3">
+                    <label class="field"><span>File</span><input type="file" id="bf-file" class="input"></label>
+                    <label class="field"><span>Find</span><input id="bf-q" class="input mono" placeholder="jdoe@ or 192.168. or a name"></label>
+                    <label class="field"><span>Match</span><select id="bf-mode" class="input"><option value="ci">text (ignore case)</option><option value="cs">text (exact case)</option><option value="re">regular expression</option></select></label>
+                </div>
+                <div class="btn-row"><button class="btn primary" id="bf-run">Search</button><button class="btn" id="bf-stop" disabled>Stop</button><button class="btn" id="bf-save" disabled>Save matches as evidence</button><span class="muted small" id="bf-status"></span></div>
+                <div id="bf-output" class="bf-output"></div>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="telegram">
+                <p class="hint">Read a public Telegram channel’s recent posts: search them, see dates, views and links, and export them. Needs the Azimuth browser extension (Telegram doesn’t let web pages read it directly).</p>
+                <div class="omni-inline"><input id="tg-channel" class="input mono" placeholder="channel name or t.me link, e.g. durov"><button class="btn primary" id="tg-load">Load posts</button><button class="btn" id="tg-more" disabled>Load older</button></div>
+                <div class="btn-row"><input type="search" id="tg-filter" class="input input-sm" placeholder="Search loaded posts"><button class="btn" id="tg-csv" disabled>Download CSV</button><button class="btn" id="tg-case" disabled>Save to case</button><span class="muted small" id="tg-status"></span></div>
+                <div id="tg-output"></div>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="personas">
+                <p class="hint">Keep track of your research (“sock puppet”) accounts: which platforms, which browser profile or VM they live in, and when they were last used. Stored only in this browser and kept separate from cases.</p>
+                <div id="persona-list"></div>
+                <details class="more-box" open>
+                    <summary><b>Add a persona</b></summary>
+                    <div class="grid-3">
+                        <label class="field"><span>Persona name</span><input class="input" data-pf="name"></label>
+                        <label class="field"><span>Browser profile / VM</span><input class="input" data-pf="profile" placeholder="Firefox container “Anna”"></label>
+                        <label class="field"><span>Status</span><select class="input" data-pf="status"><option>Active</option><option>Aging (not yet used)</option><option>Burned</option><option>Retired</option></select></label>
+                        <label class="field span-2"><span>Accounts (one per line: platform, handle, email/phone)</span><textarea class="input" data-pf="accounts" placeholder="Instagram, @anna.travels, anna.t@proton.me"></textarea></label>
+                        <label class="field"><span>Notes / backstory</span><textarea class="input" data-pf="notes"></textarea></label>
+                    </div>
+                    <div class="btn-row"><button class="btn primary" id="persona-save">Save persona</button></div>
+                </details>
             </div>
 
             <div class="card tabpane hidden" data-pane="image">
@@ -340,11 +533,14 @@
         <div class="grid-2">
             <label class="field"><span>Tags</span><input type="text" id="note-tags" class="input" placeholder="comma, separated (use “risk” to flag it in due-diligence reports)"></label>
             <label class="field"><span>Confidence</span><select id="note-confidence" class="input"><option value="">Not set</option><option>Confirmed</option><option>Probable</option><option>Possible</option><option>Doubtful</option></select></label>
+            <label class="field" title="Admiralty Code: how reliable is the source?"><span>Source reliability</span><select id="note-reliability" class="input"><option value="">Not graded</option><option value="A">A: completely reliable</option><option value="B">B: usually reliable</option><option value="C">C: fairly reliable</option><option value="D">D: not usually reliable</option><option value="E">E: unreliable</option><option value="F">F: cannot be judged</option></select></label>
+            <label class="field" title="Admiralty Code: how credible is this piece of information?"><span>Information credibility</span><select id="note-credibility" class="input"><option value="">Not graded</option><option value="1">1: confirmed by other sources</option><option value="2">2: probably true</option><option value="3">3: possibly true</option><option value="4">4: doubtful</option><option value="5">5: improbable</option><option value="6">6: cannot be judged</option></select></label>
+            <label class="field span-2"><span>Answers requirement(s)</span><select id="note-reqs" class="input" multiple size="3"></select></label>
         </div>
         <div class="field">
             <span>Screenshot</span>
             <label class="dropzone small" id="note-drop"><input type="file" id="note-image-file" accept="image/*" hidden><span>Paste (Ctrl+V), drop, or click to choose</span></label>
-            <div id="snapshot-preview-container" class="snapshot hidden"><img id="snapshot-preview" alt=""><div class="mono tiny muted" id="snapshot-hash"></div><button class="btn small" id="remove-snapshot-btn" type="button">Remove</button></div>
+            <div id="snapshot-preview-container" class="snapshot hidden"><img id="snapshot-preview" alt=""><div class="mono tiny muted" id="snapshot-hash"></div><div class="btn-row" style="margin:0"><button class="btn small" id="redact-btn" type="button">Redact…</button><button class="btn small" id="remove-snapshot-btn" type="button">Remove</button></div></div>
         </div>
         <div class="btn-row end"><button id="close-modal" class="btn">Cancel</button><button id="save-note" class="btn primary">Save <kbd>Ctrl+Enter</kbd></button></div>
     </div>
@@ -357,6 +553,8 @@
         <div class="settings-section">
             <h4>Behaviour</h4>
             <label class="toggle"><input type="checkbox" id="set-auto"> Run live checks automatically when I investigate something</label>
+            <label class="toggle"><input type="checkbox" id="set-privacy"> <b>Privacy mode:</b> never contact any service on my behalf (no live checks, watchlist, timestamps or IP check); links still work</label>
+            <label class="toggle"><input type="checkbox" id="set-capture-context"> Record the server IP and registrar when evidence with a source link is saved</label>
             <label class="toggle"><input type="checkbox" id="set-theme-light"> Light theme</label>
             <label class="field"><span>Default country for phone numbers without +</span><input id="set-region" class="input" maxlength="2" placeholder="US, GB, DE…"></label>
             <label class="field"><span>Watchlist: re-check every</span><select id="set-watch-hours" class="input"><option value="1">hour</option><option value="6">6 hours</option><option value="24">day</option><option value="168">week</option></select></label>
@@ -366,6 +564,12 @@
             <label class="field"><span>Shodan: full host details for IPs</span><input id="key-shodan" class="input mono" type="password" autocomplete="off" placeholder="paste key"></label>
             <label class="field"><span>VirusTotal: reputation for domains, IPs, URLs and file hashes</span><input id="key-virustotal" class="input mono" type="password" autocomplete="off" placeholder="paste key"></label>
             <p class="muted small">Have I Been Pwned, Hunter, SecurityTrails and GreyNoise don’t allow calls from a web page, so they can’t be added here. Their links are under “More places to look”.</p>
+            <label class="field"><span>Anthropic (Claude) API key: turns on the AI assistant in Analysis &amp; review. Usage is billed to your Anthropic account.</span><input id="key-anthropic" class="input mono" type="password" autocomplete="off" placeholder="sk-ant-…"></label>
+        </div>
+        <div class="settings-section">
+            <h4>Lock with a passphrase</h4>
+            <p class="muted small" id="vault-status"></p>
+            <div class="btn-row" style="margin:0"><button class="btn" id="vault-enable">Set a passphrase…</button><button class="btn hidden" id="vault-change">Change passphrase…</button><button class="btn danger hidden" id="vault-disable">Remove lock…</button></div>
         </div>
         <div class="settings-section">
             <h4>Browser extension</h4>
@@ -377,6 +581,40 @@
             <button class="btn danger" id="purge-session-btn">Delete all Azimuth data in this browser</button>
         </div>
         <div class="btn-row end"><button class="btn primary" id="settings-close">Done</button></div>
+    </div>
+</div>
+
+<!-- Case switcher -->
+<div id="cases-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="cases-title">
+    <div class="modal-card wide">
+        <h3 id="cases-title">Cases</h3>
+        <div class="omni-inline"><input type="search" id="cases-search" class="input" placeholder="Search all cases (names, selectors, evidence)"><button class="btn primary" id="cases-new">+ New case</button></div>
+        <label class="toggle" style="margin:.6rem 0"><input type="checkbox" id="cases-archived"> show archived</label>
+        <div id="cases-list" class="cases-list"></div>
+        <div class="btn-row end"><button class="btn" id="cases-close">Close</button></div>
+    </div>
+</div>
+
+<!-- Unlock screen -->
+<div id="unlock" class="unlock hidden" role="dialog" aria-modal="true" aria-labelledby="unlock-title">
+    <form class="modal-card" id="unlock-form">
+        <h3 id="unlock-title">🔒 Azimuth is locked</h3>
+        <p class="muted small">Enter your passphrase to decrypt your cases.</p>
+        <input type="password" id="unlock-pass" class="input input-lg" autocomplete="current-password" placeholder="Passphrase">
+        <p class="small bad" id="unlock-err"></p>
+        <div class="btn-row end"><button class="btn primary">Unlock</button></div>
+        <p class="muted tiny">Forgot it? Data can’t be recovered without the passphrase. “Delete all Azimuth data” in a fresh browser profile resets the app.</p>
+    </form>
+</div>
+
+<!-- Redaction editor -->
+<div id="redact-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="redact-title">
+    <div class="modal-card wide">
+        <h3 id="redact-title">Redact screenshot</h3>
+        <p class="muted small">Drag over anything to hide. The original is kept sealed (its hash is recorded); reports use the redacted copy.</p>
+        <div class="btn-row"><label class="toggle"><input type="radio" name="rd-mode" value="black" checked> black box</label><label class="toggle"><input type="radio" name="rd-mode" value="blur"> blur</label><button class="btn small" id="rd-undo">Undo</button></div>
+        <div class="redact-wrap"><canvas id="rd-canvas"></canvas></div>
+        <div class="btn-row end"><button class="btn" id="rd-cancel">Cancel</button><button class="btn primary" id="rd-apply">Apply redaction</button></div>
     </div>
 </div>
 
@@ -393,19 +631,30 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
-<script src="js/data.js?v=3.1"></script>
-<script src="js/util.js?v=3.1"></script>
-<script src="js/settings.js?v=3.1"></script>
-<script src="js/selectors.js?v=3.1"></script>
-<script src="js/pivots.js?v=3.1"></script>
-<script src="js/lookups.js?v=3.1"></script>
-<script src="js/toolkit.js?v=3.1"></script>
-<script src="js/imagetools.js?v=3.1"></script>
-<script src="js/case.js?v=3.1"></script>
-<script src="js/graph.js?v=3.1"></script>
-<script src="js/watch.js?v=3.1"></script>
-<script src="js/sweep.js?v=3.1"></script>
-<script src="js/palette.js?v=3.1"></script>
-<script src="js/app.js?v=3.1"></script>
+<script src="js/data.js?v=3.2"></script>
+<script src="js/util.js?v=3.2"></script>
+<script src="js/settings.js?v=3.2"></script>
+<script src="js/selectors.js?v=3.2"></script>
+<script src="js/pivots.js?v=3.2"></script>
+<script src="js/lookups.js?v=3.2"></script>
+<script src="js/toolkit.js?v=3.2"></script>
+<script src="js/imagetools.js?v=3.2"></script>
+<script src="js/case.js?v=3.2"></script>
+<script src="js/graph.js?v=3.2"></script>
+<script src="js/watch.js?v=3.2"></script>
+<script src="js/sweep.js?v=3.2"></script>
+<script src="js/palette.js?v=3.2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+<script src="js/vault.js?v=3.2"></script>
+<script src="js/analysis.js?v=3.2"></script>
+<script src="js/bulk.js?v=3.2"></script>
+<script src="js/forensics.js?v=3.2"></script>
+<script src="js/research.js?v=3.2"></script>
+<script src="js/mapview.js?v=3.2"></script>
+<script src="js/match.js?v=3.2"></script>
+<script src="js/interop.js?v=3.2"></script>
+<script src="js/evidencetools.js?v=3.2"></script>
+<script src="js/ai.js?v=3.2"></script>
+<script src="js/app.js?v=3.2"></script>
 </body>
 </html>

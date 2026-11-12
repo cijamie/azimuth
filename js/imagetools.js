@@ -115,6 +115,7 @@ const ImageTools = (() => {
         const sha = await digest('SHA-256', buf);
         const img = await loadImage(dataUrl);
         lastPhoto = { file, dataUrl, exif, lat: exif.GPS?.lat, lon: exif.GPS?.lon, taken: exif.Taken };
+        if (exif.GPS) CaseFile.addPlace({ lat: exif.GPS.lat, lon: exif.GPS.lon, label: `Photo: ${file.name}`, source: 'photo GPS (EXIF)' });
         $('#sun-from-photo').disabled = !(lastPhoto.lat && lastPhoto.taken);
         const base = [['File', file.name], ['Size', `${file.size.toLocaleString()} bytes · ${img.naturalWidth}×${img.naturalHeight}`], ['SHA-256', sha]];
         const exRows = exifRows(exif);

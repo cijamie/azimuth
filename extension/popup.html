@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: system-ui, sans-serif; width: 270px; margin: 0; padding: 14px; background: #111317; color: #e9edf1; font-size: 13px; }
+  h1 { font-size: 14px; letter-spacing: 2px; margin: 0 0 10px; }
+  label { display: flex; gap: 8px; align-items: center; padding: 10px; border: 1px solid #323843; border-radius: 8px; cursor: pointer; }
+  label.on { border-color: #10b981; background: rgba(16,185,129,.1); }
+  input { accent-color: #10b981; width: 16px; height: 16px; }
+  button { width: 100%; margin-top: 8px; padding: 8px; border-radius: 8px; border: 1px solid #323843; background: #171a1f; color: inherit; font: inherit; cursor: pointer; }
+  button.primary { background: #10b981; color: #03160f; border-color: #10b981; font-weight: 600; }
+  p { color: #9aa4b0; font-size: 12px; margin: 8px 0 0; }
+</style>
+</head>
+<body>
+  <h1>AZIMUTH</h1>
+  <label id="rec-label"><input type="checkbox" id="rec"> <span><b>Record pages</b><br><span style="color:#9aa4b0">Saves a screenshot and the HTML of every page you open</span></span></label>
+  <button id="cap">Capture this page now</button>
+  <button id="open" class="primary">Open Azimuth</button>
+  <p id="count"></p>
+  <p>Captures stay in this browser until you import them in Azimuth → Case file.</p>
+  <script src="popup.js"></script>
+</body>
+</html>

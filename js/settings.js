@@ -3,7 +3,7 @@
 
 const Settings = (() => {
     const KEY = 'azimuth_settings';
-    const defaults = { autoLookups: true, theme: 'dark', region: '', watchHours: 24, keys: { shodan: '', virustotal: '' } };
+    const defaults = { autoLookups: true, theme: 'dark', region: '', watchHours: 24, privacy: false, captureContext: true, analyst: '', keys: { shodan: '', virustotal: '', anthropic: '' } };
     let s = { ...defaults, ...store.get(KEY, {}) };
     s.keys = { ...defaults.keys, ...(s.keys || {}) };
 
@@ -23,6 +23,9 @@ const Settings = (() => {
         $('#set-watch-hours').value = String(s.watchHours);
         $('#key-shodan').value = s.keys.shodan;
         $('#key-virustotal').value = s.keys.virustotal;
+        $('#key-anthropic').value = s.keys.anthropic;
+        $('#set-privacy').checked = !!s.privacy;
+        $('#set-capture-context').checked = s.captureContext !== false;
         $('#ext-status').innerHTML = window.AzimuthExtension?.ready
             ? '<span class="ok">● Extension connected.</span> Right-click menu and username sweep are on.'
             : '<span class="muted">○ Extension not detected.</span>';
@@ -36,8 +39,12 @@ const Settings = (() => {
         s.watchHours = Number($('#set-watch-hours').value) || 24;
         s.keys.shodan = $('#key-shodan').value.trim();
         s.keys.virustotal = $('#key-virustotal').value.trim();
+        s.keys.anthropic = $('#key-anthropic').value.trim();
+        s.privacy = $('#set-privacy').checked;
+        s.captureContext = $('#set-capture-context').checked;
         save();
         applyTheme();
+        applyPrivacy();
         $('#settings-modal').classList.add('hidden');
         document.dispatchEvent(new CustomEvent('azimuth:settings'));
     }
@@ -48,8 +55,13 @@ const Settings = (() => {
         applyTheme();
     }
 
+    function applyPrivacy() {
+        $('#privacy-pill').classList.toggle('hidden', !s.privacy);
+    }
+
     function setup() {
         applyTheme();
+        applyPrivacy();
         $('#settings-btn').onclick = open;
         $('#settings-close').onclick = close;
         $('#settings-modal').addEventListener('click', e => { if (e.target.id === 'settings-modal') close(); });

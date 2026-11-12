@@ -1,8 +1,9 @@
-// Runs on pages that could host Azimuth. Only activates on an actual Azimuth page,
-// then relays sweep requests between the page and the extension's background worker.
+// Runs on pages that could host Azimuth. Only activates on an actual Azimuth page, then relays requests
+// between the page and the extension's background worker.
 (() => {
     const meta = document.querySelector('meta[name="application-name"][content="azimuth"]');
     if (!meta) return;
+    const ALLOWED = new Set(['sweep', 'sweep-cancel', 'telegram', 'captures-list', 'captures-get', 'captures-clear']);
     let port = null;
     const toPage = msg => window.postMessage({ __azimuth: 'ext', ...msg }, '*');
     const getPort = () => {
@@ -17,7 +18,7 @@
         if (e.source !== window || !e.data || e.data.__azimuth !== 'page') return;
         const m = e.data;
         if (m.type === 'ping') hello();
-        if (m.type === 'sweep' || m.type === 'sweep-cancel') getPort().postMessage(m);
+        else if (ALLOWED.has(m.type)) getPort().postMessage(m);
     });
     hello();
 })();

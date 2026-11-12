@@ -23,7 +23,7 @@ const state = {
     trail: [],
     category: null,
     favorites: store.get('azimuth_favs', null) ?? migrateFavs(),
-    recent: store.get('azimuth_recent', []),
+    recent: [],
     lookupResults: [],
     dorkTouched: false,
     blockedUrls: [],
@@ -39,9 +39,16 @@ function migrateFavs() {
 
 let fuse = null;
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     fuse = window.Fuse ? new Fuse(TOOLS, { keys: [{ name: 'name', weight: 3 }, { name: 'description', weight: 1.5 }, { name: 'tags', weight: 1.5 }, { name: 'path', weight: 1 }], threshold: 0.35, ignoreLocation: true }) : null;
     Settings.setup();
+    // Unlock (if a passphrase is set), then load encrypted data before anything renders it.
+    await Vault.ready();
+    await Secure.preload(['azimuth_cases', 'azimuth_recent', 'azimuth_watch', 'azimuth_personas']);
+    state.recent = Secure.get('azimuth_recent', []);
+    await CaseFile.init();
+    Vault.setup();
+    if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});
     setupNav();
     setupOmnibox();
     setupInvestigate();
@@ -53,6 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
     Graph.setupInteraction();
     Watch.setup();
     Palette.setup();
+    Analysis.setup();
+    Bulk.setup();
+    Forensics.setup();
+    Research.setup();
+    MapView.setup();
+    Interop.setup();
+    EvidenceTools.setup();
+    AI.setup();
+    document.addEventListener('azimuth:case-switched', () => { state.selector = null; $('#inv-active').classList.add('hidden'); $('#inv-empty').classList.remove('hidden'); if (state.view !== 'investigate') showView(state.view); });
     setupGlobalClicks();
     setupShortcuts();
     setupPasteAnywhere();
@@ -66,11 +82,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (hash.startsWith('q=') && hash.slice(2) !== state.selector?.value) runInvestigate(hash.slice(2));
     };
     window.addEventListener('hashchange', fromHash);
-    fromHash();
+    // Text shared to the installed app (Android share sheet etc.) arrives as ?text=/url=/title=.
+    const params = new URLSearchParams(location.search);
+    const shared = params.get('url') || params.get('text') || params.get('title');
+    if (shared) {
+        history.replaceState(null, '', location.pathname);
+        const iocs = extractIOCs(shared);
+        const first = iocs.url?.[0] || iocs.email?.[0] || iocs.domain?.[0] || iocs.ipv4?.[0] || shared.trim();
+        runInvestigate(first);
+    } else fromHash();
 });
 
 // ---------------- Navigation ----------------
-const VIEWS = ['investigate', 'graph', 'case', 'watch', 'registry', 'dorks', 'toolkit'];
+const VIEWS = ['investigate', 'graph', 'case', 'analysis', 'watch', 'bulk', 'registry', 'dorks', 'toolkit'];
 
 function showView(view) {
     state.view = view;
@@ -78,7 +102,9 @@ function showView(view) {
     $$('[data-view]').forEach(el => el.classList.toggle('active', el.dataset.view === view));
     if (view === 'case') CaseFile.render();
     if (view === 'registry') renderRegistry();
-    if (view === 'graph') { Graph.setCurrent(state.selector); Graph.render(); Graph.renderTimeline(); }
+    if (view === 'graph') { Graph.setCurrent(state.selector); Graph.render(); Graph.renderTimeline(); MapView.render(); }
+    if (view === 'analysis') Analysis.render();
+    if (view === 'case') EvidenceTools.checkCaptures();
     if (view === 'watch') Watch.render();
     if (view === 'dorks') syncDorkTarget();
     closeRail();
@@ -159,6 +185,8 @@ function switchInvTab(tab) {
     $$('#inv-tabs .tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
     $$('#view-investigate .tabpane').forEach(p => p.classList.toggle('hidden', p.dataset.pane !== tab));
     if (tab === 'sweep') Sweep.render(state.selector?.value);
+    if (tab === 'match') Match.run(state.lookupResults, state.selector.value);
+    if (tab === 'lookalikes') Lookalikes.show(state.selector.type === 'domain' ? registrable(state.selector.value) : registrable(state.selector.meta.domain || state.selector.meta.host || ''));
 }
 
 function openLinks(urls, label) {
@@ -188,7 +216,7 @@ function renderRecent() {
         ? '<span class="muted small">Recent:</span>' + state.recent.map(r => `<button class="chip" data-investigate="${esc(r.value)}" data-type="${esc(r.type)}"><span class="chip-type">${esc(SELECTOR_TYPES[r.type]?.label || '')}</span>${esc(r.value)}</button>`).join('') + '<button class="chip ghost" id="clear-recent">clear</button>'
         : '';
     const c = $('#clear-recent');
-    if (c) c.onclick = () => { state.recent = []; store.set('azimuth_recent', []); renderRecent(); };
+    if (c) c.onclick = () => { state.recent = []; Secure.set('azimuth_recent', []); renderRecent(); };
 }
 
 // Investigate something reached from another selector (a lead, a chart node, a subdomain…).
@@ -209,7 +237,7 @@ function runInvestigate(raw, forcedType, parent) {
     $('#q').value = sel.value;
     $('#q-detected').textContent = '';
     state.recent = [{ value: sel.value, type: sel.type }, ...state.recent.filter(r => r.value !== sel.value)].slice(0, 10);
-    store.set('azimuth_recent', state.recent);
+    Secure.set('azimuth_recent', state.recent);
     renderRecent();
     CaseFile.addSelector(sel);
     CaseFile.nameIfUntitled(sel.value);
@@ -226,9 +254,13 @@ function runInvestigate(raw, forcedType, parent) {
     $('#discovered-card').classList.add('hidden');
     $('#popup-notice').classList.add('hidden');
     $('#lookup-results').innerHTML = '';
-    $('#lookup-summary').innerHTML = `<div class="muted">Live checks are switched off. <button class="btn small" onclick="runLookups()">Run them now</button></div>`;
+    $('#lookup-summary').innerHTML = privacyOn()
+        ? '<div>🛡 <b>Privacy mode is on</b>: live checks are not sent. Use the links below, or turn privacy mode off in Settings.</div>'
+        : `<div class="muted">Live checks are switched off. <button class="btn small" onclick="runLookups()">Run them now</button></div>`;
     state.lookupResults = [];
     $('#tab-sweep').classList.toggle('hidden', sel.type !== 'username');
+    $('#tab-match').classList.toggle('hidden', sel.type !== 'username');
+    $('#tab-lookalikes').classList.toggle('hidden', !['domain', 'email', 'url'].includes(sel.type) || (sel.type === 'email' && /^(gmail|googlemail|outlook|hotmail|live|yahoo|icloud|me|aol|proton|protonmail|gmx|yandex|mail)\./.test(sel.meta.domain)));
     renderPivots(sel);
     switchInvTab('findings');
     if (state.view !== 'investigate') showView('investigate');
@@ -282,6 +314,11 @@ async function runLookups() {
     if (!sel) return;
     const plan = LOOKUP_PLAN[sel.type];
     if (!plan) return;
+    if (privacyOn()) {
+        $('#lookup-summary').innerHTML = '<div>🛡 <b>Privacy mode is on</b>: live checks are not sent. Use the links below, or turn privacy mode off in Settings.</div>';
+        $('#lookup-results').innerHTML = '';
+        return;
+    }
     const btn = $('#run-lookups');
     btn.disabled = true;
     const box = $('#lookup-results');
@@ -313,6 +350,8 @@ async function runLookups() {
     const leads = discoverLeads(results, sel);
     CaseFile.addLeads(sel, leads);
     CaseFile.addTimeline(datedFacts(results, sel));
+    const coords = results.find(r => r.title.startsWith('IP context'))?.rows?.find(x => x[0] === 'Coordinates')?.[1];
+    if (coords) { const [lat, lon] = coords.split(',').map(Number); CaseFile.addPlace({ lat, lon, label: `${sel.value} (IP location)`, source: 'IP geolocation (approximate)', selector: sel.value }); }
     renderLeads(leads);
 }
 
@@ -630,13 +669,14 @@ function setupShortcuts() {
             if (Palette.isOpen()) return Palette.close();
             if (modalOpen) return CaseFile.closeModal();
             if (!$('#settings-modal').classList.contains('hidden')) return Settings.close();
+            if (!$('#cases-modal').classList.contains('hidden')) return $('#cases-modal').classList.add('hidden');
         }
         if (modalOpen && e.ctrlKey && (e.key === 'Enter' || e.key === 's')) { e.preventDefault(); CaseFile.saveModal(); return; }
         if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); Palette.isOpen() ? Palette.close() : Palette.open(); return; }
         if (typing || modalOpen || Palette.isOpen() || e.ctrlKey || e.metaKey || e.altKey) return;
         if (e.key === '/') { e.preventDefault(); $('#q').focus(); $('#q').select(); }
         if (e.key === 'n') { e.preventDefault(); CaseFile.openModal(state.selector ? { tags: [state.selector.type] } : {}); }
-        const v = { 1: 'investigate', 2: 'graph', 3: 'case', 4: 'watch', 5: 'registry', 6: 'dorks', 7: 'toolkit' }[e.key];
+        const v = { 1: 'investigate', 2: 'graph', 3: 'case', 4: 'analysis', 5: 'watch', 6: 'bulk', 7: 'registry', 8: 'dorks', 9: 'toolkit' }[e.key];
         if (v) showView(v);
     });
 }
@@ -668,6 +708,7 @@ function setupPasteAnywhere() {
 
 function setupOpsec() {
     $('#opsec-check').onclick = async () => {
+        if (privacyOn()) return toast('Privacy mode is on: the IP check is disabled.', 'err');
         $('#opsec-text').textContent = 'Checking…';
         try {
             const j = await fetchJSON('https://ipinfo.io/json');

@@ -1,107 +1,98 @@
-# AZIMUTH v3.1 — OSINT Workbench
+# AZIMUTH v3.2 — OSINT Workbench
 
-Paste a username, email, domain, IP, link, phone number, file hash, crypto wallet or name. Azimuth works out what it is, checks free public sources straight away, tells you in plain English what it found, surfaces new leads you can follow with one click, and builds a link chart, timeline and report as you go.
+Paste a username, email, domain, IP, link, phone number, file hash, crypto wallet or name. Azimuth works out what it is, checks free public sources straight away, tells you in plain English what it found, surfaces new leads you can follow with one click, and builds a link chart, map, timeline and a professional report as you go.
 
-It is one static web page: no server, no build step, no account. Open `index.html`, serve the folder locally, or host it on GitHub Pages.
+It is a static web app: no server, no build step, no account, nothing to pay for. Use it at **[jamies.dev/azimuth](https://jamies.dev/azimuth/)**, install it as an app from the browser menu, or open `index.html` locally.
 
 ---
 
 ## Using it
 
 1. **Type or paste into the box at the top** (or paste anywhere on the page). Pasting a whole email, report or log pulls every indicator out of it; pasting a screenshot opens it in Photo check.
-2. **Read the summary.** Live checks run automatically (you can switch that off in ⚙ Settings).
-3. **Follow leads.** “New leads found” lists IPs, domains, emails, subdomains and handles that the checks uncovered. Clicking one investigates it and links it on the chart.
+2. **Read the summary.** Live checks run automatically (switch off in ⚙ Settings, or turn on **privacy mode** to never contact any service).
+3. **Follow leads.** “New leads found” lists IPs, domains, emails, subdomains and handles the checks uncovered. Clicking one investigates it and links it on the chart.
 4. **Start here** gives the 4–7 best manual sources, already filled in; “More places to look” has ~200 more.
-5. **Save** findings (⊕ Save, or *Save all findings*), then open the **Case file** to export a report.
+5. **Save** findings, grade them, link them to requirements, then export a report from the **Case file**.
 
-`Ctrl+K` opens the command palette (any action, any tool, or investigate what you type). Other keys: `/` search box · `N` add evidence · `1`–`7` switch sections · `Esc` close.
+`Ctrl+K` opens the command palette (any action, any tool, or investigate what you type). Other keys: `/` search box · `N` add evidence · `1`–`9` switch sections · `Esc` close.
 
 ## Sections
 
 | Section | What it does |
 |---|---|
-| **Investigate** | Detection, live checks, summary, leads, “Start here”, all links, and the username sweep tab. |
-| **Link chart & timeline** | Everything you investigated and how it connects: drag, zoom, click to investigate, download as SVG. The timeline collects every date the checks found (registrations, account creation, archive captures, breach dates, photo dates) plus your evidence. |
-| **Case file** | Evidence (numbered E1, E2…, with screenshots, SHA-256 hashes, confidence, tags, comments), selectors, the activity log, reports, sharing. |
-| **Watchlist** | ☆ Watch anything; Azimuth re-checks it on a schedule while it is open and shows exactly what changed (new subdomains, DNS, ports, registration, accounts, wallet activity), with optional desktop notifications. |
-| **Tool directory** | ~750 curated tools in 32 categories, search, favorites and a health badge on every link. |
-| **Search dorks** | 40+ ready-made Google/Bing/DuckDuckGo/Yandex/Brave dorks for sites, people, emails and usernames; save your own with `{T}`. |
-| **Toolkit** | Extract indicators · Photo check (metadata/GPS, error level analysis, one-click reverse image search) · Sun & shadows (sun position, shadow direction and length, times matching a shadow) · Compare archived pages (Wayback captures side by side) · Encode/decode · Hash · Timestamps. |
+| **Investigate** | Detection, live checks, summary, leads, “Start here”, all links. Extra tabs: **username sweep** (600 sites), **same person?** (compares the accounts found: profile-picture similarity, names, locations, cross-links), **lookalike domains** (typos, homoglyphs, other endings; checks which are registered and can receive email). |
+| **Link chart & timeline** | How everything connects (drag, zoom, click; SVG download), a **map** of every location (IP geolocation, photo/video GPS, places you click), and a timeline of every date found. |
+| **Case file** | **Multiple cases** with a switcher and search across all cases. Evidence numbered E1, E2… with screenshots, SHA-256 hashes, **Admiralty grading** (reliability A–F, credibility 1–6), confidence, tags, comments, **redaction**, **page preservation** (Wayback + archive.today), **OpenTimestamps** proofs and automatic **capture context** (server IP and registrar at the time). Reports, sharing, exports and imports. |
+| **Analysis & review** | **Intelligence requirements** linked to evidence, **key judgments** in standard probability language (ICD 203), an **ACH** (analysis of competing hypotheses) matrix, **authority/necessity/proportionality** record with a retention date, **peer review** sign-off, and an optional **AI assistant** (your own Anthropic key). |
+| **Watchlist** | Re-checks watched selectors on a schedule while Azimuth is open and shows exactly what changed. |
+| **Bulk check** | Up to 500 selectors at once (or paste any text): key facts and red flags per row, CSV export, add to case. |
+| **Tool directory** | ~750 curated tools, health-checked every week by a GitHub Action. |
+| **Search dorks** | 40+ dorks for five engines, plus your own saved ones. |
+| **Toolkit** | Extract indicators · **Email header analyzer** (route, real sending servers, SPF/DKIM/DMARC, spoofing signs) · **Name & email variants** (transliteration, nicknames, username and address patterns) · **Document metadata** (PDF, Word, Excel, PowerPoint, OpenDocument: authors, company, software, dates, comment authors, file-path usernames) · **Video frames** (scene-change keyframes, recording time, phone GPS) · **Search a big file** locally (multi-GB leaks, logs) · **Telegram channel** reader · **Research personas** tracker · Photo check (EXIF/GPS, error level analysis, reverse search) · Sun & shadows · Compare archived pages · Encode/decode · Hash · Timestamps. |
 
-## Live checks
+## Live checks (free, run in your browser)
 
-| Selector | Free, no key | With your key (⚙ Settings) |
+| Selector | Sources | With your key |
 |---|---|---|
-| Domain | DNS (incl. SPF, DMARC, mail provider), RDAP registration, certificate-log subdomains (crt.sh / Cert Spotter), Wayback first & last capture, AlienVault OTX threat reports, Have I Been Pwned breaches of the site | VirusTotal |
-| IP | Owner/ASN/location (ipinfo), open ports and known CVEs (Shodan InternetDB), RDAP, reverse DNS, Tor relay list, OTX | Shodan full host, VirusTotal |
-| Email | Gravatar profile & linked accounts, the domain’s DNS and breaches, GitHub for the name part | |
-| Username | GitHub, GitLab, Bluesky, Mastodon, Keybase, Hacker News, Chess.com, Lichess (+ the 600-site sweep) | |
-| Phone | Country, validity, line type (mobile/landline/VoIP…) and formats via libphonenumber | |
-| Hash | Known test files, OTX threat reports and malware families | VirusTotal |
-| URL / image | Wayback, host DNS & RDAP, OTX, image size and EXIF when the host allows it | VirusTotal (URL) |
+| Domain | DNS (SPF, DMARC, mail provider), RDAP, certificate-log subdomains, Wayback, AlienVault OTX, HIBP breaches of the site | VirusTotal |
+| IP | Owner/location (ipinfo), open ports & CVEs (Shodan InternetDB), RDAP, reverse DNS, Tor relays, OTX | Shodan, VirusTotal |
+| Email | Gravatar profile, domain DNS & breaches, GitHub for the name part | |
+| Username | GitHub, GitLab, Bluesky, Mastodon, Keybase, Hacker News, Chess.com, Lichess | |
+| Phone | Country, validity, line type (libphonenumber) | |
+| Hash | Known test files, OTX threat reports | VirusTotal |
+| URL / image | Wayback, host DNS & RDAP, OTX, image EXIF where allowed | VirusTotal |
 | Wallet | mempool.space (BTC), BlockCypher (ETH) | |
-| Name | Wikipedia, Wikidata | |
+| Name | Wikipedia, Wikidata, **GLEIF company register** with parent companies | |
 
-These requests go straight from your browser to each service, so they see your IP; use the **Check my IP** button and a VPN if that matters. Have I Been Pwned (per-account), Hunter, SecurityTrails, GreyNoise, urlscan and Reddit block requests from web pages, so they are links rather than live checks. Keys are stored only in your browser and sent only to their own service.
+Lookups go straight from your browser to each service, so they see your IP; check it with **Check my IP** in the sidebar. Have I Been Pwned (per account), Hunter, SecurityTrails, GreyNoise, urlscan and Reddit don’t allow calls from web pages, so they are links instead.
 
-## Username sweep (≈600 sites)
+## Security and privacy
 
-Web pages can’t read other websites, so the big sweep needs one of these:
+- Everything is stored only in your browser. **⚙ Settings → Lock with a passphrase** encrypts cases, screenshots, personas, watchlist and history at rest (AES-256-GCM, PBKDF2 310k). It auto-locks after 15 minutes idle; **Lock now** is in the sidebar. A forgotten passphrase can’t be recovered.
+- **Privacy mode** stops every automatic request (lookups, watchlist, timestamps, IP check, AI); links still work.
+- Shared case files can be encrypted with their own passphrase (`.azcase`). *Merge a teammate’s case* combines evidence, comments, links and timelines.
 
-**Browser extension** (Chrome, Edge, Brave): open `chrome://extensions`, turn on *Developer mode*, click *Load unpacked* and pick the `extension` folder. Reload Azimuth; the *Username sweep* tab now runs in the browser. The extension also adds **“Investigate in Azimuth”** to the right-click menu for selected text, links, images and pages. In the extension’s options, set the address where you run Azimuth (default `https://jamies.dev/azimuth/`). To use Azimuth from a file on disk, also enable *Allow access to file URLs*.
+## Exports and imports
 
-**Command line** (Node.js 18+):
+Export to **Maltego** (CSV), **Gephi/Maltego** (GraphML), **i2 Analyst’s Notebook** (CSV), **STIX 2.1**, **MISP**, **CASE/UCO** (digital-forensics standard) and evidence CSV. Import results from **Sherlock**, **Maigret**, **SpiderFoot**, **theHarvester**, **Holehe** and the Azimuth sweep; findings become leads on the chart.
 
-```bash
-node scripts/sweep.mjs someusername
-```
+Report templates: **Standard**, **Law enforcement** (exhibit list, chain of custody, legal basis, methodology, audit trail, declaration), **Journalism** (verification status, sources, open questions), **Due diligence** (risk findings, sanctions/PEP screening). Every template includes key judgments, requirements, ACH, map locations, peer review and Admiralty grades where present.
 
-Site rules come from the [WhatsMyName](https://github.com/WebBreacher/WhatsMyName) project (CC BY-SA 4.0). Matches are based on page content, so open them to confirm.
+## Browser extension (free; Chrome, Edge, Brave)
 
-## Reports and sharing
+Open `chrome://extensions`, turn on *Developer mode*, click *Load unpacked* and choose the `extension` folder. It adds:
 
-Pick a template in the Case file, then download PDF or Markdown:
+- **Investigate in Azimuth** on the right-click menu (text, links, images, pages) and **Capture this page**.
+- **Record pages**: while switched on (toolbar popup), every page you open is saved with a screenshot, its HTML and SHA-256 hashes of both. Import them into a case from the Case file.
+- The **600-site username sweep** and the **Telegram channel** reader (web pages can’t read other sites; the extension can).
 
-- **Standard:** summary, selectors, evidence index, link chart, timeline, evidence, activity log.
-- **Law enforcement:** exhibit list (case-ID-numbered with screenshot hashes), chain-of-custody statement, methodology and tools used, full audit trail, analyst declaration with signature lines.
-- **Journalism:** verification status per finding, what still needs verifying (Possible/Doubtful/unset), numbered source list.
-- **Due diligence:** conclusion, risk findings (evidence tagged `risk`, `sanctions`, `pep`, `adverse`, `fraud`, `litigation` or `criminal`), sanctions/PEP screening section, sources consulted.
+Set where Azimuth lives in the extension’s options (default `https://jamies.dev/azimuth/`).
 
-**Sharing without a server:** *Download encrypted case* (AES-256-GCM, key derived from your passphrase with PBKDF2, 310,000 rounds) creates a `.azcase` file; send the passphrase separately. *Merge a teammate’s case* adds their evidence (tagged `from:<name>`), comments, links, timeline and activity to yours without duplicating anything. Comments on evidence carry the analyst’s name, so a case can go back and forth. Real-time co-editing would need a server, which Azimuth deliberately doesn’t have.
-
-## Keeping the tool directory healthy
+## Command line
 
 ```bash
-node scripts/check-links.mjs --apply   # re-check every link and write its status into js/data.js
-node scripts/fixups.mjs                 # manual corrections after an audit
+node scripts/sweep.mjs someusername          # 600-site username sweep (Node 18+)
+node scripts/check-links.mjs --apply         # re-check every tool link
 ```
 
-The checker follows redirects and sorts links into ok, bot-protected, moved, parked/for-sale, dead and unverified. The 2026-11 audit of the old list: 860 links checked; 160 removed (dead, parked, hijacked, or shut-down services such as Panoramio, LiveLeak, Alexa and Skype tools); 28 moved links updated; 60 current tools added. See `scripts/link-report.json` and `scripts/curation-log.json`.
+A GitHub Action (`.github/workflows/link-check.yml`) runs the link check every Monday and commits updated health badges.
 
 ## Files
 
 ```text
-index.html            the app
-css/arf.css           styles (dark and light themes)
-js/data.js            tool directory with link health
-js/util.js            escaping, storage, IndexedDB, hashing, clipboard, opening tabs
-js/settings.js        settings and API keys
-js/selectors.js       type detection, refang/defang, indicator extraction
-js/pivots.js          link templates per type and the "Start here" picks
-js/lookups.js         live checks, lead discovery, dated facts, change fingerprints
-js/toolkit.js         indicators, codecs, hashes, EXIF parser, timestamps
-js/imagetools.js      photo check, error level analysis, sun & shadows, Wayback compare
-js/case.js            case file, evidence, reports, encryption, merge
-js/graph.js           link chart and timeline
-js/watch.js           watchlist
-js/sweep.js           page side of the username sweep
-js/palette.js         command palette
-js/app.js             wiring and UI
-extension/            browser extension (right-click menu + sweep engine)
-scripts/              link checker, curation scripts, command-line sweep
+index.html  manifest.webmanifest  sw.js        app shell, install manifest, offline cache
+css/arf.css                                    styles (dark and light)
+js/data.js                                     tool directory with link health
+js/util.js js/vault.js js/settings.js          helpers, encryption at rest, settings
+js/selectors.js js/pivots.js js/lookups.js     detection, links, live checks, leads, GLEIF
+js/case.js js/analysis.js js/evidencetools.js  cases, analysis & review, evidence integrity
+js/graph.js js/mapview.js js/watch.js          link chart & timeline, map, watchlist
+js/bulk.js js/match.js js/sweep.js             bulk check & lookalikes, same-person, sweep
+js/toolkit.js js/imagetools.js js/forensics.js js/research.js   toolkit tabs
+js/interop.js js/ai.js js/palette.js js/app.js  exports/imports, AI assistant, palette, wiring
+extension/                                      browser extension
+scripts/                                        link checker, curation, command-line sweep
 ```
-
-Everything you do is stored only in this browser (localStorage, plus IndexedDB for screenshots). ⚙ Settings → *Delete all Azimuth data* wipes it.
 
 ## Disclaimer
 
