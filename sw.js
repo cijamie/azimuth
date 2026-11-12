@@ -1,5 +1,5 @@
 // Offline support: caches the app's own files (never API responses or anything cross-origin).
-const CACHE = 'azimuth-v3.2';
+const CACHE = 'azimuth-v3.3';
 const SHELL = ['./', 'index.html', 'css/arf.css', 'logo.png', 'manifest.webmanifest', 'icons/icon-192.png',
     ...['data', 'util', 'settings', 'selectors', 'pivots', 'lookups', 'toolkit', 'imagetools', 'case', 'graph', 'watch', 'sweep', 'palette', 'vault', 'analysis', 'bulk', 'forensics', 'research', 'mapview', 'match', 'interop', 'evidencetools', 'ai', 'app'].map(f => `js/${f}.js`)];
 

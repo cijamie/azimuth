@@ -20,7 +20,7 @@ It is a static web app: no server, no build step, no account, nothing to pay for
 
 | Section | What it does |
 |---|---|
-| **Investigate** | Detection, live checks, summary, leads, “Start here”, all links. Extra tabs: **username sweep** (600 sites), **same person?** (compares the accounts found: profile-picture similarity, names, locations, cross-links), **lookalike domains** (typos, homoglyphs, other endings; checks which are registered and can receive email). |
+| **Investigate** | Detection, live checks, summary, leads, “Start here”, all links. Extra tabs: **username search** (Maigret, 9,000+ sites), **same person?** (compares the accounts found: profile-picture similarity, names, locations, cross-links), **lookalike domains** (typos, homoglyphs, other endings; checks which are registered and can receive email). |
 | **Link chart & timeline** | How everything connects (drag, zoom, click; SVG download), a **map** of every location (IP geolocation, photo/video GPS, places you click), and a timeline of every date found. |
 | **Case file** | **Multiple cases** with a switcher and search across all cases. Evidence numbered E1, E2… with screenshots, SHA-256 hashes, **Admiralty grading** (reliability A–F, credibility 1–6), confidence, tags, comments, **redaction**, **page preservation** (Wayback + archive.today), **OpenTimestamps** proofs and automatic **capture context** (server IP and registrar at the time). Reports, sharing, exports and imports. |
 | **Analysis & review** | **Intelligence requirements** linked to evidence, **key judgments** in standard probability language (ICD 203), an **ACH** (analysis of competing hypotheses) matrix, **authority/necessity/proportionality** record with a retention date, **peer review** sign-off, and an optional **AI assistant** (your own Anthropic key). |
@@ -64,16 +64,33 @@ Open `chrome://extensions`, turn on *Developer mode*, click *Load unpacked* and 
 
 - **Investigate in Azimuth** on the right-click menu (text, links, images, pages) and **Capture this page**.
 - **Record pages**: while switched on (toolbar popup), every page you open is saved with a screenshot, its HTML and SHA-256 hashes of both. Import them into a case from the Case file.
-- The **600-site username sweep** and the **Telegram channel** reader (web pages can’t read other sites; the extension can).
+- **Maigret username search** across 9,000+ sites, and the **Telegram channel** reader (web pages can’t read other sites; the extension can).
 
 Set where Azimuth lives in the extension’s options (default `https://jamies.dev/azimuth/`).
+
+## Maigret username search
+
+Azimuth includes a JavaScript port of [Maigret](https://github.com/soxoj/maigret) (MIT) and its database of 9,345 sites (`extension/maigret-data.json`, refreshed from Maigret’s GitHub daily by the extension, or with `--update` on the command line). What’s ported:
+
+- every site and engine template (XenForo, phpBB, Discourse, MediaWiki, Mastodon…), ranked by popularity, filterable by category tags and engines, with disabled sites optional;
+- Maigret’s three detection methods (status code, page text, redirect), username format rules, probe URLs, POST payloads, custom headers and character sets;
+- its error detection (bot protection, captchas, censorship pages, 401/403/429/5xx), so a blocked request is reported as “couldn’t check”, never as “not found”;
+- **recursive search**: usernames a profile links to (declared with `rel="me"` or structured data, or linked from two or more different sites and not part of that site’s own template) are searched too;
+- **permutations** of name parts (`john doe 1990` → `john.doe`, `doe_john`, …) and other identifier types (`gaia_id`, `vk_id`, `steam_id`…).
+
+Not ported: Tor/I2P gateways, Cloudflare bypass and TLS impersonation, token activation for six sites, and the `socid_extractor` library (Azimuth has its own smaller profile extractor). Results export as Maigret-compatible JSON, CSV or an HTML report.
 
 ## Command line
 
 ```bash
-node scripts/sweep.mjs someusername          # 600-site username sweep (Node 18+)
-node scripts/check-links.mjs --apply         # re-check every tool link
+node scripts/maigret.mjs someusername                    # Maigret search, top 500 sites (Node 18+)
+node scripts/maigret.mjs someusername -a --json out.json # all 8,500+ enabled sites, JSON report
+node scripts/maigret.mjs john doe 1990 --permute         # search permutations of name parts
+node scripts/maigret.mjs someusername --tags social,coding --html report.html
+node scripts/check-links.mjs --apply                     # re-check every tool link
 ```
+
+Run `node scripts/maigret.mjs --help` for every option (`--top-sites`, `--exclude-tags`, `--use-disabled-sites`, `--id-type`, `--no-recursion`, `--timeout`, `-n`, `--update`, `--csv`, `--print-errors`…). The older WhatsMyName sweep is still available as `scripts/sweep.mjs` and as a choice in the app.
 
 A GitHub Action (`.github/workflows/link-check.yml`) runs the link check every Monday and commits updated health badges.
 

@@ -175,9 +175,11 @@ ${c().links.filter(l => ids.has(l.from) && ids.has(l.to)).map((l, i) => `    <ed
                 const st = v?.status?.status || v?.status;
                 if (/claimed/i.test(st) && (v.url_user || v.status?.url)) {
                     found.push({ type: 'url', value: v.url_user || v.status.url, via: site });
-                    for (const [k, val] of Object.entries(v.status?.ids || {})) if (typeof val === 'string' && /email|username|fullname|links|website/i.test(k)) {
-                        const d = detectSelector(val);
-                        if (d) found.push({ type: d.type, value: d.value, via: `${site} ${k}` });
+                    for (const [k, val] of Object.entries(v.status?.ids || {})) {
+                        if (typeof val !== 'string' || !/email|username|fullname|links|website/i.test(k)) continue;
+                        let values = [val];
+                        if (/^\s*\[/.test(val)) { try { values = JSON.parse(val.replace(/'/g, '"')); } catch { values = val.match(/https?:\/\/[^\s'",\]]+/g) || []; } }
+                        for (const one of values) { const d = detectSelector(String(one)); if (d) found.push({ type: d.type, value: d.value, via: `${site} ${k}` }); }
                     }
                 }
             }

@@ -1,5 +1,24 @@
 // Azimuth extension background worker: right-click menu, username sweep, Telegram reader and page capture.
 import { loadSites, sweep } from './sweep-core.js';
+import { prepareDb, search as maigretSearch, permute, MAIGRET_DATA_URL } from './maigret-core.js';
+
+// Maigret database: bundled copy, refreshed from Maigret's GitHub at most once a day.
+let maigretDbPromise = null;
+async function maigretDb() {
+    return maigretDbPromise ||= (async () => {
+        const errors = await (await fetch(chrome.runtime.getURL('maigret-errors.json'))).json();
+        const { maigretFresh, maigretAt } = await chrome.storage.local.get(['maigretFresh', 'maigretAt']);
+        let json = maigretFresh && Date.now() - maigretAt < 7 * 864e5 ? maigretFresh : null;
+        if (!json || Date.now() - maigretAt > 864e5) {
+            try {
+                const res = await fetch(MAIGRET_DATA_URL, { credentials: 'omit' });
+                if (res.ok) { json = await res.json(); await chrome.storage.local.set({ maigretFresh: json, maigretAt: Date.now() }); }
+            } catch { /* offline: fall back */ }
+        }
+        json ||= await (await fetch(chrome.runtime.getURL('maigret-data.json'))).json();
+        return prepareDb(json, errors);
+    })().catch(e => { maigretDbPromise = null; throw e; });
+}
 
 const DEFAULT_BASE = 'https://jamies.dev/azimuth/';
 const getBase = async () => (await chrome.storage.sync.get({ base: DEFAULT_BASE })).base || DEFAULT_BASE;
@@ -101,19 +120,41 @@ chrome.runtime.onConnect.addListener(port => {
         if (m.type === 'captures-list') return answer(m, async () => (await tx('readonly', s => s.getAll())).sort((a, b) => b.t.localeCompare(a.t)).map(({ id, url, title, t }) => ({ id, url, title, t })));
         if (m.type === 'captures-get') return answer(m, async () => (await tx('readonly', s => s.getAll())).filter(c => (m.ids || []).includes(c.id)));
         if (m.type === 'captures-clear') return answer(m, async () => { await tx('readwrite', s => s.clear()); chrome.action.setBadgeText({ text: '' }); return true; });
+        if (m.type === 'maigret-meta') return answer(m, async () => {
+            const db = await maigretDb();
+            const enabled = db.sites.filter(s => !s.disabled && s.type === 'username' && !['tor', 'i2p', 'dns'].includes(s.protocol));
+            const counts = {};
+            enabled.forEach(s => s.tags.forEach(t => (counts[t] = (counts[t] || 0) + 1)));
+            return { total: db.sites.length, enabled: enabled.length, tags: Object.entries(counts).sort((a, b) => b[1] - a[1]), engines: db.engines, updated: (await chrome.storage.local.get('maigretAt')).maigretAt || null };
+        });
         if (m.type === 'sweep-cancel') { running.get(m.id)?.abort(); return; }
-        if (m.type !== 'sweep' || typeof m.username !== 'string' || !m.username.trim() || m.username.length > 100) return;
+        if (m.type !== 'sweep' || typeof m.username !== 'string' || !m.username.trim() || m.username.length > 200) return;
         const ctrl = new AbortController();
         running.set(m.id, ctrl);
         const send = msg => { try { port.postMessage({ id: m.id, ...msg }); } catch { ctrl.abort(); } };
         try {
-            const list = await sites();
-            await sweep(m.username.trim(), list, {
-                includeNsfw: !!m.includeNsfw,
-                signal: ctrl.signal,
-                onStart: total => send({ type: 'sweep-start', total }),
-                onResult: result => send({ type: 'sweep-result', result }),
-            });
+            if (m.source === 'wmn') {
+                const list = await sites();
+                await sweep(m.username.trim(), list, {
+                    includeNsfw: !!m.includeNsfw,
+                    signal: ctrl.signal,
+                    onStart: total => send({ type: 'sweep-start', total }),
+                    onResult: result => send({ type: 'sweep-result', result }),
+                });
+            } else {
+                const db = await maigretDb();
+                const o = m.options || {};
+                const names = o.permute ? permute(m.username.trim().split(/\s+/)).slice(0, 40) : [m.username.trim()];
+                const excluded = [...(o.excludeTags || []), ...(m.includeNsfw ? [] : ['porn', 'erotic', 'dating'])];
+                await maigretSearch(names, db, {
+                    top: o.top === 'all' ? Infinity : Number(o.top) || 500,
+                    tags: o.tags || [], excludedTags: excluded, includeDisabled: !!o.includeDisabled,
+                    idType: o.idType || 'username', recursive: o.recursive !== false, concurrency: 40, timeout: 15000, signal: ctrl.signal,
+                    onStart: info => send({ type: 'sweep-start', total: info.total, sites: info.sites, added: info.added }),
+                    onUsername: u => send({ type: 'sweep-username', username: u.username, via: u.via }),
+                    onResult: r => send({ type: 'sweep-result', result: { ...r, found: r.status === 'claimed', cat: (r.tags || []).join(', ') } }),
+                });
+            }
             send({ type: 'sweep-done' });
         } catch (e) {
             send({ type: 'sweep-error', error: e.message });

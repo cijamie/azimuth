@@ -30,7 +30,7 @@ const Palette = (() => {
         ['Re-check current selector', 'action', () => runLookups()],
         ['Save all findings to case', 'action', () => saveAllFindings()],
         ['Watch / unwatch current selector', 'action', () => state.selector && toggleWatch()],
-        ['Username sweep (600 sites)', 'action', () => { if (state.selector?.type === 'username') { showView('investigate'); switchInvTab('sweep'); } else toast('Investigate a username first'); }],
+        ['Username search: Maigret, 9,000+ sites', 'action', () => { if (state.selector?.type === 'username') { showView('investigate'); switchInvTab('sweep'); } else toast('Investigate a username first'); }],
         ['Download PDF report', 'action', () => CaseFile.exportPDF()],
         ['Download Markdown report', 'action', () => CaseFile.exportMarkdown()],
         ['Download JSON backup', 'action', () => CaseFile.exportJSON()],

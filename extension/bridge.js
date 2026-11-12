@@ -3,7 +3,7 @@
 (() => {
     const meta = document.querySelector('meta[name="application-name"][content="azimuth"]');
     if (!meta) return;
-    const ALLOWED = new Set(['sweep', 'sweep-cancel', 'telegram', 'captures-list', 'captures-get', 'captures-clear']);
+    const ALLOWED = new Set(['sweep', 'sweep-cancel', 'maigret-meta', 'telegram', 'captures-list', 'captures-get', 'captures-clear']);
     let port = null;
     const toPage = msg => window.postMessage({ __azimuth: 'ext', ...msg }, '*');
     const getPort = () => {

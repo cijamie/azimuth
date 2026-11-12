@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Azimuth OSINT helper",
-  "version": "1.1.0",
-  "description": "Companion to the Azimuth OSINT workbench: right-click investigate, 600-site username sweep, automatic page capture while recording, and Telegram channel reading.",
+  "version": "1.2.0",
+  "description": "Companion to the Azimuth OSINT workbench: right-click investigate, Maigret username search (9,000+ sites), automatic page capture while recording, and Telegram channel reading.",
   "permissions": ["contextMenus", "storage", "unlimitedStorage", "scripting", "tabs"],
   "host_permissions": ["<all_urls>"],
   "background": { "service_worker": "background.js", "type": "module" },

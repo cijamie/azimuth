@@ -402,7 +402,7 @@ function renderLookupSummary() {
     const names = list => list.map(r => esc(r.title.replace(/ \(.*\)$/, ''))).join(', ');
     $('#lookup-summary').innerHTML = `
         ${t === 'username'
-            ? `<div><b class="ok">Account found on ${hits.length} of ${res.length} sites:</b> ${names(hits) || 'none'}</div>${misses.length ? `<div class="muted small">Not found on: ${names(misses)}${t === 'username' ? '. Use the Username sweep tab for 600 more sites.' : ''}</div>` : ''}`
+            ? `<div><b class="ok">Account found on ${hits.length} of ${res.length} sites:</b> ${names(hits) || 'none'}</div>${misses.length ? `<div class="muted small">Not found on: ${names(misses)}${t === 'username' ? '. Use the “Username search” tab to check 9,000+ more sites (Maigret).' : ''}</div>` : ''}`
             : `<div><b class="ok">${hits.length} of ${res.length} sources returned data.</b></div>${facts.length ? `<div class="facts">${facts.map(([k, v]) => `<span><b>${esc(k)}</b>${esc(v)}</span>`).join('')}</div>` : ''}`}
         ${errs.length ? `<div class="warn small">${errs.length} source(s) failed or were rate-limited. “↻ Re-check” retries.</div>` : ''}
         <div class="summary-actions">
