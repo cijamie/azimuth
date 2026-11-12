@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/arf.css?v=3.2">
+    <link rel="stylesheet" href="css/arf.css?v=3.4">
     <script>try { const t = JSON.parse(localStorage.getItem('azimuth_settings') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch {}</script>
 </head>
 <body>
@@ -42,6 +42,7 @@
     <div id="rail-overlay" class="rail-overlay"></div>
     <nav class="rail" id="rail">
         <button class="rail-item active" data-view="investigate"><span class="ri">◎</span><span>Investigate</span></button>
+        <button class="rail-item" data-view="maigret"><span class="ri">@</span><span>Maigret username search</span></button>
         <button class="rail-item" data-view="graph"><span class="ri">⟡</span><span>Link chart &amp; timeline</span></button>
         <button class="rail-item" data-view="case"><span class="ri">▣</span><span>Case file</span><span class="badge" id="evidence-count">0</span></button>
         <button class="rail-item" data-view="analysis"><span class="ri">⚖</span><span>Analysis &amp; review</span></button>
@@ -81,6 +82,7 @@
                     <button class="chip" data-investigate="bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq">bitcoin wallet</button>
                 </div>
                 <div class="chip-row center" id="recent-selectors"></div>
+                <p class="maigret-callout"><b>Looking for someone’s accounts?</b> <button class="btn primary small" data-view="maigret">Maigret username search →</button> <span class="muted small">checks a username on 9,000+ sites</span></p>
                 <div class="how">
                     <div><b>1. Paste anything</b><span>Pasting works anywhere on the page. Paste a whole email or report and every indicator is pulled out.</span></div>
                     <div><b>2. Read the summary</b><span>Live checks run automatically. New leads they uncover are one click away.</span></div>
@@ -122,7 +124,7 @@
                 <div class="tabs" id="inv-tabs">
                     <button class="tab active" data-tab="findings">Findings <span class="count" id="tab-findings-count"></span></button>
                     <button class="tab" data-tab="links">More places to look <span class="count" id="tab-links-count"></span></button>
-                    <button class="tab hidden" data-tab="sweep" id="tab-sweep">Username search</button>
+                    <button class="tab hidden" data-tab="sweep" id="tab-sweep">Username search (Maigret)</button>
                     <button class="tab hidden" data-tab="match" id="tab-match">Same person?</button>
                     <button class="tab hidden" data-tab="lookalikes" id="tab-lookalikes">Lookalike domains</button>
                 </div>
@@ -326,6 +328,15 @@
             <div class="card"><div id="bulk-table" class="bulk-table"></div></div>
         </section>
 
+        <!-- ================= MAIGRET ================= -->
+        <section id="view-maigret" class="view hidden">
+            <div class="card">
+                <div class="card-head"><h2>Maigret username search</h2><span class="muted small">Find accounts with a username across 9,000+ sites, using Azimuth’s built-in port of <a href="https://github.com/soxoj/maigret" target="_blank" rel="noopener noreferrer">Maigret</a>.</span></div>
+                <form class="omni-inline" id="maigret-form"><input id="maigret-user" class="input input-lg mono" placeholder="username, or name parts to permute (john doe 1990)" autocomplete="off" spellcheck="false"><button class="btn primary">Set up search</button></form>
+            </div>
+            <div class="card" id="maigret-card"><div id="maigret-panel"></div></div>
+        </section>
+
         <!-- ================= WATCHLIST ================= -->
         <section id="view-watch" class="view hidden">
             <div class="card">
@@ -517,9 +528,9 @@
 
 <nav class="bottom-nav">
     <button data-view="investigate" class="active"><span>◎</span>Investigate</button>
+    <button data-view="maigret"><span>@</span>Maigret</button>
     <button data-view="graph"><span>⟡</span>Chart</button>
     <button data-view="case"><span>▣</span>Case</button>
-    <button data-view="registry"><span>▤</span>Tools</button>
     <button data-view="toolkit"><span>⚒</span>Toolkit</button>
 </nav>
 
@@ -631,30 +642,30 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
-<script src="js/data.js?v=3.3"></script>
-<script src="js/util.js?v=3.3"></script>
-<script src="js/settings.js?v=3.3"></script>
-<script src="js/selectors.js?v=3.3"></script>
-<script src="js/pivots.js?v=3.3"></script>
-<script src="js/lookups.js?v=3.3"></script>
-<script src="js/toolkit.js?v=3.3"></script>
-<script src="js/imagetools.js?v=3.3"></script>
-<script src="js/case.js?v=3.3"></script>
-<script src="js/graph.js?v=3.3"></script>
-<script src="js/watch.js?v=3.3"></script>
-<script src="js/sweep.js?v=3.3"></script>
-<script src="js/palette.js?v=3.3"></script>
+<script src="js/data.js?v=3.4"></script>
+<script src="js/util.js?v=3.4"></script>
+<script src="js/settings.js?v=3.4"></script>
+<script src="js/selectors.js?v=3.4"></script>
+<script src="js/pivots.js?v=3.4"></script>
+<script src="js/lookups.js?v=3.4"></script>
+<script src="js/toolkit.js?v=3.4"></script>
+<script src="js/imagetools.js?v=3.4"></script>
+<script src="js/case.js?v=3.4"></script>
+<script src="js/graph.js?v=3.4"></script>
+<script src="js/watch.js?v=3.4"></script>
+<script src="js/sweep.js?v=3.4"></script>
+<script src="js/palette.js?v=3.4"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
-<script src="js/vault.js?v=3.3"></script>
-<script src="js/analysis.js?v=3.3"></script>
-<script src="js/bulk.js?v=3.3"></script>
-<script src="js/forensics.js?v=3.3"></script>
-<script src="js/research.js?v=3.3"></script>
-<script src="js/mapview.js?v=3.3"></script>
-<script src="js/match.js?v=3.3"></script>
-<script src="js/interop.js?v=3.3"></script>
-<script src="js/evidencetools.js?v=3.3"></script>
-<script src="js/ai.js?v=3.3"></script>
-<script src="js/app.js?v=3.3"></script>
+<script src="js/vault.js?v=3.4"></script>
+<script src="js/analysis.js?v=3.4"></script>
+<script src="js/bulk.js?v=3.4"></script>
+<script src="js/forensics.js?v=3.4"></script>
+<script src="js/research.js?v=3.4"></script>
+<script src="js/mapview.js?v=3.4"></script>
+<script src="js/match.js?v=3.4"></script>
+<script src="js/interop.js?v=3.4"></script>
+<script src="js/evidencetools.js?v=3.4"></script>
+<script src="js/ai.js?v=3.4"></script>
+<script src="js/app.js?v=3.4"></script>
 </body>
 </html>

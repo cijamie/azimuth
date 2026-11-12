@@ -8,14 +8,25 @@ window.AzimuthExtension = { ready: false, version: null };
 const Sweep = (() => {
     let current = null;   // { id, username, source, total, done, results: [], usernames: [], finished }
     let meta = null;      // Maigret database info from the extension
+    let mount = '#sweep-panel';   // where the panel is shown: the Investigate tab or the Maigret section
+    let lastUsername = '';
+    let presetPermute = '';
+
+    // Show the panel in another container (only one is live at a time, so element ids stay unique).
+    function setMount(sel) {
+        if (sel !== mount && $(mount)) $(mount).innerHTML = '';
+        mount = sel;
+    }
     const prefs = () => ({ source: 'maigret', top: '500', tags: [], includeDisabled: false, recursive: true, nsfw: false, ...store.get('azimuth_sweep_prefs', {}) });
 
     window.addEventListener('message', e => {
         if (e.source !== window || !e.data || e.data.__azimuth !== 'ext') return;
         const m = e.data;
         if (m.type === 'hello') {
+            const was = window.AzimuthExtension.ready;
             window.AzimuthExtension = { ready: true, version: m.version };
             document.dispatchEvent(new CustomEvent('azimuth:extension'));
+            if (!was && lastUsername && $(mount)?.offsetParent) render(lastUsername);
         }
         if (!current || m.id !== current.id) return;
         if (m.type === 'sweep-start') { current.total = m.total; if (m.sites) current.sites = m.sites; if (m.added) current.recursions.push(m.added); throttled(); }
@@ -88,22 +99,32 @@ const Sweep = (() => {
         $('#sw-source').value = p.source; $('#sw-top').value = p.top;
         [...$('#sw-tags').options].forEach(o => { o.selected = p.tags.includes(o.value); });
         $('#sw-recursive').checked = p.recursive; $('#sw-disabled').checked = p.includeDisabled; $('#sw-nsfw').checked = p.nsfw;
+        if (presetPermute) { $('#sw-permute').checked = true; $('#sw-permute-text').value = presetPermute; }
         $('#sweep-start').onclick = () => start(username);
     }
 
-    function render(username = state?.selector?.value) {
-        const box = $('#sweep-panel');
+    function render(username = lastUsername || state?.selector?.value) {
+        const box = $(mount);
         if (!box) return;
+        lastUsername = username || '';
         if (!window.AzimuthExtension.ready) {
             box.innerHTML = `
-                <p>Searches <b>${esc(username || 'this username')}</b> across <b>9,000+ sites</b> using Azimuth’s built-in port of <a href="https://github.com/soxoj/maigret" target="_blank" rel="noopener noreferrer">Maigret</a>. A web page isn’t allowed to read other sites, so this needs one of:</p>
-                <h4 style="margin-top:.8rem">Option 1: the Azimuth browser extension (recommended)</h4>
-                <p class="muted small">Chrome / Edge / Brave: open <code>chrome://extensions</code>, turn on Developer mode, click “Load unpacked” and choose the <code>extension</code> folder inside Azimuth (download it from the GitHub repository). Then reload this page.</p>
-                <h4 style="margin-top:.8rem">Option 2: the command line (Node.js 18+)</h4>
+                <p>Searches <b>${esc(username || 'a username')}</b> across <b>9,000+ sites</b> using Azimuth’s built-in port of <a href="https://github.com/soxoj/maigret" target="_blank" rel="noopener noreferrer">Maigret</a>. Web pages aren’t allowed to read other websites, so the checks run in the free Azimuth browser extension.</p>
+                <h4 style="margin-top:.8rem">Install the extension (one time, about a minute)</h4>
+                <ol class="setup-steps">
+                    <li><a class="btn primary" href="azimuth-extension.zip" download>⬇ Download the extension</a> and unzip it (right-click → Extract All).</li>
+                    <li>In Chrome, Edge or Brave, open <code>chrome://extensions</code> <button class="btn small" data-copy="chrome://extensions">⧉ copy</button></li>
+                    <li>Turn on <b>Developer mode</b> (top right).</li>
+                    <li>Click <b>Load unpacked</b> and choose the unzipped <code>azimuth-extension</code> folder.</li>
+                    <li>Come back here and <a href="#" id="sw-reload">reload this page</a>. This panel turns into the search form.</li>
+                </ol>
+                <h4 style="margin-top:.8rem">Or use the command line (Node.js 18+)</h4>
                 <pre class="cmd">node scripts/maigret.mjs ${esc(username || 'username')} --json result.json</pre>
-                <p class="muted small">Add <code>-a</code> for all sites, <code>--tags social,coding</code> to filter, <code>--permute</code> for name parts. Import <code>result.json</code> under Case file → Import results from other tools.</p>`;
+                <p class="muted small">Run it in the downloaded Azimuth folder from <a href="https://github.com/cijamie/azimuth" target="_blank" rel="noopener noreferrer">GitHub</a>. Add <code>-a</code> for all sites, <code>--tags social,coding</code> to filter, <code>--permute</code> for name parts. Import <code>result.json</code> under Case file → Import results from other tools.</p>`;
+            $('#sw-reload')?.addEventListener('click', e => { e.preventDefault(); location.reload(); });
             return;
         }
+        if (!username) { box.innerHTML = '<p class="muted small">Enter a username above.</p>'; return; }
         if (!current || current.username !== username) { renderForm(box, username); return; }
         const res = current.results;
         const found = res.filter(r => r.found);
@@ -186,5 +207,33 @@ ${found.map(r => `<tr><td>${esc(r.site)}</td><td>${esc(r.username)}</td><td><a h
         $('#sweep-save').textContent = '✓ Saved';
     }
 
-    return { start, stop, render };
+    // The standalone "Maigret username search" section.
+    function setupView() {
+        $('#maigret-form').onsubmit = e => {
+            e.preventDefault();
+            const v = $('#maigret-user').value.trim().replace(/^@/, '');
+            if (!v) return $('#maigret-user').focus();
+            const parts = v.split(/\s+/);
+            presetPermute = parts.length > 1 ? v : '';
+            setMount('#maigret-panel');
+            if (current && current.username !== (parts.length > 1 ? parts.join('') : v)) current = current.finished ? null : current;
+            render(parts.length > 1 ? parts.join('') : v);
+            CaseFile.addSelector({ type: 'username', value: parts.length > 1 ? parts.join('') : v });
+        };
+    }
+
+    function showInView() {
+        setMount('#maigret-panel');
+        if (state.selector?.type === 'username' && !$('#maigret-user').value) $('#maigret-user').value = state.selector.value;
+        render(lastUsername || $('#maigret-user').value.trim() || '');
+        setTimeout(() => $('#maigret-user').focus(), 30);
+    }
+
+    function showInTab(username) {
+        setMount('#sweep-panel');
+        presetPermute = '';
+        render(username);
+    }
+
+    return { start, stop, render, setupView, showInView, showInTab };
 })();

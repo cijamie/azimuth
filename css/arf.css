@@ -463,3 +463,6 @@ select[multiple].input { min-height: 70px; }
     .req-row { grid-template-columns: 30px 1fr; }
     .map-wrap { height: 320px; }
 }
+.maigret-callout { margin-top: 1.4rem; display: flex; gap: 0.6rem; align-items: center; justify-content: center; flex-wrap: wrap; }
+.setup-steps { margin: 0.4rem 0 0 1.3rem; display: grid; gap: 0.45rem; font-size: 0.9rem; }
+.setup-steps .btn { vertical-align: middle; }

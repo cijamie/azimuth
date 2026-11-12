@@ -1,0 +1,31 @@
+name: Build extension zip
+
+# Keeps azimuth-extension.zip (offered for download on the site) in sync with the extension folder.
+on:
+  push:
+    branches: [main]
+    paths: ['extension/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build zip
+        run: |
+          rm -rf build && mkdir -p build/azimuth-extension
+          find extension -maxdepth 1 -type f ! -name package.json -exec cp {} build/azimuth-extension/ \;
+          rm -f azimuth-extension.zip
+          (cd build && zip -qr ../azimuth-extension.zip azimuth-extension)
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- azimuth-extension.zip; then echo "No changes"; exit 0; fi
+          git config user.name "azimuth-build"
+          git config user.email "actions@users.noreply.github.com"
+          git add azimuth-extension.zip
+          git commit -m "Rebuild extension zip"
+          git push

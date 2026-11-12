@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     Interop.setup();
     EvidenceTools.setup();
     AI.setup();
+    Sweep.setupView();
     document.addEventListener('azimuth:case-switched', () => { state.selector = null; $('#inv-active').classList.add('hidden'); $('#inv-empty').classList.remove('hidden'); if (state.view !== 'investigate') showView(state.view); });
     setupGlobalClicks();
     setupShortcuts();
@@ -94,7 +95,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // ---------------- Navigation ----------------
-const VIEWS = ['investigate', 'graph', 'case', 'analysis', 'watch', 'bulk', 'registry', 'dorks', 'toolkit'];
+const VIEWS = ['investigate', 'maigret', 'graph', 'case', 'analysis', 'watch', 'bulk', 'registry', 'dorks', 'toolkit'];
 
 function showView(view) {
     state.view = view;
@@ -104,6 +105,7 @@ function showView(view) {
     if (view === 'registry') renderRegistry();
     if (view === 'graph') { Graph.setCurrent(state.selector); Graph.render(); Graph.renderTimeline(); MapView.render(); }
     if (view === 'analysis') Analysis.render();
+    if (view === 'maigret') Sweep.showInView();
     if (view === 'case') EvidenceTools.checkCaptures();
     if (view === 'watch') Watch.render();
     if (view === 'dorks') syncDorkTarget();
@@ -184,7 +186,7 @@ function setupInvestigate() {
 function switchInvTab(tab) {
     $$('#inv-tabs .tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
     $$('#view-investigate .tabpane').forEach(p => p.classList.toggle('hidden', p.dataset.pane !== tab));
-    if (tab === 'sweep') Sweep.render(state.selector?.value);
+    if (tab === 'sweep') Sweep.showInTab(state.selector?.value);
     if (tab === 'match') Match.run(state.lookupResults, state.selector.value);
     if (tab === 'lookalikes') Lookalikes.show(state.selector.type === 'domain' ? registrable(state.selector.value) : registrable(state.selector.meta.domain || state.selector.meta.host || ''));
 }
