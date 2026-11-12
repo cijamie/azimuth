@@ -1,0 +1,6037 @@
+{
+  "checked": "2026-11-12",
+  "counts": {
+    "error": 36,
+    "blocked": 134,
+    "ok": 578,
+    "dead": 2,
+    "moved": 2,
+    "tor": 5
+  },
+  "results": [
+    {
+      "name": "WhatsMyName",
+      "category": "Username / Username Search Engines",
+      "url": "https://whatsmyname.app/?q={target}",
+      "status": "error",
+      "reason": "HTTP 464",
+      "finalUrl": "https://whatsmyname.app/?q=johndoe"
+    },
+    {
+      "name": "Namechk",
+      "category": "Username / Username Search Engines",
+      "url": "https://namechk.com/?q={target}",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://namechk.com/?q=johndoe"
+    },
+    {
+      "name": "UserSearch.org",
+      "category": "Username / Username Search Engines",
+      "url": "https://usersearch.org/?q={target}",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://usersearch.org/?q=johndoe"
+    },
+    {
+      "name": "Thats Them",
+      "category": "Username / Username Search Engines",
+      "url": "https://thatsthem.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://thatsthem.com/"
+    },
+    {
+      "name": "NameCheckup",
+      "category": "Username / Username Search Engines",
+      "url": "https://namecheckup.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://namecheckup.com/"
+    },
+    {
+      "name": "Instant Username Search",
+      "category": "Username / Username Search Engines",
+      "url": "https://instantusername.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://instantusername.com/"
+    },
+    {
+      "name": "IDCrawl Username Search",
+      "category": "Username / Username Search Engines",
+      "url": "https://www.idcrawl.com/username",
+      "status": "ok",
+      "reason": "HTTP 202",
+      "finalUrl": "https://www.idcrawl.com/username"
+    },
+    {
+      "name": "Names Directory",
+      "category": "Username / Username Search Engines",
+      "url": "https://namesdir.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://namesdir.com/"
+    },
+    {
+      "name": "Sherlock (CLI)",
+      "category": "Username / Username Search Engines",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://github.com/sherlock-project/sherlock"
+    },
+    {
+      "name": "Maigret (CLI)",
+      "category": "Username / Username Search Engines",
+      "url": "https://github.com/soxoj/maigret",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://github.com/soxoj/maigret"
+    },
+    {
+      "name": "Blackbird (CLI)",
+      "category": "Username / Username Search Engines",
+      "url": "https://github.com/p1ngul1n0/blackbird",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://github.com/antoniaci/blackbird"
+    },
+    {
+      "name": "Amazon Profiles (Google)",
+      "category": "Username / Specific Sites",
+      "url": "https://www.google.com/search?q=site%3Aamazon.com+%22{target}%22",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.google.com/search?q=site%3Aamazon.com+%22johndoe%22"
+    },
+    {
+      "name": "Keybase",
+      "category": "Username / Specific Sites",
+      "url": "https://keybase.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://keybase.io/"
+    },
+    {
+      "name": "MIT PGP Key Server",
+      "category": "Username / Specific Sites",
+      "url": "http://pgp.mit.edu/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://pgp.mit.edu/"
+    },
+    {
+      "name": "Proton Mail Key Lookup",
+      "category": "Username / Specific Sites",
+      "url": "https://api.protonmail.ch/pks/lookup?op=index&search={target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://api.protonmail.ch/pks/lookup?op=index&search=test%40example.com"
+    },
+    {
+      "name": "ThatsThem",
+      "category": "Email Address / Email Search",
+      "url": "https://thatsthem.com/reverse-email-lookup",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://thatsthem.com/reverse-email-lookup"
+    },
+    {
+      "name": "Hunter",
+      "category": "Email Address / Email Search",
+      "url": "https://hunter.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://hunter.io/"
+    },
+    {
+      "name": "VoilaNorbert",
+      "category": "Email Address / Email Search",
+      "url": "https://www.voilanorbert.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.voilanorbert.com/"
+    },
+    {
+      "name": "OSINT Industries",
+      "category": "Email Address / Email Search",
+      "url": "https://osint.industries/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.osint.industries/"
+    },
+    {
+      "name": "Skymem",
+      "category": "Email Address / Email Search",
+      "url": "http://www.skymem.info/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.skymem.info/"
+    },
+    {
+      "name": "Epieos",
+      "category": "Email Address / Email Search",
+      "url": "https://epieos.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://epieos.com/"
+    },
+    {
+      "name": "Holehe (CLI)",
+      "category": "Email Address / Email Search",
+      "url": "https://github.com/megadose/holehe",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://github.com/megadose/holehe"
+    },
+    {
+      "name": "GHunt (CLI)",
+      "category": "Email Address / Email Search",
+      "url": "https://github.com/mxrch/GHunt",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://github.com/mxrch/GHunt"
+    },
+    {
+      "name": "Epieos",
+      "category": "Email Address / Email Search",
+      "url": "https://epieos.com/?q={target}&t=email",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://epieos.com/?q=test%40example.com&t=email"
+    },
+    {
+      "name": "Email Format",
+      "category": "Email Address / Common Email Formats",
+      "url": "https://www.email-format.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.email-format.com/"
+    },
+    {
+      "name": "Email Permutator",
+      "category": "Email Address / Common Email Formats",
+      "url": "http://metricsparrow.com/toolkit/email-permutator/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://metricsparrow.com/toolkit/email-permutator/"
+    },
+    {
+      "name": "OneLook Reverse Dictionary and Thesaurus",
+      "category": "Email Address / Common Email Formats",
+      "url": "http://www.onelook.com/reverse-dictionary.shtml",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.onelook.com/thesaurus"
+    },
+    {
+      "name": "Reacher Demo",
+      "category": "Email Address / Email Verification",
+      "url": "https://reacher.email",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://reacher.email/"
+    },
+    {
+      "name": "MailScrap",
+      "category": "Email Address / Email Verification",
+      "url": "https://mailscrap.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://mailscrap.com/"
+    },
+    {
+      "name": "Read Notify",
+      "category": "Email Address / Email Verification",
+      "url": "http://www.readnotify.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.readnotify.com/"
+    },
+    {
+      "name": "Email Reputation",
+      "category": "Email Address / Email Verification",
+      "url": "https://emailrep.io/",
+      "status": "error",
+      "reason": "HTTP 400",
+      "finalUrl": "https://emailrep.io/"
+    },
+    {
+      "name": "MailboxValidator",
+      "category": "Email Address / Email Verification",
+      "url": "https://www.mailboxvalidator.com/demo",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.mailboxvalidator.com/demo"
+    },
+    {
+      "name": "Have I been pwned?",
+      "category": "Email Address / Breach Data",
+      "url": "https://haveibeenpwned.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://haveibeenpwned.com/"
+    },
+    {
+      "name": "Hudson Rock",
+      "category": "Email Address / Breach Data",
+      "url": "https://www.hudsonrock.com/threat-intelligence-cybercrime-tools",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.hudsonrock.com/threat-intelligence-cybercrime-tools"
+    },
+    {
+      "name": "Vigilante.pw",
+      "category": "Email Address / Breach Data",
+      "url": "https://www.vigilante.pw/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://dehashed.com/"
+    },
+    {
+      "name": "Ashley Madison Emails",
+      "category": "Email Address / Breach Data",
+      "url": "https://ashley.cynic.al/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://ashley.cynic.al/"
+    },
+    {
+      "name": "DeHashed",
+      "category": "Email Address / Breach Data",
+      "url": "https://dehashed.com/search?query={target}",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://dehashed.com/search?query=test"
+    },
+    {
+      "name": "LeakCheck",
+      "category": "Email Address / Breach Data",
+      "url": "https://leakcheck.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://leakcheck.io/"
+    },
+    {
+      "name": "Intelligence X",
+      "category": "Email Address / Breach Data",
+      "url": "https://intelx.io/?s={target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://intelx.io/?s=test"
+    },
+    {
+      "name": "h8mail (CLI)",
+      "category": "Email Address / Breach Data",
+      "url": "https://github.com/khast3x/h8mail",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://github.com/khast3x/h8mail"
+    },
+    {
+      "name": "MxToolbox",
+      "category": "Email Address / Mail Blacklists",
+      "url": "http://mxtoolbox.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://mxtoolbox.com/"
+    },
+    {
+      "name": "Domain Dossier",
+      "category": "Domain Name / Whois Records",
+      "url": "http://centralops.net/co/DomainDossier.aspx",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://centralops.net/co/DomainDossier.aspx"
+    },
+    {
+      "name": "domainIQ",
+      "category": "Domain Name / Whois Records",
+      "url": "https://www.domainiq.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.domainiq.com/"
+    },
+    {
+      "name": "DomainTools Whois",
+      "category": "Domain Name / Whois Records",
+      "url": "http://whois.domaintools.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://whois.domaintools.com/"
+    },
+    {
+      "name": "Whoisology",
+      "category": "Domain Name / Whois Records",
+      "url": "https://whoisology.com/#advanced",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://whoisology.com/"
+    },
+    {
+      "name": "DNSstuff",
+      "category": "Domain Name / Whois Records",
+      "url": "https://tools.dnsstuff.com/",
+      "status": "error",
+      "reason": "HTTP 502",
+      "finalUrl": "https://tools.dnsstuff.com/"
+    },
+    {
+      "name": "Domaincrawler.com",
+      "category": "Domain Name / Whois Records",
+      "url": "http://www.domaincrawler.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://domaincrawler.com/"
+    },
+    {
+      "name": "MarkMonitor Whois Search",
+      "category": "Domain Name / Whois Records",
+      "url": "https://domains.markmonitor.com/whois/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://whois-webform.markmonitor.com/whois/"
+    },
+    {
+      "name": "Website Informer",
+      "category": "Domain Name / Whois Records",
+      "url": "http://website.informer.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://website.informer.com/"
+    },
+    {
+      "name": "Who.is",
+      "category": "Domain Name / Whois Records",
+      "url": "https://who.is/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://who.is/"
+    },
+    {
+      "name": "ViewDNS.info",
+      "category": "Domain Name / Whois Records",
+      "url": "http://viewdns.info/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://viewdns.info/"
+    },
+    {
+      "name": "Daily DNS Changes",
+      "category": "Domain Name / Whois Records",
+      "url": "https://dailychanges.domaintools.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://dailychanges.domaintools.com/"
+    },
+    {
+      "name": "IP2WHOIS",
+      "category": "Domain Name / Whois Records",
+      "url": "https://www.ip2whois.com",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.ip2whois.com/"
+    },
+    {
+      "name": "Netlas.io",
+      "category": "Domain Name / Whois Records",
+      "url": "https://app.netlas.io/whois_domains/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://app.netlas.io/whois_domains/"
+    },
+    {
+      "name": "ICANN Lookup (RDAP)",
+      "category": "Domain Name / Whois Records",
+      "url": "https://lookup.icann.org/en/lookup?name={target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://lookup.icann.org/en/lookup?name=example.com"
+    },
+    {
+      "name": "WhoisXML API",
+      "category": "Domain Name / Whois Records",
+      "url": "https://whois.whoisxmlapi.com/lookup?q={target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://whois.whoisxmlapi.com/lookup?q=example.com"
+    },
+    {
+      "name": "SynapsInt",
+      "category": "Domain Name / Subdomains",
+      "url": "https://synapsint.com",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://synapsint.com/"
+    },
+    {
+      "name": "Pentest-tools.com Subdomains",
+      "category": "Domain Name / Subdomains",
+      "url": "https://pentest-tools.com/information-gathering/find-subdomains-of-domain",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://pentest-tools.com/information-gathering/find-subdomains-of-domain"
+    },
+    {
+      "name": "Netlas.io",
+      "category": "Domain Name / Subdomains",
+      "url": "https://app.netlas.io/domains/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://app.netlas.io/domains/"
+    },
+    {
+      "name": "Subdomain Center",
+      "category": "Domain Name / Subdomains",
+      "url": "https://api.subdomain.center/?domain={target}",
+      "status": "blocked",
+      "reason": "HTTP 503 (bot protection)",
+      "finalUrl": "https://api.subdomain.center/?domain=example.com"
+    },
+    {
+      "name": "crt.sh subdomains",
+      "category": "Domain Name / Subdomains",
+      "url": "https://crt.sh/?q=%25.{target}",
+      "status": "error",
+      "reason": "AbortError: This operation was aborted"
+    },
+    {
+      "name": "subfinder (CLI)",
+      "category": "Domain Name / Subdomains",
+      "url": "https://github.com/projectdiscovery/subfinder",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://github.com/projectdiscovery/subfinder"
+    },
+    {
+      "name": "OWASP Amass (CLI)",
+      "category": "Domain Name / Subdomains",
+      "url": "https://github.com/owasp-amass/amass",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://github.com/owasp-amass/amass"
+    },
+    {
+      "name": "Shodan",
+      "category": "Domain Name / Discovery",
+      "url": "https://www.shodan.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.shodan.io/"
+    },
+    {
+      "name": "Netlas.io",
+      "category": "Domain Name / Discovery",
+      "url": "https://app.netlas.io/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://app.netlas.io/"
+    },
+    {
+      "name": "Online Nikto scanner",
+      "category": "Domain Name / Discovery",
+      "url": "https://nikto.online/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://nikto.online/"
+    },
+    {
+      "name": "urlscan.io",
+      "category": "Domain Name / Discovery",
+      "url": "https://urlscan.io/search/#*",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://urlscan.io/search/"
+    },
+    {
+      "name": "Redirect Detective",
+      "category": "Domain Name / Discovery",
+      "url": "http://redirectdetective.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://redirectdetective.com/"
+    },
+    {
+      "name": "BuiltWith",
+      "category": "Domain Name / Discovery",
+      "url": "https://builtwith.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://builtwith.com/"
+    },
+    {
+      "name": "Wappalyzer",
+      "category": "Domain Name / Discovery",
+      "url": "https://www.wappalyzer.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.wappalyzer.com/"
+    },
+    {
+      "name": "AnalyzeID",
+      "category": "Domain Name / Discovery",
+      "url": "http://analyzeid.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://analyzeid.com/"
+    },
+    {
+      "name": "Criminal IP Search",
+      "category": "Domain Name / Discovery",
+      "url": "https://www.criminalip.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.criminalip.io/"
+    },
+    {
+      "name": "urlDNA",
+      "category": "Domain Name / Discovery",
+      "url": "https://urldna.io",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://urldna.io/"
+    },
+    {
+      "name": "SecurityTrails",
+      "category": "Domain Name / Discovery",
+      "url": "https://securitytrails.com/domain/{target}/dns",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://securitytrails.com/domain/example.com/dns"
+    },
+    {
+      "name": "Validin",
+      "category": "Domain Name / Discovery",
+      "url": "https://app.validin.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://app.validin.com/login"
+    },
+    {
+      "name": "LeakIX",
+      "category": "Domain Name / Discovery",
+      "url": "https://leakix.net/search?scope=leak&q={target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://leakix.net/auth/login"
+    },
+    {
+      "name": "theHarvester (CLI)",
+      "category": "Domain Name / Discovery",
+      "url": "https://github.com/laramies/theHarvester",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://github.com/laramies/theHarvester"
+    },
+    {
+      "name": "SpiderFoot (CLI)",
+      "category": "Domain Name / Discovery",
+      "url": "https://github.com/smicallef/spiderfoot",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://github.com/smicallef/spiderfoot"
+    },
+    {
+      "name": "Censys",
+      "category": "Domain Name / Certificate Search",
+      "url": "https://search.censys.io/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://search.censys.io/"
+    },
+    {
+      "name": "crt.sh - Certificate Search",
+      "category": "Domain Name / Certificate Search",
+      "url": "https://crt.sh/?",
+      "status": "dead",
+      "reason": "HTTP 404",
+      "finalUrl": "https://crt.sh/?"
+    },
+    {
+      "name": "Netlas.io",
+      "category": "Domain Name / Certificate Search",
+      "url": "https://app.netlas.io/certs/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://app.netlas.io/certs/"
+    },
+    {
+      "name": "Mnemonic",
+      "category": "Domain Name / PassiveDNS",
+      "url": "http://passivedns.mnemonic.no/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://passivedns.mnemonic.no/"
+    },
+    {
+      "name": "DNS History",
+      "category": "Domain Name / PassiveDNS",
+      "url": "http://dnshistory.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://dnshistory.org/"
+    },
+    {
+      "name": "PTRarchive.com",
+      "category": "Domain Name / PassiveDNS",
+      "url": "http://ptrarchive.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://securitytrails.com/"
+    },
+    {
+      "name": "DNS Dumpster",
+      "category": "Domain Name / PassiveDNS",
+      "url": "https://dnsdumpster.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://dnsdumpster.com/"
+    },
+    {
+      "name": "AbuseIPDB (Webpage and API)",
+      "category": "Domain Name / Reputation",
+      "url": "https://www.abuseipdb.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.abuseipdb.com/"
+    },
+    {
+      "name": "UrlQuery.net",
+      "category": "Domain Name / Reputation",
+      "url": "http://urlquery.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://urlquery.net/"
+    },
+    {
+      "name": "URL Void",
+      "category": "Domain Name / Reputation",
+      "url": "http://www.urlvoid.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.urlvoid.com/"
+    },
+    {
+      "name": "FortiGuard Reputation Service",
+      "category": "Domain Name / Reputation",
+      "url": "http://fortiguard.com/iprep",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.fortiguard.com/iprep"
+    },
+    {
+      "name": "Trend Micro Site Safety Center",
+      "category": "Domain Name / Reputation",
+      "url": "https://global.sitesafety.trendmicro.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://global.sitesafety.trendmicro.com/"
+    },
+    {
+      "name": "Sucuri SiteCheck",
+      "category": "Domain Name / Reputation",
+      "url": "https://sitecheck.sucuri.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://sitecheck.sucuri.net/"
+    },
+    {
+      "name": "ThreatMiner.org",
+      "category": "Domain Name / Reputation",
+      "url": "https://www.threatminer.org/",
+      "status": "error",
+      "reason": "AbortError: This operation was aborted"
+    },
+    {
+      "name": "BlueCoat WebPulse",
+      "category": "Domain Name / Reputation",
+      "url": "https://sitereview.bluecoat.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://sitereview.bluecoat.com/"
+    },
+    {
+      "name": "Zscaler Zulu URL Risk Analyzer",
+      "category": "Domain Name / Reputation",
+      "url": "http://zulu.zscaler.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://zulu.zscaler.com/"
+    },
+    {
+      "name": "Joe Sandbox Url Analyzer",
+      "category": "Domain Name / Reputation",
+      "url": "https://www.url-analyzer.net/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.joesandbox.com/"
+    },
+    {
+      "name": "AlienVault Open Threat Exchange",
+      "category": "Domain Name / Reputation",
+      "url": "https://otx.alienvault.com/browse/pulses/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://otx.alienvault.com/browse/pulses/"
+    },
+    {
+      "name": "Web Inspector Online Scan",
+      "category": "Domain Name / Reputation",
+      "url": "http://app.webinspector.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.webinspector.com/website-malware-scanner/"
+    },
+    {
+      "name": "Google Safe Browsing API",
+      "category": "Domain Name / Reputation",
+      "url": "https://developers.google.com/safe-browsing/?csw=1",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://developers.google.com/safe-browsing/?csw=1"
+    },
+    {
+      "name": "Threatexpert.com Malicious URLs",
+      "category": "Domain Name / Domain Blacklists",
+      "url": "http://www.networksec.org/grabbho/block.txt",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.networksec.org/grabbho/block.txt"
+    },
+    {
+      "name": "scumware.org",
+      "category": "Domain Name / Domain Blacklists",
+      "url": "https://www.scumware.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.scumware.org/"
+    },
+    {
+      "name": "Shadowserver Foundation",
+      "category": "Domain Name / Domain Blacklists",
+      "url": "https://www.shadowserver.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.shadowserver.org/"
+    },
+    {
+      "name": "Email Domain Validation",
+      "category": "Domain Name / Domain Blacklists",
+      "url": "https://www.mailboxvalidator.com/domain",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.mailboxvalidator.com/domain"
+    },
+    {
+      "name": "dnstwister",
+      "category": "Domain Name / Typosquatting",
+      "url": "https://dnstwister.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://dnstwister.com/"
+    },
+    {
+      "name": "BuiltWith",
+      "category": "Domain Name / Analytics",
+      "url": "http://builtwith.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://builtwith.com/"
+    },
+    {
+      "name": "SEMrush",
+      "category": "Domain Name / Analytics",
+      "url": "https://www.semrush.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.semrush.com/"
+    },
+    {
+      "name": "Moonsearch",
+      "category": "Domain Name / Analytics",
+      "url": "http://moonsearch.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://moonsearch.com/"
+    },
+    {
+      "name": "StackShare",
+      "category": "Domain Name / Analytics",
+      "url": "https://stackshare.io/",
+      "status": "blocked",
+      "reason": "HTTP 429",
+      "finalUrl": "https://stackshare.io/"
+    },
+    {
+      "name": "Ewhois",
+      "category": "Domain Name / Analytics",
+      "url": "https://ewhois.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ewhois.com/"
+    },
+    {
+      "name": "StatsCrop",
+      "category": "Domain Name / Analytics",
+      "url": "http://www.statscrop.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.statscrop.com/"
+    },
+    {
+      "name": "Open Site Explorer",
+      "category": "Domain Name / Analytics",
+      "url": "https://moz.com/researchtools/ose/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://moz.com/link-explorer"
+    },
+    {
+      "name": "SecurityHeaders.io",
+      "category": "Domain Name / Analytics",
+      "url": "https://securityheaders.io/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://securityheaders.com/"
+    },
+    {
+      "name": "Keyword Density",
+      "category": "Domain Name / Analytics",
+      "url": "http://tools.seobook.com/general/keyword-density/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://tools.seobook.com/general/keyword-density/"
+    },
+    {
+      "name": "Cisco Umbrella Popularity List",
+      "category": "Domain Name / Analytics",
+      "url": "http://s3-us-west-1.amazonaws.com/umbrella-static/index.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://s3-us-west-1.amazonaws.com/umbrella-static/index.html"
+    },
+    {
+      "name": "W3bin.com",
+      "category": "Domain Name / Analytics",
+      "url": "https://w3bin.com/",
+      "status": "error",
+      "reason": "UND_ERR_SOCKET: other side closed"
+    },
+    {
+      "name": "Sitedossier",
+      "category": "Domain Name / Analytics",
+      "url": "http://www.sitedossier.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.sitedossier.com/"
+    },
+    {
+      "name": "ClearWebStats.com",
+      "category": "Domain Name / Analytics",
+      "url": "https://www.clearwebstats.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.clearwebstats.com/"
+    },
+    {
+      "name": "PubDB",
+      "category": "Domain Name / Analytics",
+      "url": "http://pub-db.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://pub-db.com/"
+    },
+    {
+      "name": "WWW Domain Tools",
+      "category": "Domain Name / Analytics",
+      "url": "https://w3dt.net/",
+      "status": "error",
+      "reason": "UND_ERR_SOCKET: other side closed"
+    },
+    {
+      "name": "SimilarWeb",
+      "category": "Domain Name / Analytics",
+      "url": "https://www.similarweb.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.similarweb.com/"
+    },
+    {
+      "name": "Siteliner",
+      "category": "Domain Name / Analytics",
+      "url": "http://siteliner.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.siteliner.com/"
+    },
+    {
+      "name": "WebPagetest",
+      "category": "Domain Name / Analytics",
+      "url": "https://www.webpagetest.org/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.webpagetest.org/"
+    },
+    {
+      "name": "GetLinkInfo",
+      "category": "Domain Name / URL Expanders",
+      "url": "http://www.getlinkinfo.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.getlinkinfo.com/"
+    },
+    {
+      "name": "CheckShortURL",
+      "category": "Domain Name / URL Expanders",
+      "url": "http://checkshorturl.com/",
+      "status": "blocked",
+      "reason": "HTTP 503",
+      "finalUrl": "http://checkshorturl.com/"
+    },
+    {
+      "name": "URL Unshortener",
+      "category": "Domain Name / URL Expanders",
+      "url": "http://www.urlunshortener.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.urlunshortener.com/"
+    },
+    {
+      "name": "Where Does This Link Go?",
+      "category": "Domain Name / URL Expanders",
+      "url": "https://wheregoes.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://wheregoes.com/"
+    },
+    {
+      "name": "KnowURL",
+      "category": "Domain Name / URL Expanders",
+      "url": "http://www.knowurl.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.knowurl.com/"
+    },
+    {
+      "name": "VisualPing",
+      "category": "Domain Name / Change Detection",
+      "url": "http://visualping.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://visualping.io/"
+    },
+    {
+      "name": "Check site availability Online",
+      "category": "Domain Name / Change Detection",
+      "url": "https://upcheck.online/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://upcheck.online/"
+    },
+    {
+      "name": "Follow That Page",
+      "category": "Domain Name / Change Detection",
+      "url": "https://www.followthatpage.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.followthatpage.com/"
+    },
+    {
+      "name": "WatchThatPage",
+      "category": "Domain Name / Change Detection",
+      "url": "http://watchthatpage.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://watchthatpage.com/"
+    },
+    {
+      "name": "Google Trends",
+      "category": "Domain Name / Social Analysis",
+      "url": "https://www.google.com/trends/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://trends.google.com/trends/"
+    },
+    {
+      "name": "DNSSEC Analyzer",
+      "category": "Domain Name / DNSSEC",
+      "url": "http://dnssec-debugger.verisignlabs.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://dnssec-analyzer.verisignlabs.com/"
+    },
+    {
+      "name": "DNSViz",
+      "category": "Domain Name / DNSSEC",
+      "url": "http://dnsviz.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://dnsviz.net/"
+    },
+    {
+      "name": "Public Buckets",
+      "category": "Domain Name / Cloud Resources",
+      "url": "https://buckets.grayhatwarfare.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://buckets.grayhatwarfare.com/"
+    },
+    {
+      "name": "Online Port scanner",
+      "category": "Domain Name / Cloud Resources",
+      "url": "https://portscanner.online/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://portscanner.online/"
+    },
+    {
+      "name": "Zone-H.org",
+      "category": "Domain Name / Vulnerabilities / Disclosure Sites",
+      "url": "http://zone-h.org/archive",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://zone-h.org/archive"
+    },
+    {
+      "name": "International Domain Name Conversion Tool",
+      "category": "Domain Name / Tools",
+      "url": "http://mct.verisign-grs.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://mct.verisign-grs.com/"
+    },
+    {
+      "name": "Microsoft",
+      "category": "Domain Name / Report Malicious Sites",
+      "url": "https://www.microsoft.com/en-us/wdsi/support/report-unsafe-site-guest",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.microsoft.com/en-us/wdsi/support/report-unsafe-site-guest"
+    },
+    {
+      "name": "Google",
+      "category": "Domain Name / Report Malicious Sites",
+      "url": "https://safebrowsing.google.com/safebrowsing/report_phish/?hl=en",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://safebrowsing.google.com/safebrowsing/report_phish/?hl=en"
+    },
+    {
+      "name": "MaxMind Demo",
+      "category": "IP & MAC Address / Geolocation",
+      "url": "https://www.maxmind.com/en/home",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.maxmind.com/en/home"
+    },
+    {
+      "name": "IPv4/IPv6 lists by country code",
+      "category": "IP & MAC Address / Geolocation",
+      "url": "https://github.com/ipverse/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://github.com/ipverse/"
+    },
+    {
+      "name": "IP2Location.com",
+      "category": "IP & MAC Address / Geolocation",
+      "url": "https://www.ip2location.com/demo",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.ip2location.com/demo"
+    },
+    {
+      "name": "IP Fingerprints",
+      "category": "IP & MAC Address / Geolocation",
+      "url": "http://www.ipfingerprints.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ipfingerprints.com/"
+    },
+    {
+      "name": "DB-IP",
+      "category": "IP & MAC Address / Geolocation",
+      "url": "https://db-ip.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://db-ip.com/"
+    },
+    {
+      "name": "IP Location Finder",
+      "category": "IP & MAC Address / Geolocation",
+      "url": "https://www.iplocation.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.iplocation.net/"
+    },
+    {
+      "name": "Info Sniper",
+      "category": "IP & MAC Address / Geolocation",
+      "url": "http://www.infosniper.net/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.infosniper.net/"
+    },
+    {
+      "name": "utrace",
+      "category": "IP & MAC Address / Geolocation",
+      "url": "http://en.utrace.de/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://en.utrace.de/"
+    },
+    {
+      "name": "InfobyIP.com",
+      "category": "IP & MAC Address / Geolocation",
+      "url": "https://www.infobyip.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.infobyip.com/"
+    },
+    {
+      "name": "ipTRACKERonline",
+      "category": "IP & MAC Address / Geolocation",
+      "url": "https://www.iptrackeronline.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.iptrackeronline.com/"
+    },
+    {
+      "name": "My IP Address",
+      "category": "IP & MAC Address / Geolocation",
+      "url": "https://www.ipaddress.my/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.ipaddress.my/"
+    },
+    {
+      "name": "ipinfo.io",
+      "category": "IP & MAC Address / Geolocation",
+      "url": "https://ipinfo.io/{target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ipinfo.io/8.8.8.8"
+    },
+    {
+      "name": "Netlas.io",
+      "category": "IP & MAC Address / Host / Port Discovery",
+      "url": "https://netlas.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://netlas.io/"
+    },
+    {
+      "name": "ZoomEye",
+      "category": "IP & MAC Address / Host / Port Discovery",
+      "url": "https://www.zoomeye.ai/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.zoomeye.ai/"
+    },
+    {
+      "name": "FOFA",
+      "category": "IP & MAC Address / Host / Port Discovery",
+      "url": "https://en.fofa.info/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://en.fofa.info/"
+    },
+    {
+      "name": "Hunter.how",
+      "category": "IP & MAC Address / Host / Port Discovery",
+      "url": "https://hunter.how/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://hunter.how/"
+    },
+    {
+      "name": "Onyphe",
+      "category": "IP & MAC Address / IPv4",
+      "url": "https://www.onyphe.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.onyphe.com/"
+    },
+    {
+      "name": "IPv4 CIDR Report",
+      "category": "IP & MAC Address / IPv4",
+      "url": "http://www.cidr-report.org/as2.0/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.cidr-report.org/as2.0/"
+    },
+    {
+      "name": "Team Cymru IP to ASN",
+      "category": "IP & MAC Address / IPv4",
+      "url": "https://asn.cymru.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://asn.cymru.com/"
+    },
+    {
+      "name": "IP to ASN DB",
+      "category": "IP & MAC Address / IPv4",
+      "url": "https://iptoasn.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://iptoasn.com/"
+    },
+    {
+      "name": "Hacker Target - Reverse DNS",
+      "category": "IP & MAC Address / IPv4",
+      "url": "https://hackertarget.com/reverse-dns-lookup/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://hackertarget.com/reverse-dns-lookup/"
+    },
+    {
+      "name": "IPv6 CIDR Report",
+      "category": "IP & MAC Address / IPv6",
+      "url": "http://www.cidr-report.org/v6/as2.0/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.cidr-report.org/v6/as2.0/"
+    },
+    {
+      "name": "Hurricane Electric BGP Toolkit",
+      "category": "IP & MAC Address / BGP",
+      "url": "http://bgp.he.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://bgp.he.net/"
+    },
+    {
+      "name": "BGP Malicious Content Ranking",
+      "category": "IP & MAC Address / BGP",
+      "url": "http://bgpranking.circl.lu/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://bgpranking.circl.lu/"
+    },
+    {
+      "name": "BGPStream",
+      "category": "IP & MAC Address / BGP",
+      "url": "https://bgpstream.com/",
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: bgpstream.com:443, timeout: 10000ms)"
+    },
+    {
+      "name": "PeeringDB",
+      "category": "IP & MAC Address / BGP",
+      "url": "https://www.peeringdb.com/advanced_search",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.peeringdb.com/advanced_search"
+    },
+    {
+      "name": "IP Void",
+      "category": "IP & MAC Address / Reputation",
+      "url": "http://www.ipvoid.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.ipvoid.com/"
+    },
+    {
+      "name": "ExoneraTor",
+      "category": "IP & MAC Address / Reputation",
+      "url": "https://exonerator.torproject.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://metrics.torproject.org/exonerator.html"
+    },
+    {
+      "name": "Grey Noise",
+      "category": "IP & MAC Address / Reputation",
+      "url": "https://viz.greynoise.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://viz.greynoise.io/"
+    },
+    {
+      "name": "LiveIPMap IP Check",
+      "category": "IP & MAC Address / Reputation",
+      "url": "https://www.liveipmap.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.liveipmap.com/"
+    },
+    {
+      "name": "Spur",
+      "category": "IP & MAC Address / Reputation",
+      "url": "https://spur.us/context/{target}",
+      "status": "blocked",
+      "reason": "HTTP 429",
+      "finalUrl": "https://spur.us/context/8.8.8.8"
+    },
+    {
+      "name": "AbuseIPDB check",
+      "category": "IP & MAC Address / Reputation",
+      "url": "https://www.abuseipdb.com/check/{target}",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.abuseipdb.com/check/8.8.8.8"
+    },
+    {
+      "name": "Blocklist.de",
+      "category": "IP & MAC Address / Blacklists",
+      "url": "http://www.blocklist.de/en/index.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.blocklist.de/en/index.html"
+    },
+    {
+      "name": "DShield API",
+      "category": "IP & MAC Address / Blacklists",
+      "url": "https://isc.sans.edu/api/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://isc.sans.edu/api/"
+    },
+    {
+      "name": "FireHOL IP Lists ",
+      "category": "IP & MAC Address / Blacklists",
+      "url": "http://iplists.firehol.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://iplists.firehol.org/"
+    },
+    {
+      "name": "Project Honey Pot",
+      "category": "IP & MAC Address / Blacklists",
+      "url": "http://www.projecthoneypot.org/list_of_ips.php",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.projecthoneypot.org/list_of_ips.php"
+    },
+    {
+      "name": "IP Fingerprints - Reverse IP Lookup",
+      "category": "IP & MAC Address / Neighbor Domains",
+      "url": "http://www.ipfingerprints.com/reverseip.php",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ipfingerprints.com/reverseip.php"
+    },
+    {
+      "name": "TCP/IP Utils - Domain Neighbors",
+      "category": "IP & MAC Address / Neighbor Domains",
+      "url": "https://dnslytics.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://dnslytics.com/"
+    },
+    {
+      "name": "MyIPNeighbors",
+      "category": "IP & MAC Address / Neighbor Domains",
+      "url": "http://www.my-ip-neighbors.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.my-ip-neighbors.com/"
+    },
+    {
+      "name": "CloudFlare Watch",
+      "category": "IP & MAC Address / Protected by Cloud Services",
+      "url": "http://www.crimeflare.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://crimeflare.com/"
+    },
+    {
+      "name": "WiGLE: Wireless Network Mapping",
+      "category": "IP & MAC Address / Wireless Network Info",
+      "url": "https://wigle.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://wigle.net/"
+    },
+    {
+      "name": "OpenCellid: Database of Cell Towers",
+      "category": "IP & MAC Address / Wireless Network Info",
+      "url": "https://opencellid.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://opencellid.org/"
+    },
+    {
+      "name": "Wireshark",
+      "category": "IP & MAC Address / Network Analysis Tools",
+      "url": "https://www.wireshark.org/download.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.wireshark.org/download.html"
+    },
+    {
+      "name": "NetworkMiner",
+      "category": "IP & MAC Address / Network Analysis Tools",
+      "url": "https://www.netresec.com/?page=Networkminer",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.netresec.com/?page=Networkminer"
+    },
+    {
+      "name": "NetworkTotal",
+      "category": "IP & MAC Address / Network Analysis Tools",
+      "url": "https://www.networktotal.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.networktotal.com/"
+    },
+    {
+      "name": "Grabify",
+      "category": "IP & MAC Address / IP Loggers",
+      "url": "https://grabify.link",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://grabify.link/"
+    },
+    {
+      "name": "IP Logger",
+      "category": "IP & MAC Address / IP Loggers",
+      "url": "https://iplogger.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://iplogger.com/"
+    },
+    {
+      "name": "Google Images",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "https://images.google.com/?gws_rd=ssl",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://images.google.com/?gws_rd=ssl"
+    },
+    {
+      "name": "Bing Images",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "http://www.bing.com/images",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.bing.com/images"
+    },
+    {
+      "name": "FaceCheck Facial Recognition Search",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "https://facecheck.id/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://facecheck.id/"
+    },
+    {
+      "name": "TinEye Reverse Image Search",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "http://tineye.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://tineye.com/"
+    },
+    {
+      "name": "PimEyes Face Search Engine",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "https://pimeyes.com/en",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://pimeyes.com/en"
+    },
+    {
+      "name": "Yandex Images",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "https://www.yandex.com/images/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.yandex.com/images/"
+    },
+    {
+      "name": "Baidu Images",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "http://shitu.baidu.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://graph.baidu.com/pcpage/index?tpl_from=pc"
+    },
+    {
+      "name": "Imgur Search",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "https://imgur.com/search",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://imgur.com/search"
+    },
+    {
+      "name": "Photobucket",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "http://photobucket.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://photobucket.com/"
+    },
+    {
+      "name": "Karma Decay",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "http://karmadecay.com/",
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: karmadecay.com:80, timeout: 10000ms)"
+    },
+    {
+      "name": "7Photos.net",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "http://7photos.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://7photos.net/"
+    },
+    {
+      "name": "Current Location",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "http://current-location.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://current-location.com/"
+    },
+    {
+      "name": "Lakako Photo Search",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "http://www.lakako.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.lakako.com/"
+    },
+    {
+      "name": "CC Search",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "https://ccsearch.creativecommons.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://search.creativecommons.org/"
+    },
+    {
+      "name": "SmugMug Search",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "https://www.smugmug.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.smugmug.com/"
+    },
+    {
+      "name": "ImageNet",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "http://image-net.org/",
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: image-net.org:80, timeout: 10000ms)"
+    },
+    {
+      "name": "Places2",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "http://places2.csail.mit.edu/explore.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://places2.csail.mit.edu/explore.html"
+    },
+    {
+      "name": "Image Identification Project",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "https://www.imageidentify.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.imageidentify.com/"
+    },
+    {
+      "name": "SauceNAO",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "https://saucenao.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://saucenao.com/"
+    },
+    {
+      "name": "Picarta",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "https://picarta.ai/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://picarta.ai/"
+    },
+    {
+      "name": "FaceSeek Face Search Engine",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "https://faceseek.online",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.faceseek.online/"
+    },
+    {
+      "name": "Google Lens",
+      "category": "Images / Videos / Docs / Images / Search",
+      "url": "https://lens.google.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.google.com/?olud"
+    },
+    {
+      "name": "Instagram",
+      "category": "Images / Videos / Docs / Images / Instagram",
+      "url": "https://www.instagram.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.instagram.com/"
+    },
+    {
+      "name": "Imgrab",
+      "category": "Images / Videos / Docs / Images / Instagram",
+      "url": "https://imgrab.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.imgrab.com/"
+    },
+    {
+      "name": "Flickr",
+      "category": "Images / Videos / Docs / Images / Flickr",
+      "url": "https://www.flickr.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.flickr.com/"
+    },
+    {
+      "name": "Flickr Map",
+      "category": "Images / Videos / Docs / Images / Flickr",
+      "url": "https://www.flickr.com/map/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.flickr.com/map/"
+    },
+    {
+      "name": "My Pics Map",
+      "category": "Images / Videos / Docs / Images / Flickr",
+      "url": "http://www.mypicsmap.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.mypicsmap.com/"
+    },
+    {
+      "name": "Flickr Hive Mind",
+      "category": "Images / Videos / Docs / Images / Flickr",
+      "url": "http://flickrhivemind.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://flickrhivemind.net/"
+    },
+    {
+      "name": "ExifEditor",
+      "category": "Images / Videos / Docs / Images / Metadata",
+      "url": "https://exifeditor.io",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://exifeditor.io/"
+    },
+    {
+      "name": "Jeffrey's Exif Viewer",
+      "category": "Images / Videos / Docs / Images / Metadata",
+      "url": "http://exif.regex.info/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://exif.regex.info/"
+    },
+    {
+      "name": "ExifViewer",
+      "category": "Images / Videos / Docs / Images / Metadata",
+      "url": "http://www.exifviewer.org/",
+      "status": "moved",
+      "reason": "redirects to sgp2.clck1.tclckrlu.com",
+      "finalUrl": "https://sgp2.clck1.tclckrlu.com/c?id=509b966b-7f90-4f07-b0f7-27d2ea29e019&t=K1ZQ6-lLuctADeOFlMmBLhCp_sbGfN6xWIOPRVKqgQDGa0ZO0eC2d_7b3MU0sAKb-v3eqmC-6ey4bYtIbA2GBJX1Aqb3M1_3_QhTKSWn3c_twOn7JxF88a1CKDz8aDGP3XRHyB_rqij71MotIBUdPi4VcPPAELWdOIzB4-fG1KDW0x22BfNFHaKj5MmrzFjFodK8vk5QwGwj2-uk4wBhoLDhXrPxub1ouGuHT8J3ZYdb1GFmlehCmTWSWDM3icKtxw6a3DrR8eEDpStOWKJZWFScPvXNl8b0Oyt6Cbb07Rs9tjozc8fBlwWGvwhGClpwD-lxx4Evl5GFDLzNR7KMBVFeLGEnIfir8PTqUyaAOOt-COmFcyUb3yUqvLA-GNKvRkW0SycrIxPLLa10Zs4NXIm9thejXyQQpK6wKhnL8Tk0ahClMdxsSee-0lhH2_5EDKzWYcBUxzEr5mfR4aMVb6YrlY20yn7-mtPWcH6XD2MuplRwPC2TxD27rm3RQYDC9yxXy1sNI_-5tq2Lj-0An0tlAYJ7O277Q_BkRbZJuNNKYNqXi9vvbjTAJWju2kk0ueg2y8LmoDAUZFcDOC0xQtK1VIOO2YoPek9RWfl3BRDugGoeFj_oInC2bYaaRcF8CIddBLYRbR3SvYMRB7KVLpDiHyUQP1gfz_F5MVeQImclW-47TD5TYoeEUtqcMqPhXlg3jRmcO2ELPdd8W02E7KAaqnQVxsyc4D2Bos8iIitK37d-ZY9dC4FIQX-v0x_6GH6cjc_v61PUbEFYrsyM00pE8wHbHuT7AJIvB8lrm47g_Jx4Iv3vjRv5JWrmMUuGdP0AtN6JMMBIrpFKGWNW4UDODJ2Tgki4sO_VUN4yKXfmGeNz5AV3BmQC8YFpofAS9P7M-ge-eDmgeeJQNhcGwpIfsELdz9PC"
+    },
+    {
+      "name": "Search by Exif",
+      "category": "Images / Videos / Docs / Images / Metadata",
+      "url": "http://www.exif-search.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.exif-search.com/"
+    },
+    {
+      "name": "ImgOps",
+      "category": "Images / Videos / Docs / Images / Metadata",
+      "url": "http://imgops.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://imgops.com/"
+    },
+    {
+      "name": "Metapicz",
+      "category": "Images / Videos / Docs / Images / Metadata",
+      "url": "http://metapicz.com/#landing",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://metapicz.com/"
+    },
+    {
+      "name": "GeoSetter",
+      "category": "Images / Videos / Docs / Images / Metadata",
+      "url": "http://www.geosetter.de/en/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://geosetter.de/en/main-en/"
+    },
+    {
+      "name": "FotoForensics",
+      "category": "Images / Videos / Docs / Images / Forensics",
+      "url": "http://fotoforensics.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://fotoforensics.com/"
+    },
+    {
+      "name": "Forensically",
+      "category": "Images / Videos / Docs / Images / Forensics",
+      "url": "https://29a.ch/photo-forensics/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://29a.ch/photo-forensics/"
+    },
+    {
+      "name": "InVID-WeVerify plugin",
+      "category": "Images / Videos / Docs / Images / Forensics",
+      "url": "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/",
+      "status": "error",
+      "reason": "AbortError: This operation was aborted"
+    },
+    {
+      "name": "ExifTool",
+      "category": "Images / Videos / Docs / Images / Forensics",
+      "url": "https://exiftool.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://exiftool.org/"
+    },
+    {
+      "name": "i2OCR",
+      "category": "Images / Videos / Docs / Images / OCR",
+      "url": "http://www.i2ocr.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.i2ocr.com/"
+    },
+    {
+      "name": "New OCR",
+      "category": "Images / Videos / Docs / Images / OCR",
+      "url": "https://www.newocr.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.newocr.com/"
+    },
+    {
+      "name": "Online OCR",
+      "category": "Images / Videos / Docs / Images / OCR",
+      "url": "http://www.onlineocr.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.onlineocr.net/"
+    },
+    {
+      "name": "Google Videos",
+      "category": "Images / Videos / Docs / Videos / Search",
+      "url": "https://www.google.com/videohp?gws_rd=ssl",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.google.com/videohp?gws_rd=ssl"
+    },
+    {
+      "name": "Bing Videos",
+      "category": "Images / Videos / Docs / Videos / Search",
+      "url": "http://www.bing.com/videos",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.bing.com/videos"
+    },
+    {
+      "name": "Vimeo Search",
+      "category": "Images / Videos / Docs / Videos / Search",
+      "url": "https://vimeo.com/search?",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://vimeo.com/search?"
+    },
+    {
+      "name": "Internet Archive Videos",
+      "category": "Images / Videos / Docs / Videos / Search",
+      "url": "https://archive.org/details/opensource_movies",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://archive.org/details/opensource_movies"
+    },
+    {
+      "name": "Dogpile Web Search",
+      "category": "Images / Videos / Docs / Videos / Search",
+      "url": "http://www.dogpile.com/",
+      "status": "ok",
+      "reason": "HTTP 202",
+      "finalUrl": "https://www.dogpile.com/"
+    },
+    {
+      "name": "Geo Search Tool",
+      "category": "Images / Videos / Docs / Videos / Search",
+      "url": "http://www.geosearchtool.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.geosearchtool.com/"
+    },
+    {
+      "name": "Yahoo Video Search",
+      "category": "Images / Videos / Docs / Videos / Search",
+      "url": "http://video.search.yahoo.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://video.search.yahoo.com/"
+    },
+    {
+      "name": "DetURL",
+      "category": "Images / Videos / Docs / Videos / Analyze / Record",
+      "url": "http://deturl.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://deturl.com/"
+    },
+    {
+      "name": "YouTube Metadata",
+      "category": "Images / Videos / Docs / Videos / Analyze / Record",
+      "url": "http://www.amnestyusa.org/citizenevidence/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.amnestyusa.org/citizenevidence/"
+    },
+    {
+      "name": "TubeChop",
+      "category": "Images / Videos / Docs / Videos / Analyze / Record",
+      "url": "http://www.tubechop.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://tubechop.com/"
+    },
+    {
+      "name": "YouTube Data Tools",
+      "category": "Images / Videos / Docs / Videos / Analyze / Record",
+      "url": "https://ytdt.digitalmethods.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ytdt.digitalmethods.net/"
+    },
+    {
+      "name": "yasiv-youtube",
+      "category": "Images / Videos / Docs / Videos / Analyze / Record",
+      "url": "https://yasiv.com/youtube",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://yasiv.com/youtube/"
+    },
+    {
+      "name": "Insecam",
+      "category": "Images / Videos / Docs / Webcams",
+      "url": "http://insecam.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://insecam.org/"
+    },
+    {
+      "name": "EarthCam",
+      "category": "Images / Videos / Docs / Webcams",
+      "url": "http://www.earthcam.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.earthcam.com/"
+    },
+    {
+      "name": "Scribd",
+      "category": "Images / Videos / Docs / Documents / Search",
+      "url": "https://www.scribd.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.scribd.com/"
+    },
+    {
+      "name": "WikiLeaks Search",
+      "category": "Images / Videos / Docs / Documents / Search",
+      "url": "https://search.wikileaks.org/advanced",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://search.wikileaks.org/advanced"
+    },
+    {
+      "name": "Leaked Cables",
+      "category": "Images / Videos / Docs / Documents / Search",
+      "url": "https://search.wikileaks.org/plusd/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://search.wikileaks.org/plusd/"
+    },
+    {
+      "name": "Just Paste It",
+      "category": "Images / Videos / Docs / Documents / Paste Sites",
+      "url": "https://justpaste.it/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://justpaste.it/"
+    },
+    {
+      "name": "What The Font",
+      "category": "Images / Videos / Docs / Fonts",
+      "url": "https://www.myfonts.com/WhatTheFont/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.myfonts.com/pages/whatthefont"
+    },
+    {
+      "name": "Font Squirrel",
+      "category": "Images / Videos / Docs / Fonts",
+      "url": "https://www.fontsquirrel.com/matcherator",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.fontsquirrel.com/matcherator"
+    },
+    {
+      "name": "IdentiFont",
+      "category": "Images / Videos / Docs / Fonts",
+      "url": "http://www.identifont.com/index.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.identifont.com/index.html"
+    },
+    {
+      "name": "Font Spring",
+      "category": "Images / Videos / Docs / Fonts",
+      "url": "https://www.fontspring.com/matcherator",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.fontspring.com/matcherator"
+    },
+    {
+      "name": "What Font Is",
+      "category": "Images / Videos / Docs / Fonts",
+      "url": "https://www.whatfontis.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.whatfontis.com/"
+    },
+    {
+      "name": "Recover FB Account",
+      "category": "Social Networks / Facebook / Search",
+      "url": "https://www.facebook.com/login/identify?ctx=recover",
+      "status": "error",
+      "reason": "HTTP 400",
+      "finalUrl": "https://www.facebook.com/login/identify?ctx=recover"
+    },
+    {
+      "name": "FB Lookup ID",
+      "category": "Social Networks / Facebook / Search",
+      "url": "https://lookup-id.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://lookup-id.com/"
+    },
+    {
+      "name": "FB Identify (Requires Logout)",
+      "category": "Social Networks / Facebook / Search",
+      "url": "https://www.facebook.com/login/identify",
+      "status": "error",
+      "reason": "HTTP 400",
+      "finalUrl": "https://www.facebook.com/login/identify"
+    },
+    {
+      "name": "Inflact Instagram Viewer (Anonymous)",
+      "category": "Social Networks / Instagram",
+      "url": "https://inflact.com/profiles/instagram-viewer/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://inflact.com/instagram-profile-viewer/"
+    },
+    {
+      "name": "X Advanced Search",
+      "category": "Social Networks / Twitter / Search",
+      "url": "https://x.com/search-advanced",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://x.com/i/jf/onboarding/web?redirect_after_login=%2Fsearch-advanced&mode=login"
+    },
+    {
+      "name": "TweeterID",
+      "category": "Social Networks / Twitter / Search",
+      "url": "https://tweeterid.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://tweeterid.com/"
+    },
+    {
+      "name": "Tweepsect",
+      "category": "Social Networks / Twitter / Analytics / Profile",
+      "url": "http://tweepsect.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://tweepsect.com/"
+    },
+    {
+      "name": "Twitonomy",
+      "category": "Social Networks / Twitter / Analytics / Profile",
+      "url": "http://www.twitonomy.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.twitonomy.com/"
+    },
+    {
+      "name": "Foller.me Analytics",
+      "category": "Social Networks / Twitter / Analytics / Profile",
+      "url": "https://foller.me/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://foller.me/"
+    },
+    {
+      "name": "RiteTag",
+      "category": "Social Networks / Twitter / Analytics / Hashtag",
+      "url": "https://ritetag.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ritetag.com/"
+    },
+    {
+      "name": "TAGSExplorer",
+      "category": "Social Networks / Twitter / Analytics / Hashtag",
+      "url": "https://tags.hawksey.info/tagsexplorer/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://tags.hawksey.info/tagsexplorer/"
+    },
+    {
+      "name": "GeoSocial Footprint",
+      "category": "Social Networks / Twitter / Location / Mapping",
+      "url": "http://geosocialfootprint.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://geosocialfootprint.com/"
+    },
+    {
+      "name": "Fedica",
+      "category": "Social Networks / Twitter / Location / Mapping",
+      "url": "https://fedica.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://fedica.com/"
+    },
+    {
+      "name": "Reddit Metis",
+      "category": "Social Networks / Reddit",
+      "url": "https://redditmetis.com/#",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://redditmetis.com/"
+    },
+    {
+      "name": "subreddits",
+      "category": "Social Networks / Reddit",
+      "url": "http://subreddits.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://subreddits.org/"
+    },
+    {
+      "name": "Reddit Comment History",
+      "category": "Social Networks / Reddit",
+      "url": "https://roadtolarissa.com/javascript/reddit-comment-visualizer/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://roadtolarissa.com/javascript/reddit-comment-visualizer/"
+    },
+    {
+      "name": "TikTok Viewer",
+      "category": "Social Networks / Tiktok",
+      "url": "https://urlebird.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://urlebird.com/"
+    },
+    {
+      "name": "Myspace",
+      "category": "Social Networks / Other Social Networks",
+      "url": "https://myspace.com/",
+      "status": "error",
+      "reason": "AbortError: This operation was aborted"
+    },
+    {
+      "name": "TheHoodUp (NSFW)",
+      "category": "Social Networks / Other Social Networks",
+      "url": "http://thehoodup.com/board/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://thehoodup.com/board/"
+    },
+    {
+      "name": "MiGente (Latino)",
+      "category": "Social Networks / Other Social Networks",
+      "url": "http://www.migente.com/user_search/index.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://migente.com/wp-login.php?redirect_to=https%3A%2F%2Fmigente.com%2Fuser_search%2Findex.html&bp-auth=1&action=bpnoaccess"
+    },
+    {
+      "name": "Odnoklassniki",
+      "category": "Social Networks / Other Social Networks",
+      "url": "http://ok.ru/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ok.ru/"
+    },
+    {
+      "name": "VK",
+      "category": "Social Networks / Other Social Networks",
+      "url": "https://vk.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://vk.com/"
+    },
+    {
+      "name": "TikTok",
+      "category": "Social Networks / Other Social Networks",
+      "url": "https://www.tiktok.com/@{target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.tiktok.com/@johndoe"
+    },
+    {
+      "name": "Bluesky profile",
+      "category": "Social Networks / Other Social Networks",
+      "url": "https://bsky.app/profile/{target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://bsky.app/profile/johndoe"
+    },
+    {
+      "name": "Threads profile",
+      "category": "Social Networks / Other Social Networks",
+      "url": "https://www.threads.net/@{target}",
+      "status": "moved",
+      "reason": "redirects to www.threads.com",
+      "finalUrl": "https://www.threads.com/@johndoe"
+    },
+    {
+      "name": "Mastodon search",
+      "category": "Social Networks / Other Social Networks",
+      "url": "https://mastodon.social/search?q={target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://mastodon.social/search?q=test"
+    },
+    {
+      "name": "Social Searcher",
+      "category": "Social Networks / Search",
+      "url": "http://www.social-searcher.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.social-searcher.com/"
+    },
+    {
+      "name": "SocialBlade.com",
+      "category": "Social Networks / Search",
+      "url": "http://socialblade.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://socialblade.com/"
+    },
+    {
+      "name": "PinGroupie",
+      "category": "Social Networks / Search",
+      "url": "http://pingroupie.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://pingroupie.com/"
+    },
+    {
+      "name": "Google CSE for Telegram links",
+      "category": "Social Networks / Search",
+      "url": "https://cse.google.com/cse?cx=006368593537057042503:efxu7xprihg",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://cse.google.com/cse?cx=006368593537057042503:efxu7xprihg"
+    },
+    {
+      "name": "TGStat",
+      "category": "Instant Messaging / Telegram",
+      "url": "https://tgstat.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://tgstat.com/"
+    },
+    {
+      "name": "Telemetr.io",
+      "category": "Instant Messaging / Telegram",
+      "url": "https://telemetr.io/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://telemetr.io/"
+    },
+    {
+      "name": "Family Tree Now",
+      "category": "People Search Engines / General People Search",
+      "url": "http://www.familytreenow.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.familytreenow.com/"
+    },
+    {
+      "name": "CyberBackgroundChecks",
+      "category": "People Search Engines / General People Search",
+      "url": "https://www.cyberbackgroundchecks.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.cyberbackgroundchecks.com/"
+    },
+    {
+      "name": "InfoFlow Public People Search In Chilean",
+      "category": "People Search Engines / General People Search",
+      "url": "https://infoflow.cloud/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://infoflow.cloud/"
+    },
+    {
+      "name": "ThatsThem",
+      "category": "People Search Engines / General People Search",
+      "url": "https://thatsthem.com/name-address-search",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://thatsthem.com/name-address-search"
+    },
+    {
+      "name": "Zaba Search",
+      "category": "People Search Engines / General People Search",
+      "url": "http://www.zabasearch.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.zabasearch.com/"
+    },
+    {
+      "name": "USSearch.com",
+      "category": "People Search Engines / General People Search",
+      "url": "http://www.ussearch.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.ussearch.com/"
+    },
+    {
+      "name": "Advanced Background Checks",
+      "category": "People Search Engines / General People Search",
+      "url": "https://www.advancedbackgroundchecks.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.advancedbackgroundchecks.com/"
+    },
+    {
+      "name": "PeekYou",
+      "category": "People Search Engines / General People Search",
+      "url": "http://www.peekyou.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.peekyou.com/"
+    },
+    {
+      "name": "Wink People Search",
+      "category": "People Search Engines / General People Search",
+      "url": "http://itools.com/tool/wink-people-search",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://itools.com/tool/wink-people-search"
+    },
+    {
+      "name": "Radaris",
+      "category": "People Search Engines / General People Search",
+      "url": "http://radaris.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://radaris.com/"
+    },
+    {
+      "name": "Intelius",
+      "category": "People Search Engines / General People Search",
+      "url": "http://www.intelius.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.intelius.com/"
+    },
+    {
+      "name": "InfoSpace",
+      "category": "People Search Engines / General People Search",
+      "url": "http://infospace.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://infospace.com/"
+    },
+    {
+      "name": "Webmii",
+      "category": "People Search Engines / General People Search",
+      "url": "http://webmii.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://webmii.com/"
+    },
+    {
+      "name": "Snitch.name",
+      "category": "People Search Engines / General People Search",
+      "url": "http://snitch.name/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://snitch.name/"
+    },
+    {
+      "name": "Yasni",
+      "category": "People Search Engines / General People Search",
+      "url": "http://www.yasni.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.yasni.com/"
+    },
+    {
+      "name": "findmypast.com",
+      "category": "People Search Engines / General People Search",
+      "url": "http://search.findmypast.com/search-world-records",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://search.findmypast.com/search-world-records"
+    },
+    {
+      "name": "HowManyOfMe",
+      "category": "People Search Engines / General People Search",
+      "url": "http://howmanyofme.com/search/",
+      "status": "error",
+      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN howmanyofme.com"
+    },
+    {
+      "name": "FamilySearch.org",
+      "category": "People Search Engines / General People Search",
+      "url": "https://familysearch.org/search/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.familysearch.org/en/search/"
+    },
+    {
+      "name": "Ancestry.com",
+      "category": "People Search Engines / General People Search",
+      "url": "http://search.ancestry.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://search.ancestry.com/"
+    },
+    {
+      "name": "Nuwber",
+      "category": "People Search Engines / General People Search",
+      "url": "https://nuwber.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://nuwber.com/"
+    },
+    {
+      "name": "Genealogy.com",
+      "category": "People Search Engines / General People Search",
+      "url": "http://www.genealogy.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.genealogy.com/"
+    },
+    {
+      "name": "My Life",
+      "category": "People Search Engines / General People Search",
+      "url": "https://www.mylife.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.mylife.com/"
+    },
+    {
+      "name": "Addresses.com",
+      "category": "People Search Engines / General People Search",
+      "url": "http://www.addresses.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.addresses.com/"
+    },
+    {
+      "name": "Sorted By Name",
+      "category": "People Search Engines / General People Search",
+      "url": "http://sortedbyname.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://sortedbyname.com/"
+    },
+    {
+      "name": "True People Search",
+      "category": "People Search Engines / General People Search",
+      "url": "https://www.truepeoplesearch.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.truepeoplesearch.com/"
+    },
+    {
+      "name": "Fast People Search",
+      "category": "People Search Engines / General People Search",
+      "url": "https://www.fastpeoplesearch.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.fastpeoplesearch.com/"
+    },
+    {
+      "name": "IDCrawl",
+      "category": "People Search Engines / General People Search",
+      "url": "https://www.idcrawl.com/",
+      "status": "ok",
+      "reason": "HTTP 202",
+      "finalUrl": "https://www.idcrawl.com/"
+    },
+    {
+      "name": "The Knot",
+      "category": "People Search Engines / Registries",
+      "url": "https://www.theknot.com/registry/couplesearch",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.theknot.com/registry/couplesearch"
+    },
+    {
+      "name": "Registry Finder",
+      "category": "People Search Engines / Registries",
+      "url": "https://www.registryfinder.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://registryfinder.com/"
+    },
+    {
+      "name": "My Registry",
+      "category": "People Search Engines / Registries",
+      "url": "https://www.myregistry.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.myregistry.com/us/en/"
+    },
+    {
+      "name": "The Bump",
+      "category": "People Search Engines / Registries",
+      "url": "https://registry.thebump.com/babyregistrysearch",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://registry.thebump.com/babyregistrysearch"
+    },
+    {
+      "name": "Match.com",
+      "category": "Dating",
+      "url": "http://www.match.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.match.com/"
+    },
+    {
+      "name": "Plenty Of Fish.com",
+      "category": "Dating",
+      "url": "http://www.pof.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.pof.com/"
+    },
+    {
+      "name": "eHarmony",
+      "category": "Dating",
+      "url": "http://www.eharmony.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.eharmony.com/"
+    },
+    {
+      "name": "Farmers Only",
+      "category": "Dating",
+      "url": "http://www.farmersonly.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.farmersonly.com/"
+    },
+    {
+      "name": "Zoosk",
+      "category": "Dating",
+      "url": "https://www.zoosk.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.zoosk.com/"
+    },
+    {
+      "name": "OkCupid",
+      "category": "Dating",
+      "url": "https://www.okcupid.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.okcupid.com/"
+    },
+    {
+      "name": "Wamba.com",
+      "category": "Dating",
+      "url": "http://wamba.com/",
+      "status": "blocked",
+      "reason": "HTTP 403",
+      "finalUrl": "https://wamba.com/"
+    },
+    {
+      "name": "AdultFriendFinder",
+      "category": "Dating",
+      "url": "http://adultfriendfinder.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://adultfriendfinder.com/"
+    },
+    {
+      "name": "Ashley Madison",
+      "category": "Dating",
+      "url": "https://www.ashleymadison.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.ashleymadison.com/"
+    },
+    {
+      "name": "Badoo",
+      "category": "Dating",
+      "url": "https://badoo.us/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://badoo.us/"
+    },
+    {
+      "name": "Spark.com",
+      "category": "Dating",
+      "url": "https://www.spark.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.spark.com/"
+    },
+    {
+      "name": "Meetup",
+      "category": "Dating",
+      "url": "http://www.meetup.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.meetup.com/"
+    },
+    {
+      "name": "BlackPeopleMeet",
+      "category": "Dating",
+      "url": "http://www.blackpeoplemeet.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.blackpeoplemeet.com/"
+    },
+    {
+      "name": "Bumble",
+      "category": "Dating",
+      "url": "https://bumble.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://bumble.com/"
+    },
+    {
+      "name": "Hinge",
+      "category": "Dating",
+      "url": "https://hinge.co/en-gb",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://hinge.co/en-gb"
+    },
+    {
+      "name": "Slydial",
+      "category": "Telephone Numbers / Voicemail",
+      "url": "https://www.slydial.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.slydial.com/"
+    },
+    {
+      "name": "Numbering Plans",
+      "category": "Telephone Numbers / International",
+      "url": "https://www.numberingplans.com/?page=analysis&sub=phonenr",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.numberingplans.com/?page=analysis&sub=phonenr"
+    },
+    {
+      "name": "411",
+      "category": "Telephone Numbers",
+      "url": "http://www.411.com/reverse_phone",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.411.com/reverse-phone-lookup"
+    },
+    {
+      "name": "CallerID Test",
+      "category": "Telephone Numbers",
+      "url": "http://www.calleridtest.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://calleridtest.com/"
+    },
+    {
+      "name": "ThatsThem - Reverse Phone Lookup",
+      "category": "Telephone Numbers",
+      "url": "https://thatsthem.com/reverse-phone-lookup",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://thatsthem.com/reverse-phone-lookup"
+    },
+    {
+      "name": "Twilio Lookup",
+      "category": "Telephone Numbers",
+      "url": "https://www.twilio.com/lookup",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.twilio.com/en-us/user-authentication-identity/lookup"
+    },
+    {
+      "name": "Fone Finder",
+      "category": "Telephone Numbers",
+      "url": "http://www.fonefinder.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.fonefinder.net/"
+    },
+    {
+      "name": "True Caller",
+      "category": "Telephone Numbers",
+      "url": "http://www.truecaller.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.truecaller.com/"
+    },
+    {
+      "name": "SpyDialer",
+      "category": "Telephone Numbers",
+      "url": "http://www.spydialer.com/default.aspx",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.spydialer.com/default.aspx"
+    },
+    {
+      "name": "Phone Validator",
+      "category": "Telephone Numbers",
+      "url": "http://www.phonevalidator.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.phonevalidator.com/"
+    },
+    {
+      "name": "Free Carrier Lookup",
+      "category": "Telephone Numbers",
+      "url": "http://freecarrierlookup.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://freecarrierlookup.com/"
+    },
+    {
+      "name": "OpenCNAM",
+      "category": "Telephone Numbers",
+      "url": "https://www.opencnam.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.home.neustar/trusted-call-solutions/caller-name-services"
+    },
+    {
+      "name": "USPhoneBook",
+      "category": "Telephone Numbers",
+      "url": "https://www.usphonebook.com",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.usphonebook.com/"
+    },
+    {
+      "name": "Family Tree Now (phone)",
+      "category": "Telephone Numbers",
+      "url": "https://www.familytreenow.com/search/genealogy/results?phoneno={target}",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.familytreenow.com/search/genealogy/results?phoneno=15555550123"
+    },
+    {
+      "name": "Regrid (US Only)",
+      "category": "Public Records / Property Records",
+      "url": "https://app.regrid.com/us/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://app.regrid.com/us/"
+    },
+    {
+      "name": "Zillow",
+      "category": "Public Records / Property Records",
+      "url": "http://www.zillow.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.zillow.com/"
+    },
+    {
+      "name": "Homefacts",
+      "category": "Public Records / Property Records",
+      "url": "https://www.homefacts.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.homefacts.com/"
+    },
+    {
+      "name": "Neighbor Report",
+      "category": "Public Records / Property Records",
+      "url": "https://neighbor.report/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://neighbor.report/"
+    },
+    {
+      "name": "Redfin",
+      "category": "Public Records / Property Records",
+      "url": "https://www.redfin.com/",
+      "status": "blocked",
+      "reason": "HTTP 405 (bot protection)",
+      "finalUrl": "https://www.redfin.com/"
+    },
+    {
+      "name": "Nationwide County Court Records",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "http://www.blackbookonline.info/USA-County-Court-Records.aspx",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.blackbookonline.info/USA-County-Court-Records.aspx"
+    },
+    {
+      "name": "World Legal Information Institute",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "http://worldlii.org/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://worldlii.org/"
+    },
+    {
+      "name": "Canadian Legal Information Institute",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "http://www.canlii.org/en/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.canlii.org/en/"
+    },
+    {
+      "name": "Most Wanted Criminal Pages",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "http://ancestorhunt.com/most-wanted-criminals-and-fugitives.htm",
+      "status": "error",
+      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN ancestorhunt.com"
+    },
+    {
+      "name": "Black Book Online - Criminal Search",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "http://www.blackbookonline.info/criminalsearch.aspx",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.blackbookonline.info/criminalsearch.aspx"
+    },
+    {
+      "name": "Familywatchdog - Sex Offender Search",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "http://www.familywatchdog.us/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.familywatchdog.us/"
+    },
+    {
+      "name": "Felon Spy",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "http://www.felonspy.com/search.html",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://sawsells.com/domain/hoax.com"
+    },
+    {
+      "name": "The Inmate Locator",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "http://www.theinmatelocator.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://theinmatelocator.com/"
+    },
+    {
+      "name": "Criminal Searches",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "http://www.criminalsearches.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.peoplefinders.com/"
+    },
+    {
+      "name": "National Sex Offender Search",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "https://www.nsopw.gov/en/Search",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.nsopw.gov/search-public-sex-offender-registries?search="
+    },
+    {
+      "name": "Mugshots.com",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "http://mugshots.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://mugshots.com/"
+    },
+    {
+      "name": "judyrecords",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "https://www.judyrecords.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.judyrecords.com/"
+    },
+    {
+      "name": "Caselaw Access Project",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "https://case.law/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://case.law/"
+    },
+    {
+      "name": "CourtListener",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "https://www.courtlistener.com/",
+      "status": "blocked",
+      "reason": "HTTP 405 (bot protection)",
+      "finalUrl": "https://www.courtlistener.com/"
+    },
+    {
+      "name": "Docket Alarm",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "https://www.docketalarm.com/",
+      "status": "blocked",
+      "reason": "HTTP 403",
+      "finalUrl": "https://www.docketalarm.com/"
+    },
+    {
+      "name": "Google Scholar Case Law",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "https://scholar.google.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://scholar.google.com/"
+    },
+    {
+      "name": "PACER",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "https://pacer.uscourts.gov/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://pacer.uscourts.gov/"
+    },
+    {
+      "name": "Free Law RECAP Archive",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "https://www.courtlistener.com/recap/",
+      "status": "blocked",
+      "reason": "HTTP 405 (bot protection)",
+      "finalUrl": "https://www.courtlistener.com/recap/"
+    },
+    {
+      "name": "UniCourt",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "https://unicourt.com/",
+      "status": "blocked",
+      "reason": "HTTP 405 (bot protection)",
+      "finalUrl": "https://unicourt.com/"
+    },
+    {
+      "name": "Federal Inmate Locator",
+      "category": "Public Records / Court / Criminal Records",
+      "url": "https://www.bop.gov/inmateloc/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.bop.gov/inmateloc/"
+    },
+    {
+      "name": "NC Salary DB",
+      "category": "Public Records / Government Records",
+      "url": "http://www.newsobserver.com/news/databases/state-pay/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.newsobserver.com/news/databases/state-pay/"
+    },
+    {
+      "name": "CA Salary DB",
+      "category": "Public Records / Government Records",
+      "url": "http://www.sacbee.com/site-services/databases/state-pay/article2642161.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.sacbee.com/news/databases/state-pay/article229468549.html"
+    },
+    {
+      "name": "BIN Base",
+      "category": "Public Records / Financial / Tax Resources",
+      "url": "http://www.binbase.com/search.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.binbase.com/search.html"
+    },
+    {
+      "name": "VAT Research",
+      "category": "Public Records / Financial / Tax Resources",
+      "url": "https://vat-search.eu/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://vat-search.eu/"
+    },
+    {
+      "name": "NETR Online",
+      "category": "Public Records / Financial / Tax Resources",
+      "url": "http://publicrecords.netronline.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://publicrecords.netronline.com/"
+    },
+    {
+      "name": "Sorted by Birth Date",
+      "category": "Public Records / Birth Records",
+      "url": "http://sortedbybirthdate.com/",
+      "status": "error",
+      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN sortedbybirthdate.com"
+    },
+    {
+      "name": "Find A Grave",
+      "category": "Public Records / Death Records",
+      "url": "http://www.findagrave.com/index.html",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.findagrave.com/index.html"
+    },
+    {
+      "name": "GraveInfo",
+      "category": "Public Records / Death Records",
+      "url": "http://www.graveinfo.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.graveinfo.com/"
+    },
+    {
+      "name": "NACo County Explorer",
+      "category": "Public Records / US County Data",
+      "url": "http://explorer.naco.org/index.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://explorer.naco.org/index.html"
+    },
+    {
+      "name": "Voter Records",
+      "category": "Public Records / US Voter Records",
+      "url": "https://voterrecords.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://voterrecords.com/"
+    },
+    {
+      "name": "Voter Registration Data",
+      "category": "Public Records / US Voter Records",
+      "url": "http://www.blackbookonline.info/USA-Voter-Records.aspx",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.blackbookonline.info/USA-Voter-Records.aspx"
+    },
+    {
+      "name": "US Patent Office Search",
+      "category": "Public Records / Patent Records",
+      "url": "https://www.uspto.gov/patents/search",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.uspto.gov/patents/search"
+    },
+    {
+      "name": "Google Patent Search",
+      "category": "Public Records / Patent Records",
+      "url": "https://www.google.com/advanced_patent_search",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://patents.google.com/advanced"
+    },
+    {
+      "name": "FollowTheMoney.org",
+      "category": "Public Records / US Political Records",
+      "url": "http://www.followthemoney.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.followthemoney.org/"
+    },
+    {
+      "name": "OpenSecrets.org",
+      "category": "Public Records / US Political Records",
+      "url": "http://www.opensecrets.org/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.opensecrets.org/"
+    },
+    {
+      "name": "US Federal Election Commission",
+      "category": "Public Records / US Political Records",
+      "url": "http://www.fec.gov/finance/disclosure/norindsea.shtml",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.fec.gov/data/"
+    },
+    {
+      "name": "Public Records?",
+      "category": "Public Records",
+      "url": "http://publicrecords.searchsystems.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.searchsystems.net/"
+    },
+    {
+      "name": "The World Bank Open Data Catalog",
+      "category": "Public Records",
+      "url": "http://datacatalog.worldbank.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://datacatalog.worldbank.org/"
+    },
+    {
+      "name": "BRB Public Records",
+      "category": "Public Records",
+      "url": "http://www.brbpub.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.brbpub.com/"
+    },
+    {
+      "name": "GOVDATA - Das Datenportal für Deutschland (German)",
+      "category": "Public Records",
+      "url": "https://www.govdata.de/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.govdata.de/"
+    },
+    {
+      "name": "Open-Data-Portal München (German)",
+      "category": "Public Records",
+      "url": "https://opendata.muenchen.de/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://opendata.muenchen.de/"
+    },
+    {
+      "name": "Searchable FCC ID Database",
+      "category": "Public Records",
+      "url": "https://fccid.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://fccid.io/"
+    },
+    {
+      "name": "AnnualReports.com",
+      "category": "Business Records / Annual Reports",
+      "url": "http://www.annualreports.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.annualreports.com/"
+    },
+    {
+      "name": "Public Register Online",
+      "category": "Business Records / Annual Reports",
+      "url": "http://www.annualreportservice.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.annualreportservice.com/"
+    },
+    {
+      "name": "Public Register's Annual Report Service",
+      "category": "Business Records / Annual Reports",
+      "url": "http://www.prars.com/search/alpha/A",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.prars.com/search/alpha/A"
+    },
+    {
+      "name": "International Registries",
+      "category": "Business Records / Annual Reports",
+      "url": "https://www.gov.uk/government/publications/overseas-registries/overseas-registries",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.gov.uk/government/publications/overseas-registries/overseas-registries"
+    },
+    {
+      "name": "Corporation Wiki",
+      "category": "Business Records / General Info & News",
+      "url": "http://www.corporationwiki.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.corporationwiki.com/"
+    },
+    {
+      "name": "Commercial Register - Worldwide",
+      "category": "Business Records / General Info & News",
+      "url": "http://www.commercial-register.sg.ch/home/worldwide.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.sg.ch/recht/handelsregister-notariate.html"
+    },
+    {
+      "name": "SEC.gov - EDGAR",
+      "category": "Business Records / General Info & News",
+      "url": "http://www.sec.gov/edgar.shtml",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.sec.gov/submit-filings"
+    },
+    {
+      "name": "International White Pages",
+      "category": "Business Records / General Info & News",
+      "url": "http://www.wayp.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.wayp.com/"
+    },
+    {
+      "name": "UK Companies",
+      "category": "Business Records / General Info & News",
+      "url": "https://www.gov.uk/get-information-about-a-company",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.gov.uk/get-information-about-a-company"
+    },
+    {
+      "name": "Global EDGE Resource Directory",
+      "category": "Business Records / General Info & News",
+      "url": "http://globaledge.msu.edu/global-resources",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://globaledge.msu.edu/global-resources"
+    },
+    {
+      "name": "Ripoff Report",
+      "category": "Business Records / General Info & News",
+      "url": "http://www.ripoffreport.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.ripoffreport.com/"
+    },
+    {
+      "name": "Google Finance",
+      "category": "Business Records / General Info & News",
+      "url": "https://www.google.com/finance",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.google.com/finance"
+    },
+    {
+      "name": "OpenCorporates",
+      "category": "Business Records / Company Profiles",
+      "url": "https://opencorporates.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://opencorporates.com/"
+    },
+    {
+      "name": "Corporation Wiki",
+      "category": "Business Records / Company Profiles",
+      "url": "https://www.corporationwiki.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.corporationwiki.com/"
+    },
+    {
+      "name": "Kompass International",
+      "category": "Business Records / Company Profiles",
+      "url": "http://www.kompass.com/selectcountry/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.kompass.com/selectcountry/"
+    },
+    {
+      "name": "Infobel",
+      "category": "Business Records / Company Profiles",
+      "url": "http://www.infobel.com/en/world/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.infobel.com/en/world/"
+    },
+    {
+      "name": "AIHIT",
+      "category": "Business Records / Company Profiles",
+      "url": "https://www.aihitdata.com/",
+      "status": "error",
+      "reason": "HTTP 502",
+      "finalUrl": "https://www.aihitdata.com/"
+    },
+    {
+      "name": "Buzzfile",
+      "category": "Business Records / Company Profiles",
+      "url": "http://www.buzzfile.com/Home/Basic",
+      "status": "error",
+      "reason": "HTTP 500",
+      "finalUrl": "https://www.buzzfile.com/Home/Basic"
+    },
+    {
+      "name": "LittleSis",
+      "category": "Business Records / Company Profiles",
+      "url": "http://littlesis.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://littlesis.org/"
+    },
+    {
+      "name": "Companies House",
+      "category": "Business Records / Company Profiles",
+      "url": "https://find-and-update.company-information.service.gov.uk/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://find-and-update.company-information.service.gov.uk/"
+    },
+    {
+      "name": "Hoovers",
+      "category": "Business Records / Company Profiles",
+      "url": "http://www.hoovers.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.dnb.com/en-us/products/dnb-hoovers.html"
+    },
+    {
+      "name": "Corporate Information",
+      "category": "Business Records / Company Profiles",
+      "url": "http://corporateinformation.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.corporateinformation.com/"
+    },
+    {
+      "name": "Company Data Rex (EU)",
+      "category": "Business Records / Company Profiles",
+      "url": "http://cdrex.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.cdrex.com/"
+    },
+    {
+      "name": "Europages",
+      "category": "Business Records / Company Profiles",
+      "url": "http://www.europages.co.uk/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.europages.co.uk/"
+    },
+    {
+      "name": "Glassdoor Company Reviews",
+      "category": "Business Records / Company Profiles",
+      "url": "https://www.glassdoor.com/Reviews/index.htm",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.glassdoor.com/Reviews/index.htm"
+    },
+    {
+      "name": "Vault",
+      "category": "Business Records / Company Profiles",
+      "url": "http://www.vault.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://vault.com/"
+    },
+    {
+      "name": "Companies In The UK",
+      "category": "Business Records / Company Profiles",
+      "url": "https://www.companiesintheuk.co.uk/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.companiesintheuk.co.uk/"
+    },
+    {
+      "name": "UK Companies list",
+      "category": "Business Records / Company Profiles",
+      "url": "https://www.companieslist.co.uk/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.companieslist.co.uk/"
+    },
+    {
+      "name": "UK Data",
+      "category": "Business Records / Company Profiles",
+      "url": "http://ukdata.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ukdata.com/"
+    },
+    {
+      "name": "Manta Small Business Directory",
+      "category": "Business Records / Company Profiles",
+      "url": "https://www.manta.com/business-directory",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.manta.com/business-directory"
+    },
+    {
+      "name": "Crunchbase",
+      "category": "Business Records / Company Profiles",
+      "url": "https://www.crunchbase.com/#/home/index",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.crunchbase.com/"
+    },
+    {
+      "name": "RecruitEm",
+      "category": "Business Records / Employee Profiles & Resumes",
+      "url": "http://recruitin.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://recruitin.net/"
+    },
+    {
+      "name": "LinkedIn",
+      "category": "Business Records / Employee Profiles & Resumes",
+      "url": "https://www.linkedin.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.linkedin.com/"
+    },
+    {
+      "name": "Indeed",
+      "category": "Business Records / Employee Profiles & Resumes",
+      "url": "http://www.indeed.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.indeed.com/"
+    },
+    {
+      "name": "RBA - Business Information Resources",
+      "category": "Business Records / Additional Resources",
+      "url": "http://www.rba.co.uk/sources/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.rba.co.uk/sources/"
+    },
+    {
+      "name": "VAT Number Validation",
+      "category": "Business Records / Additional Resources",
+      "url": "http://ec.europa.eu/taxation_customs/vies/?locale=en",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ec.europa.eu/taxation_customs/vies/?locale=en"
+    },
+    {
+      "name": "OpenSanctions",
+      "category": "Business Records / Sanctions & Leaks",
+      "url": "https://www.opensanctions.org/search/?q={target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.opensanctions.org/search/?q=test"
+    },
+    {
+      "name": "OCCRP Aleph",
+      "category": "Business Records / Sanctions & Leaks",
+      "url": "https://aleph.occrp.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://aleph.occrp.org/"
+    },
+    {
+      "name": "ICIJ Offshore Leaks",
+      "category": "Business Records / Sanctions & Leaks",
+      "url": "https://offshoreleaks.icij.org/search?q={target}",
+      "status": "ok",
+      "reason": "HTTP 202",
+      "finalUrl": "https://offshoreleaks.icij.org/search?q=test"
+    },
+    {
+      "name": "GLEIF LEI Search",
+      "category": "Business Records / Sanctions & Leaks",
+      "url": "https://search.gleif.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://search.gleif.org/"
+    },
+    {
+      "name": "OpenCorporates officers",
+      "category": "Business Records / Sanctions & Leaks",
+      "url": "https://opencorporates.com/officers?q={target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://opencorporates.com/officers?q=test"
+    },
+    {
+      "name": "VIN Decoderz",
+      "category": "Transportation / Vehicle Records",
+      "url": "http://www.vindecoderz.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.vindecoderz.com/"
+    },
+    {
+      "name": "That's Them VIN Search",
+      "category": "Transportation / Vehicle Records",
+      "url": "https://thatsthem.com/vin-search",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://thatsthem.com/vin-search"
+    },
+    {
+      "name": "TRAVIC - Public Transportation Tracking",
+      "category": "Transportation / Vehicle Records",
+      "url": "https://mobility.portal.geops.io/world.geops.transit",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://mobility.portal.geops.io/world.geops.transit"
+    },
+    {
+      "name": "MyAccident - traffic accident map",
+      "category": "Transportation / Vehicle Records",
+      "url": "https://myaccident.org/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://myaccident.org/"
+    },
+    {
+      "name": "NHTSA Vehicle API",
+      "category": "Transportation / Vehicle Records",
+      "url": "https://vpic.nhtsa.dot.gov/api/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://vpic.nhtsa.dot.gov/api/"
+    },
+    {
+      "name": "FlightAware - Live Flight Tracker",
+      "category": "Transportation / Air Traffic Records",
+      "url": "http://flightaware.com/live/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.flightaware.com/live/"
+    },
+    {
+      "name": "Flightradar24.com",
+      "category": "Transportation / Air Traffic Records",
+      "url": "https://www.flightradar24.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.flightradar24.com/"
+    },
+    {
+      "name": "World Aeronautical Database",
+      "category": "Transportation / Air Traffic Records",
+      "url": "http://worldaerodata.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://worldaerodata.com/"
+    },
+    {
+      "name": "ADS-B Exchange",
+      "category": "Transportation / Air Traffic Records",
+      "url": "https://www.adsbexchange.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.adsbexchange.com/"
+    },
+    {
+      "name": "ADS-B.NL",
+      "category": "Transportation / Air Traffic Records",
+      "url": "https://www.ads-b.nl/index.php?pageno=9999",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.ads-b.nl/index.php?pageno=9999"
+    },
+    {
+      "name": "Marine Traffic",
+      "category": "Transportation / Marine Records",
+      "url": "http://www.marinetraffic.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.marinetraffic.com/"
+    },
+    {
+      "name": "Vessel Tracker",
+      "category": "Transportation / Marine Records",
+      "url": "https://www.vesseltracker.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.vesseltracker.com/"
+    },
+    {
+      "name": "Ship AIS",
+      "category": "Transportation / Marine Records",
+      "url": "https://shipais.uk/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://shipais.uk/"
+    },
+    {
+      "name": "OpenSeaMap - The free nautical chart",
+      "category": "Transportation / Marine Records",
+      "url": "http://www.openseamap.org",
+      "status": "blocked",
+      "reason": "HTTP 403",
+      "finalUrl": "https://openseamap.org/"
+    },
+    {
+      "name": "Vessel Finder",
+      "category": "Transportation / Marine Records",
+      "url": "https://www.vesselfinder.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.vesselfinder.com/"
+    },
+    {
+      "name": "Global Fishing Watch",
+      "category": "Transportation / Marine Records",
+      "url": "https://globalfishingwatch.org/map",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://globalfishingwatch.org/platform/map"
+    },
+    {
+      "name": "Deutsche Bahn Open-Data-Portal (German)",
+      "category": "Transportation / Railway Records",
+      "url": "http://data.deutschebahn.com/",
+      "status": "error",
+      "reason": "AbortError: This operation was aborted"
+    },
+    {
+      "name": "OpenRailwayMap",
+      "category": "Transportation / Railway Records",
+      "url": "https://www.openrailwaymap.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.openrailwaymap.org/"
+    },
+    {
+      "name": "Transportation & Train Tracking",
+      "category": "Transportation",
+      "url": "https://mobility.portal.geops.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://mobility.portal.geops.io/world.geops.transit"
+    },
+    {
+      "name": "Satellite Tracking",
+      "category": "Transportation",
+      "url": "http://www.n2yo.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.n2yo.com/"
+    },
+    {
+      "name": "Track-Trace",
+      "category": "Transportation",
+      "url": "http://www.track-trace.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.track-trace.com/"
+    },
+    {
+      "name": "Astrometry",
+      "category": "Geolocation Tools / Maps / Geolocation Tools",
+      "url": "https://nova.astrometry.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://nova.astrometry.net/"
+    },
+    {
+      "name": "SunCalc",
+      "category": "Geolocation Tools / Maps / Geolocation Tools",
+      "url": "http://suncalc.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://suncalc.net/"
+    },
+    {
+      "name": "SunCalc",
+      "category": "Geolocation Tools / Maps / Geolocation Tools",
+      "url": "http://suncalc.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.suncalc.org/"
+    },
+    {
+      "name": "Overpass Turbo",
+      "category": "Geolocation Tools / Maps / Geolocation Tools",
+      "url": "https://overpass-turbo.eu/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://overpass-turbo.eu/"
+    },
+    {
+      "name": "Bellingcat OSM Search",
+      "category": "Geolocation Tools / Maps / Geolocation Tools",
+      "url": "https://osm-search.bellingcat.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://osm-search.bellingcat.com/"
+    },
+    {
+      "name": "PeakVisor",
+      "category": "Geolocation Tools / Maps / Geolocation Tools",
+      "url": "https://peakvisor.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://peakvisor.com/"
+    },
+    {
+      "name": "Military Grid Reference System Coordinates",
+      "category": "Geolocation Tools / Maps / Coordinates",
+      "url": "https://dominoc925-pages.appspot.com/mapplets/cs_mgrs.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://dominoc925-pages.appspot.com/mapplets/cs_mgrs.html"
+    },
+    {
+      "name": "Batch Geocoding",
+      "category": "Geolocation Tools / Maps / Coordinates",
+      "url": "https://www.doogal.co.uk/BatchGeocoding.php",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.doogal.co.uk/BatchGeocoding.php"
+    },
+    {
+      "name": "Batch Reverse Geocoding",
+      "category": "Geolocation Tools / Maps / Coordinates",
+      "url": "https://www.doogal.co.uk/BatchReverseGeocoding.php",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.doogal.co.uk/BatchReverseGeocoding.php"
+    },
+    {
+      "name": "BatchGeo",
+      "category": "Geolocation Tools / Maps / Map Reporting Tools",
+      "url": "https://batchgeo.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://batchgeo.com/"
+    },
+    {
+      "name": "Google Maps Streetview Player",
+      "category": "Geolocation Tools / Maps / Map Reporting Tools",
+      "url": "http://brianfolts.com/driver/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://brianfolts.com/driver/"
+    },
+    {
+      "name": "ScribbleMaps",
+      "category": "Geolocation Tools / Maps / Map Reporting Tools",
+      "url": "http://scribblemaps.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.scribblemaps.com/"
+    },
+    {
+      "name": "OpenSignal",
+      "category": "Geolocation Tools / Maps / Mobile Coverage",
+      "url": "https://opensignal.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.opensignal.com/"
+    },
+    {
+      "name": "AntennaSearch",
+      "category": "Geolocation Tools / Maps / Mobile Coverage",
+      "url": "http://www.antennasearch.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.antennasearch.com/"
+    },
+    {
+      "name": "Google Maps",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://www.google.com/maps/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.google.com/maps/"
+    },
+    {
+      "name": "Bing Maps",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://www.bing.com/maps/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.bing.com/maps"
+    },
+    {
+      "name": "HERE Maps",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://maps.here.com/",
+      "status": "blocked",
+      "reason": "HTTP 403",
+      "finalUrl": "https://maps.here.com/"
+    },
+    {
+      "name": "Dual Maps",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://data.mashedworld.com/dualmaps/map.htm",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://data.mashedworld.com/dualmaps/map.htm"
+    },
+    {
+      "name": "Instant Google Street View",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://www.instantstreetview.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.instantstreetview.com/"
+    },
+    {
+      "name": "Wikimapia",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://wikimapia.org/#lang=en&lat=40.078071&lon=-100.458984&z=5&m=b",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://wikimapia.org/"
+    },
+    {
+      "name": "OpenStreetMap",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://www.openstreetmap.org/#map=5/40.614/-100.679",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.openstreetmap.org/"
+    },
+    {
+      "name": "Zoom Earth",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://zoom.earth/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://zoom.earth/"
+    },
+    {
+      "name": "Historic Aerials",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://www.historicaerials.com/?javascript=&",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.historicaerials.com/?javascript=&"
+    },
+    {
+      "name": "Google Earth Overlays",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://www.mgmaps.com/kml/#view",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.mgmaps.com/kml/"
+    },
+    {
+      "name": "Yandex.Maps",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://yandex.com/maps/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://yandex.com/maps/"
+    },
+    {
+      "name": "Google Earth",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://www.google.com/earth/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://earth.google.com/web/"
+    },
+    {
+      "name": "Baidu Maps",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://map.baidu.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://map.baidu.com/"
+    },
+    {
+      "name": "Corona",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://corona.cast.uark.edu/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://corona.cast.uark.edu/"
+    },
+    {
+      "name": "Daum (Korean)",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://map.kakao.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://map.kakao.com/"
+    },
+    {
+      "name": "Naver (Korean)",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://map.naver.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://map.naver.com/p/"
+    },
+    {
+      "name": "OpenStreetMap",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://www.openstreetmap.org/#map=5/51.500/-0.100",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.openstreetmap.org/"
+    },
+    {
+      "name": "EarthExplorer",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://earthexplorer.usgs.gov/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://earthexplorer.usgs.gov/"
+    },
+    {
+      "name": "KartaView",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://kartaview.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://kartaview.org/"
+    },
+    {
+      "name": "Travel by Drone",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://travelbydrone.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://travelbydrone.com/"
+    },
+    {
+      "name": "Hivemapper",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://hivemapper.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://hivemapper.com/"
+    },
+    {
+      "name": "LandsatLook Viewer",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://landsatlook.usgs.gov/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://landsatlook.usgs.gov/"
+    },
+    {
+      "name": "Sentinel2Look Viewer",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://landsatlook.usgs.gov/sentinel2/",
+      "status": "blocked",
+      "reason": "HTTP 403",
+      "finalUrl": "https://landsatlook.usgs.gov/sentinel2/"
+    },
+    {
+      "name": "NEXRAD Data Inventory Search",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://www.ncdc.noaa.gov/nexradinv/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.ncei.noaa.gov/nexradinv/"
+    },
+    {
+      "name": "MapQuest",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://www.mapquest.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.mapquest.com/"
+    },
+    {
+      "name": "OpenRailwayMap",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://www.openrailwaymap.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.openrailwaymap.org/"
+    },
+    {
+      "name": "OpenInfrastructureMap",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://openinframap.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://openinframap.org/"
+    },
+    {
+      "name": "OpenStreetMap Routing Service",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://www.yournavigation.org/",
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.yournavigation.org:80, timeout: 10000ms)"
+    },
+    {
+      "name": "Hiking & Biking Map",
+      "category": "Geolocation Tools / Maps",
+      "url": "http://hikebikemap.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://hikebikemap.org/"
+    },
+    {
+      "name": "Wayback Imagery",
+      "category": "Geolocation Tools / Maps",
+      "url": "https://livingatlas.arcgis.com/wayback/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://livingatlas.arcgis.com/wayback/"
+    },
+    {
+      "name": "Copernicus Browser",
+      "category": "Geolocation Tools / Maps / Satellite Imagery",
+      "url": "https://browser.dataspace.copernicus.eu/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://browser.dataspace.copernicus.eu/"
+    },
+    {
+      "name": "NASA FIRMS",
+      "category": "Geolocation Tools / Maps / Satellite Imagery",
+      "url": "https://firms.modaps.eosdis.nasa.gov/map/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://firms.modaps.eosdis.nasa.gov/map/"
+    },
+    {
+      "name": "Google",
+      "category": "Search Engines / General Search",
+      "url": "https://www.google.com/?gws_rd=ssl",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.google.com/?gws_rd=ssl"
+    },
+    {
+      "name": "Bing",
+      "category": "Search Engines / General Search",
+      "url": "http://www.bing.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.bing.com/?toHttps=1&redig=F6ECAA25AD114DD1982E05654C03A1F2"
+    },
+    {
+      "name": "DuckDuckGo",
+      "category": "Search Engines / General Search",
+      "url": "https://duckduckgo.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://duckduckgo.com/"
+    },
+    {
+      "name": "StartPage",
+      "category": "Search Engines / General Search",
+      "url": "https://www.startpage.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.startpage.com/"
+    },
+    {
+      "name": "Yandex",
+      "category": "Search Engines / General Search",
+      "url": "https://www.yandex.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://yandex.com/"
+    },
+    {
+      "name": "Baidu",
+      "category": "Search Engines / General Search",
+      "url": "http://www.baidu.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.baidu.com/"
+    },
+    {
+      "name": "Google Advanced Search",
+      "category": "Search Engines / General Search",
+      "url": "https://www.google.com/advanced_search",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.google.com/advanced_search"
+    },
+    {
+      "name": "iBoogie",
+      "category": "Search Engines / General Search",
+      "url": "http://www.iboogie.com/",
+      "status": "blocked",
+      "reason": "HTTP 503",
+      "finalUrl": "http://www.iboogie.com/"
+    },
+    {
+      "name": "iZito",
+      "category": "Search Engines / General Search",
+      "url": "http://www.izito.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.izito.com/"
+    },
+    {
+      "name": "Bing vs. Google",
+      "category": "Search Engines / General Search",
+      "url": "http://bvsg.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://bvsg.org/"
+    },
+    {
+      "name": "Advangle",
+      "category": "Search Engines / General Search",
+      "url": "http://advangle.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://advangle.com/"
+    },
+    {
+      "name": "Hulbee",
+      "category": "Search Engines / General Search",
+      "url": "https://hulbee.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://hulbee.com/en"
+    },
+    {
+      "name": "Mojeek",
+      "category": "Search Engines / General Search",
+      "url": "https://mojeek.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.mojeek.com/"
+    },
+    {
+      "name": "Swisscows",
+      "category": "Search Engines / General Search",
+      "url": "https://swisscows.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://swisscows.com/en"
+    },
+    {
+      "name": "Brave",
+      "category": "Search Engines / General Search",
+      "url": "https://search.brave.com/",
+      "status": "blocked",
+      "reason": "HTTP 429",
+      "finalUrl": "https://search.brave.com/"
+    },
+    {
+      "name": "Stract",
+      "category": "Search Engines / General Search",
+      "url": "https://stract.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://stract.com/"
+    },
+    {
+      "name": "eTools.ch",
+      "category": "Search Engines / Meta Search",
+      "url": "https://www.etools.ch/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.etools.ch/"
+    },
+    {
+      "name": "AnswerThePublic.com",
+      "category": "Search Engines / Meta Search",
+      "url": "http://answerthepublic.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://answerthepublic.com/en"
+    },
+    {
+      "name": "PublicWWW",
+      "category": "Search Engines / Code Search",
+      "url": "https://publicwww.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://publicwww.com/"
+    },
+    {
+      "name": "Searchcode",
+      "category": "Search Engines / Code Search",
+      "url": "https://searchcode.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://searchcode.com/"
+    },
+    {
+      "name": "NerdyData",
+      "category": "Search Engines / Code Search",
+      "url": "https://nerdydata.com/search",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.nerdydata.com/reports/new"
+    },
+    {
+      "name": "Napalm FTP",
+      "category": "Search Engines / FTP Search",
+      "url": "http://www.searchftps.net/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.searchftps.net/"
+    },
+    {
+      "name": "PubPeer",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "https://pubpeer.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://pubpeer.com/"
+    },
+    {
+      "name": "Bielefeld Academic Search Engine",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "https://www.base-search.net/Search/Advanced",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.base-search.net/Search/Advanced"
+    },
+    {
+      "name": "PubMed - National Center for Biotechnology Information",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/"
+    },
+    {
+      "name": "Social Science Research Network",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "http://ssrn.com/en/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.ssrn.com/en/"
+    },
+    {
+      "name": "Open Library",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "https://openlibrary.org/",
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: openlibrary.org:443, timeout: 10000ms)"
+    },
+    {
+      "name": "World Digital Library",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "https://www.wdl.org/en/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.loc.gov/collections/world-digital-library/about-this-collection/"
+    },
+    {
+      "name": "HathiTrust Digital Library",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "https://www.hathitrust.org/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.hathitrust.org/"
+    },
+    {
+      "name": "UK National Archives",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "http://discovery.nationalarchives.gov.uk/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://discovery.nationalarchives.gov.uk/"
+    },
+    {
+      "name": "OpenGrey EU Papers",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "http://opengrey.eu/",
+      "status": "blocked",
+      "reason": "HTTP 403",
+      "finalUrl": "http://opengrey.eu/"
+    },
+    {
+      "name": "US Gov Publishing Office - FDsys",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "https://www.govinfo.gov/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.govinfo.gov/"
+    },
+    {
+      "name": "Science Direct",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "http://www.sciencedirect.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.sciencedirect.com/"
+    },
+    {
+      "name": "Think Tank Search",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "http://guides.library.harvard.edu/hks/think_tank_search",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://guides.library.harvard.edu/hks/think_tank_search"
+    },
+    {
+      "name": "Library Databases",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "http://guides.uflib.ufl.edu/az.php",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://guides.uflib.ufl.edu/az.php"
+    },
+    {
+      "name": "Copyscape Plagiarism Checker",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "http://copyscape.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.copyscape.com/"
+    },
+    {
+      "name": "Open Access Scholarly Journals",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "http://www.pagepress.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.pagepress.org/"
+    },
+    {
+      "name": "The Open Syllabus Project",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "https://www.opensyllabus.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.opensyllabus.org/"
+    },
+    {
+      "name": "Science Publications",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "http://www.thescipub.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.thescipub.com/"
+    },
+    {
+      "name": "arXiv.org",
+      "category": "Search Engines / Academic / Publication Search",
+      "url": "https://arxiv.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://arxiv.org/"
+    },
+    {
+      "name": "Paperboy Online Newspapers",
+      "category": "Search Engines / News Search",
+      "url": "http://www.thepaperboy.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.thepaperboy.com/"
+    },
+    {
+      "name": "Google News Search",
+      "category": "Search Engines / News Search",
+      "url": "https://news.google.com/news/advanced_news_search?",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://news.google.com/home?hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Flipboard",
+      "category": "Search Engines / News Search",
+      "url": "https://flipboard.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://flipboard.com/"
+    },
+    {
+      "name": "YouGotTheNews",
+      "category": "Search Engines / News Search",
+      "url": "http://www.yougotthenews.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://yougotthenews.com/"
+    },
+    {
+      "name": "NewspaperARCHIVE.com",
+      "category": "Search Engines / News Search",
+      "url": "http://newspaperarchive.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://newspaperarchive.com/"
+    },
+    {
+      "name": "PressReader.com",
+      "category": "Search Engines / News Search",
+      "url": "http://www.pressreader.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.pressreader.com/"
+    },
+    {
+      "name": "Newspaper Map",
+      "category": "Search Engines / News Search",
+      "url": "http://newspapermap.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://newspapermap.com/"
+    },
+    {
+      "name": "NewsBrief",
+      "category": "Search Engines / News Search",
+      "url": "https://media-monitor.europa.eu/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://media-monitor.europa.eu/"
+    },
+    {
+      "name": "AllYouCanRead.com",
+      "category": "Search Engines / News Search",
+      "url": "http://www.allyoucanread.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.allyoucanread.com/"
+    },
+    {
+      "name": "World News",
+      "category": "Search Engines / News Search",
+      "url": "https://wn.com/#/search",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://wn.com/"
+    },
+    {
+      "name": "NewsNow.co.uk",
+      "category": "Search Engines / News Search",
+      "url": "http://www.newsnow.co.uk/h/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.newsnow.co.uk/h/"
+    },
+    {
+      "name": "Inshorts",
+      "category": "Search Engines / News Search",
+      "url": "https://www.inshorts.com/en/read",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://inshorts.com/en/read"
+    },
+    {
+      "name": "Colossus International Engine List",
+      "category": "Search Engines / Other Search",
+      "url": "http://www.searchenginecolossus.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.searchenginecolossus.com/"
+    },
+    {
+      "name": "Zenodo",
+      "category": "Search Engines / Other Search",
+      "url": "https://zenodo.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://zenodo.org/"
+    },
+    {
+      "name": "Million Short",
+      "category": "Search Engines / Search Tools",
+      "url": "https://millionshort.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://millionshort.com/"
+    },
+    {
+      "name": "Google Alerts",
+      "category": "Search Engines / Search Tools",
+      "url": "https://www.google.com/alerts#",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.google.com/alerts"
+    },
+    {
+      "name": "Google Custom Search Engine",
+      "category": "Search Engines / Search Tools",
+      "url": "https://cse.google.com/cse/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://programmablesearchengine.google.com/about/"
+    },
+    {
+      "name": "Talkwalker Alerts",
+      "category": "Search Engines / Search Tools",
+      "url": "http://www.talkwalker.com/alerts",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.talkwalker.com/alerts"
+    },
+    {
+      "name": "Google Trends",
+      "category": "Search Engines / Search Tools",
+      "url": "https://trends.google.com/trends/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://trends.google.com/trends/"
+    },
+    {
+      "name": "Google Hacking Database",
+      "category": "Search Engines / Search Engine Guides",
+      "url": "https://www.exploit-db.com/google-hacking-database/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.exploit-db.com/google-hacking-database"
+    },
+    {
+      "name": "Google Search Operators Guide",
+      "category": "Search Engines / Search Engine Guides",
+      "url": "http://googleguide.com/advanced_operators_reference.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.googleguide.com/advanced_operators_reference.html"
+    },
+    {
+      "name": "Google Guide Cheat Sheet",
+      "category": "Search Engines / Search Engine Guides",
+      "url": "http://googleguide.com/help/calculator.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.googleguide.com/help/calculator.html"
+    },
+    {
+      "name": "Africa Check",
+      "category": "Search Engines / Fact Checking",
+      "url": "https://africacheck.org/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://africacheck.org/"
+    },
+    {
+      "name": "PolitiFact",
+      "category": "Search Engines / Fact Checking",
+      "url": "http://www.politifact.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://politifact.com/"
+    },
+    {
+      "name": "SciCheck",
+      "category": "Search Engines / Fact Checking",
+      "url": "http://www.factcheck.org/scicheck/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.factcheck.org/scicheck/"
+    },
+    {
+      "name": "Duke Reporters' Lab",
+      "category": "Search Engines / Fact Checking",
+      "url": "http://reporterslab.org/fact-checking/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://reporterslab.org/fact-checking/"
+    },
+    {
+      "name": "Stop Fake Tools",
+      "category": "Search Engines / Fact Checking",
+      "url": "http://www.stopfake.org/en/category/tools/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.stopfake.org/en/category/tools/"
+    },
+    {
+      "name": "Snopes",
+      "category": "Search Engines / Fact Checking",
+      "url": "http://www.snopes.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.snopes.com/"
+    },
+    {
+      "name": "Verification Handbook",
+      "category": "Search Engines / Fact Checking",
+      "url": "http://verificationhandbook.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://verificationhandbook.com/"
+    },
+    {
+      "name": "Verification Junkie",
+      "category": "Search Engines / Fact Checking",
+      "url": "http://verificationjunkie.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://verificationjunkie.com/"
+    },
+    {
+      "name": "BoardReader",
+      "category": "Forums / Blogs / IRC / Forum Search Engines",
+      "url": "http://boardreader.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://boardreader.com/"
+    },
+    {
+      "name": "Omgili",
+      "category": "Forums / Blogs / IRC / Forum Search Engines",
+      "url": "http://omgili.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://omgili.com/"
+    },
+    {
+      "name": "Craigslist Forums",
+      "category": "Forums / Blogs / IRC / Forum Search Engines",
+      "url": "https://forums.craigslist.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://forums.craigslist.org/"
+    },
+    {
+      "name": "Delphi Forum Search",
+      "category": "Forums / Blogs / IRC / Forum Search Engines",
+      "url": "http://www.delphiforums.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.delphiforums.com/"
+    },
+    {
+      "name": "Mibbit",
+      "category": "Forums / Blogs / IRC / IRC Search",
+      "url": "http://search.mibbit.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://search.mibbit.com/"
+    },
+    {
+      "name": "Internet Archive: Wayback Machine",
+      "category": "Archives / Web",
+      "url": "https://web.archive.org/",
+      "status": "blocked",
+      "reason": "HTTP 429",
+      "finalUrl": "https://web.archive.org/"
+    },
+    {
+      "name": "archive.today",
+      "category": "Archives / Web",
+      "url": "https://archive.ph/",
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: archive.ph:443, timeout: 10000ms)"
+    },
+    {
+      "name": "Cached View",
+      "category": "Archives / Web",
+      "url": "http://cachedview.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://cachedview.com/"
+    },
+    {
+      "name": "Textfiles.com",
+      "category": "Archives / Web",
+      "url": "http://textfiles.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://textfiles.com/"
+    },
+    {
+      "name": "UK Web Archive",
+      "category": "Archives / Web",
+      "url": "http://www.webarchive.org.uk/ukwa/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.webarchive.org.uk/en/ukwa/"
+    },
+    {
+      "name": "Common Crawl",
+      "category": "Archives / Web",
+      "url": "http://commoncrawl.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://commoncrawl.org/"
+    },
+    {
+      "name": "Wayback Machine Chrome Extension",
+      "category": "Archives / Web",
+      "url": "https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://chromewebstore.google.com/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak"
+    },
+    {
+      "name": "PDF My URL",
+      "category": "Archives / Web",
+      "url": "http://pdfmyurl.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://pdfmyurl.com/"
+    },
+    {
+      "name": "Web Archive-RU",
+      "category": "Archives / Web",
+      "url": "https://web-arhive.ru/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://web-arhive.ru/"
+    },
+    {
+      "name": "Ghostarchive",
+      "category": "Archives / Web",
+      "url": "https://ghostarchive.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ghostarchive.org/"
+    },
+    {
+      "name": "archive.today newest",
+      "category": "Archives / Web",
+      "url": "https://archive.ph/newest/{target}",
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: archive.ph:443, timeout: 10000ms)"
+    },
+    {
+      "name": "Wayback Machine (all captures)",
+      "category": "Archives / Web",
+      "url": "https://web.archive.org/web/*/{target}*",
+      "status": "blocked",
+      "reason": "HTTP 429",
+      "finalUrl": "https://web.archive.org/web//example.com"
+    },
+    {
+      "name": "Snusbase",
+      "category": "Archives / Data Leaks",
+      "url": "https://snusbase.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://snusbase.com/"
+    },
+    {
+      "name": "Cryptome",
+      "category": "Archives / Data Leaks",
+      "url": "http://cryptome.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://cryptome.org/"
+    },
+    {
+      "name": "WikiLeaks",
+      "category": "Archives / Data Leaks",
+      "url": "https://wikileaks.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://wikileaks.org/"
+    },
+    {
+      "name": "VisualGenome",
+      "category": "Archives / Public Datasets",
+      "url": "http://visualgenome.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://visualgenome.org/"
+    },
+    {
+      "name": "UCI Spambase Data Set",
+      "category": "Archives / Public Datasets",
+      "url": "https://archive.ics.uci.edu/ml/datasets/Spambase",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://archive.ics.uci.edu/dataset/94/spambase"
+    },
+    {
+      "name": "Stanford Large Network Dataset Collection",
+      "category": "Archives / Public Datasets",
+      "url": "http://snap.stanford.edu/data/#amazon",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://snap.stanford.edu/data/"
+    },
+    {
+      "name": "Library of Congress: Digitized Newspapers - 1836-1922",
+      "category": "Archives / Other Media",
+      "url": "http://chroniclingamerica.loc.gov/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.loc.gov/collections/chronicling-america/"
+    },
+    {
+      "name": "Library of Congress: Newspaper Directory - 1690-Present",
+      "category": "Archives / Other Media",
+      "url": "http://chroniclingamerica.loc.gov/search/titles/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.loc.gov/collections/directory-of-us-newspapers-in-american-libraries/about-this-collection/"
+    },
+    {
+      "name": "TV Closed Caption Search",
+      "category": "Archives / Other Media",
+      "url": "https://archive.org/details/tv",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://archive.org/details/tv"
+    },
+    {
+      "name": "DeepL Translator",
+      "category": "Language Translation / Text",
+      "url": "https://www.deepl.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.deepl.com/en"
+    },
+    {
+      "name": "Google Translate",
+      "category": "Language Translation / Text",
+      "url": "https://translate.google.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://translate.google.com/"
+    },
+    {
+      "name": "Google Input Tools",
+      "category": "Language Translation / Text",
+      "url": "https://www.google.com/inputtools/try/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.google.com/inputtools/try/"
+    },
+    {
+      "name": "Bing Translate",
+      "category": "Language Translation / Text",
+      "url": "http://www.bing.com/translator/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.bing.com/translator/"
+    },
+    {
+      "name": "Word Reference",
+      "category": "Language Translation / Text",
+      "url": "https://www.wordreference.com/",
+      "status": "error",
+      "reason": "HTTP 418",
+      "finalUrl": "https://www.wordreference.com/"
+    },
+    {
+      "name": "Wiktionary",
+      "category": "Language Translation / Text",
+      "url": "https://www.wiktionary.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.wiktionary.org/"
+    },
+    {
+      "name": "Slangit - The Slang Dictionary",
+      "category": "Language Translation / Text",
+      "url": "https://slang.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://slang.net/"
+    },
+    {
+      "name": "Slang Dictionary & Translator",
+      "category": "Language Translation / Text",
+      "url": "http://www.noslang.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.noslang.com/"
+    },
+    {
+      "name": "Urban Dictionary",
+      "category": "Language Translation / Text",
+      "url": "http://www.urbandictionary.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.urbandictionary.com/"
+    },
+    {
+      "name": "Eleven Labs Dubbing",
+      "category": "Language Translation / Videos",
+      "url": "https://elevenlabs.io/dubbing",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://elevenlabs.io/dubbing-studio"
+    },
+    {
+      "name": "Nox App Player",
+      "category": "Mobile Emulation / Android / Emulation Tools",
+      "url": "https://www.bignox.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.bignox.com/"
+    },
+    {
+      "name": "Global Terrorism Database",
+      "category": "Terrorism",
+      "url": "http://www.start.umd.edu/gtd/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.start.umd.edu/data-tools/GTD"
+    },
+    {
+      "name": "Reddit Deep Web",
+      "category": "Dark Web / General Info",
+      "url": "https://www.reddit.com/r/deepweb",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.reddit.com/r/deepweb/"
+    },
+    {
+      "name": "Reddit Onions",
+      "category": "Dark Web / General Info",
+      "url": "https://www.reddit.com/r/onions",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.reddit.com/r/onions/"
+    },
+    {
+      "name": "Reddit Darknet",
+      "category": "Dark Web / General Info",
+      "url": "https://www.reddit.com/r/darknet",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.reddit.com/r/darknet/"
+    },
+    {
+      "name": "Candle",
+      "category": "Dark Web / TOR Search",
+      "url": "http://gjobqjj7wyczbqie.onion/",
+      "status": "tor",
+      "reason": "onion service (needs Tor)"
+    },
+    {
+      "name": "Not Evil",
+      "category": "Dark Web / TOR Search",
+      "url": "http://hss3uro2hsxfogfq.onion/",
+      "status": "tor",
+      "reason": "onion service (needs Tor)"
+    },
+    {
+      "name": "Tor66",
+      "category": "Dark Web / TOR Search",
+      "url": "http://tor66sezptuu2nta.onion/",
+      "status": "tor",
+      "reason": "onion service (needs Tor)"
+    },
+    {
+      "name": "dark.fail",
+      "category": "Dark Web / TOR Search",
+      "url": "http://darkfailllnkf4vf.onion/",
+      "status": "tor",
+      "reason": "onion service (needs Tor)"
+    },
+    {
+      "name": "Ahmia",
+      "category": "Dark Web / TOR Search",
+      "url": "https://ahmia.fi/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ahmia.fi/"
+    },
+    {
+      "name": "Core.onion",
+      "category": "Dark Web / TOR Directories",
+      "url": "http://eqt5g4fuenphqinx.onion/",
+      "status": "tor",
+      "reason": "onion service (needs Tor)"
+    },
+    {
+      "name": "IACA Dark Web Investigation Support",
+      "category": "Dark Web",
+      "url": "https://iaca-darkweb-tools.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://iaca-darkweb-tools.com/"
+    },
+    {
+      "name": "OXT",
+      "category": "Digital Currency / Bitcoin",
+      "url": "https://oxt.me",
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: oxt.me:443, timeout: 10000ms)"
+    },
+    {
+      "name": "Blockchain.info",
+      "category": "Digital Currency / Bitcoin",
+      "url": "https://blockchain.info/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.blockchain.com/explorer"
+    },
+    {
+      "name": "Block Explorer",
+      "category": "Digital Currency / Bitcoin",
+      "url": "https://blockexplorer.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.blockexplorer.com/"
+    },
+    {
+      "name": "BitRef",
+      "category": "Digital Currency / Bitcoin",
+      "url": "https://bitref.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://bitref.com/"
+    },
+    {
+      "name": "Wallet Explorer",
+      "category": "Digital Currency / Bitcoin",
+      "url": "https://www.walletexplorer.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.walletexplorer.com/"
+    },
+    {
+      "name": "Graphsense",
+      "category": "Digital Currency / Bitcoin",
+      "url": "https://graphsense.info/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://graphsense.info/"
+    },
+    {
+      "name": "Blockonomics",
+      "category": "Digital Currency / Bitcoin",
+      "url": "https://www.blockonomics.co/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.blockonomics.co/"
+    },
+    {
+      "name": "Bitcoin Who's Who",
+      "category": "Digital Currency / Bitcoin",
+      "url": "http://bitcoinwhoswho.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.bitcoinwhoswho.com/"
+    },
+    {
+      "name": "mempool.space",
+      "category": "Digital Currency / Bitcoin",
+      "url": "https://mempool.space/address/{target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://mempool.space/address/test"
+    },
+    {
+      "name": "etherchain.org",
+      "category": "Digital Currency / Ethereum",
+      "url": "https://etherchain.org/accounts/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://beaconcha.in/"
+    },
+    {
+      "name": "Etherscan",
+      "category": "Digital Currency / Ethereum",
+      "url": "https://etherscan.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://etherscan.io/"
+    },
+    {
+      "name": "XMRChain.net",
+      "category": "Digital Currency / Monero",
+      "url": "https://xmrchain.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://xmrchain.net/"
+    },
+    {
+      "name": "Monero Blocks",
+      "category": "Digital Currency / Monero",
+      "url": "http://moneroblocks.info/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://moneroblocks.info/"
+    },
+    {
+      "name": "Blockchair",
+      "category": "Digital Currency / Multi-chain",
+      "url": "https://blockchair.com/search?q={target}",
+      "status": "blocked",
+      "reason": "HTTP 401",
+      "finalUrl": "https://blockchair.com/search?q=test"
+    },
+    {
+      "name": "Arkham Intelligence",
+      "category": "Digital Currency / Multi-chain",
+      "url": "https://intel.arkm.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://arkm.com/"
+    },
+    {
+      "name": "Chainabuse",
+      "category": "Digital Currency / Multi-chain",
+      "url": "https://www.chainabuse.com/address/{target}",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://chainabuse.com/address/test"
+    },
+    {
+      "name": "Breadcrumbs",
+      "category": "Digital Currency / Multi-chain",
+      "url": "https://www.breadcrumbs.app/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.breadcrumbs.app/"
+    },
+    {
+      "name": "Craigslist",
+      "category": "Classifieds",
+      "url": "http://craigslist.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.craigslist.org/area/seoul"
+    },
+    {
+      "name": "Kijiji - Canada Classifieds",
+      "category": "Classifieds",
+      "url": "http://www.kijiji.ca/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.kijiji.ca/"
+    },
+    {
+      "name": "Quikr - India Classifieds",
+      "category": "Classifieds",
+      "url": "http://www.quikr.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.quikr.com/"
+    },
+    {
+      "name": "eBay",
+      "category": "Classifieds",
+      "url": "http://www.ebay.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.ebay.com/"
+    },
+    {
+      "name": "OfferUp",
+      "category": "Classifieds",
+      "url": "https://offerup.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://offerup.com/"
+    },
+    {
+      "name": "Flippity",
+      "category": "Classifieds",
+      "url": "http://www.flippity.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.flippity.com/"
+    },
+    {
+      "name": "SearchAllJunk",
+      "category": "Classifieds",
+      "url": "http://www.searchalljunk.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.searchalljunk.com/"
+    },
+    {
+      "name": "TotalCraigSearch",
+      "category": "Classifieds",
+      "url": "http://www.totalcraigsearch.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ww17.totalcraigsearch.com/"
+    },
+    {
+      "name": "Search Tempest",
+      "category": "Classifieds",
+      "url": "http://www.searchtempest.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.searchtempest.com/"
+    },
+    {
+      "name": "Oodle",
+      "category": "Classifieds",
+      "url": "http://www.oodle.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.oodle.com/"
+    },
+    {
+      "name": "Claz.org",
+      "category": "Classifieds",
+      "url": "http://claz.org/",
+      "status": "blocked",
+      "reason": "HTTP 429 (bot protection)",
+      "finalUrl": "https://claz.org/"
+    },
+    {
+      "name": "francais-a-londres.org - French Classifieds",
+      "category": "Classifieds",
+      "url": "https://francaisalondres.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://francaisalondres.com/"
+    },
+    {
+      "name": "ClearImage Barcode Reader",
+      "category": "Encoding / Decoding / Barcodes / QR",
+      "url": "http://online-barcode-reader.inliteresearch.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://online-barcode-reader.inliteresearch.com/"
+    },
+    {
+      "name": "JS Beautifier",
+      "category": "Encoding / Decoding / Javascript",
+      "url": "https://beautifier.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://beautifier.io/"
+    },
+    {
+      "name": "JS NICE",
+      "category": "Encoding / Decoding / Javascript",
+      "url": "http://jsnice.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://jsnice.org/"
+    },
+    {
+      "name": "DDecode - PHP Decoder",
+      "category": "Encoding / Decoding / PHP",
+      "url": "http://ddecode.com/phpdecoder/",
+      "status": "error",
+      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN ddecode.com"
+    },
+    {
+      "name": "Functions Online",
+      "category": "Encoding / Decoding",
+      "url": "https://www.functions-online.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.functions-online.com/"
+    },
+    {
+      "name": "IntelligenceX",
+      "category": "Tools / OSINT Automation",
+      "url": "https://intelx.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://intelx.io/"
+    },
+    {
+      "name": "Analyst Research Tools",
+      "category": "Tools / OSINT Automation",
+      "url": "https://analystresearchtools.com",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://analystresearchtools.com/"
+    },
+    {
+      "name": "W Generator",
+      "category": "Tools / Wordlist",
+      "url": "https://app.wgen.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://app.wgen.io/"
+    },
+    {
+      "name": "Overview",
+      "category": "Tools",
+      "url": "https://github.com/overview/overview-local",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://github.com/overview/overview-local"
+    },
+    {
+      "name": "Duck.ai",
+      "category": "AI Tools",
+      "url": "https://duck.ai/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://duck.ai/"
+    },
+    {
+      "name": "InQuest Labs DFI/MalDoc Search",
+      "category": "Malicious File Analysis / Search",
+      "url": "https://labs.inquest.net/dfi",
+      "status": "error",
+      "reason": "UND_ERR_SOCKET: other side closed"
+    },
+    {
+      "name": "VirusShare.com",
+      "category": "Malicious File Analysis / Search",
+      "url": "https://virusshare.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://virusshare.com/"
+    },
+    {
+      "name": "VX Vault",
+      "category": "Malicious File Analysis / Search",
+      "url": "http://vxvault.net/ViriList.php",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://vxvault.net/ViriList.php"
+    },
+    {
+      "name": "ID Ransomware",
+      "category": "Malicious File Analysis / Search",
+      "url": "https://id-ransomware.malwarehunterteam.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://id-ransomware.malwarehunterteam.com/"
+    },
+    {
+      "name": "MalwareBazaar",
+      "category": "Malicious File Analysis / Search",
+      "url": "https://bazaar.abuse.ch/browse/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://bazaar.abuse.ch/verify-ua/"
+    },
+    {
+      "name": "Triage",
+      "category": "Malicious File Analysis / Search",
+      "url": "https://tria.ge/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://tria.ge/"
+    },
+    {
+      "name": "ThreatFox",
+      "category": "Malicious File Analysis / Search",
+      "url": "https://threatfox.abuse.ch/browse/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://threatfox.abuse.ch/verify-ua/"
+    },
+    {
+      "name": "TYLabs QuickSand Framework",
+      "category": "Malicious File Analysis / Hosted Automated Analysis / Office Files",
+      "url": "https://scan.tylabs.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://scan.tylabs.com/"
+    },
+    {
+      "name": "JoeSandbox Document Analyzer",
+      "category": "Malicious File Analysis / Hosted Automated Analysis / Office Files",
+      "url": "http://www.document-analyzer.net/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.joesandbox.com/"
+    },
+    {
+      "name": "Joe APK Analyzer",
+      "category": "Malicious File Analysis / Hosted Automated Analysis / Android",
+      "url": "https://www.apk-analyzer.net/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.joesandbox.com/"
+    },
+    {
+      "name": "VirusTotal",
+      "category": "Malicious File Analysis / Hosted Automated Analysis",
+      "url": "https://www.virustotal.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.virustotal.com/gui/"
+    },
+    {
+      "name": "OPSWAT Meta Defender",
+      "category": "Malicious File Analysis / Hosted Automated Analysis",
+      "url": "https://metadefender.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://metadefender.com/"
+    },
+    {
+      "name": "Hybrid Analysis",
+      "category": "Malicious File Analysis / Hosted Automated Analysis",
+      "url": "https://www.hybrid-analysis.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://hybrid-analysis.com/"
+    },
+    {
+      "name": "Jotti's Malware Scanner",
+      "category": "Malicious File Analysis / Hosted Automated Analysis",
+      "url": "https://virusscan.jotti.org/en-US/scan-file",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://virusscan.jotti.org/en-US/scan-file"
+    },
+    {
+      "name": "detux Linux Sandbox",
+      "category": "Malicious File Analysis / Hosted Automated Analysis",
+      "url": "https://detux.org/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://detux.org/"
+    },
+    {
+      "name": "Joe File Analyzer",
+      "category": "Malicious File Analysis / Hosted Automated Analysis",
+      "url": "https://www.file-analyzer.net/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.joesandbox.com/"
+    },
+    {
+      "name": "Pikker.ee Cuckoo Sandbox",
+      "category": "Malicious File Analysis / Hosted Automated Analysis",
+      "url": "http://sandbox.pikker.ee/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://sandbox.pikker.ee/"
+    },
+    {
+      "name": "Koodous",
+      "category": "Malicious File Analysis / Hosted Automated Analysis",
+      "url": "https://koodous.com",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://koodous.com/"
+    },
+    {
+      "name": "Any Run",
+      "category": "Malicious File Analysis / Hosted Automated Analysis",
+      "url": "https://app.any.run/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://app.any.run/"
+    },
+    {
+      "name": "Uncover It",
+      "category": "Malicious File Analysis / Hosted Automated Analysis",
+      "url": "https://www.uncoverit.org/",
+      "status": "blocked",
+      "reason": "HTTP 429",
+      "finalUrl": "https://www.uncoverit.org/"
+    },
+    {
+      "name": "Malware-Traffic-Analysis.net",
+      "category": "Malicious File Analysis / PCAPs",
+      "url": "http://www.malware-traffic-analysis.net/index.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.malware-traffic-analysis.net/index.html"
+    },
+    {
+      "name": "Malware Analysis Tools",
+      "category": "Malicious File Analysis",
+      "url": "http://malwareanalysis.tools/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://malwareanalysis.tools/"
+    },
+    {
+      "name": "virustotal",
+      "category": "Malicious File Analysis",
+      "url": "https://www.virustotal.com/gui/home/upload",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.virustotal.com/gui/home/upload"
+    },
+    {
+      "name": "Default Passwords DB",
+      "category": "Exploits & Advisories / Default Passwords",
+      "url": "https://cirt.net/passwords",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://cirt.net/passwords/"
+    },
+    {
+      "name": "Default passwords list",
+      "category": "Exploits & Advisories / Default Passwords",
+      "url": "https://default-password.info/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://default-password.info/"
+    },
+    {
+      "name": "Default Password Lookup Utility",
+      "category": "Exploits & Advisories / Default Passwords",
+      "url": "http://www.fortypoundhead.com/tools_dpw.asp",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://fortypoundhead.com/tools_dpw.asp"
+    },
+    {
+      "name": "Phenoelit Default Password List",
+      "category": "Exploits & Advisories / Default Passwords",
+      "url": "http://phenoelit.org/dpl/dpl.html",
+      "status": "error",
+      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN phenoelit.org"
+    },
+    {
+      "name": "Default Router Passwords",
+      "category": "Exploits & Advisories / Default Passwords",
+      "url": "http://routerpasswords.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.routerpasswords.com/"
+    },
+    {
+      "name": "Open Sez Me Default Passwords",
+      "category": "Exploits & Advisories / Default Passwords",
+      "url": "http://open-sez.me/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://open-sez.me/"
+    },
+    {
+      "name": "Vulert: Updated Open Source Vulnerability Database",
+      "category": "Exploits & Advisories",
+      "url": "https://vulertsecurity.com/vuln-db",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://vulertsecurity.com/vuln-db"
+    },
+    {
+      "name": "MITRE ATT&CK",
+      "category": "Exploits & Advisories",
+      "url": "https://attack.mitre.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://attack.mitre.org/"
+    },
+    {
+      "name": "Exploit DB",
+      "category": "Exploits & Advisories",
+      "url": "https://www.exploit-db.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.exploit-db.com/"
+    },
+    {
+      "name": "Packet Storm",
+      "category": "Exploits & Advisories",
+      "url": "https://packetstorm.news/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://packetstorm.news/"
+    },
+    {
+      "name": "NVD - NIST",
+      "category": "Exploits & Advisories",
+      "url": "https://nvd.nist.gov/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://nvd.nist.gov/"
+    },
+    {
+      "name": "OSV Vulnerability Library",
+      "category": "Exploits & Advisories",
+      "url": "https://osv.dev/list",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://osv.dev/list"
+    },
+    {
+      "name": "Mend Vulnerability Database",
+      "category": "Exploits & Advisories",
+      "url": "https://www.mend.io/vulnerability-database/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.mend.io/vulnerability-database/"
+    },
+    {
+      "name": "CVE Details",
+      "category": "Exploits & Advisories",
+      "url": "http://www.cvedetails.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.cvedetails.com/"
+    },
+    {
+      "name": "CVE Program",
+      "category": "Exploits & Advisories",
+      "url": "https://www.cve.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.cve.org/"
+    },
+    {
+      "name": "OWASP",
+      "category": "Exploits & Advisories",
+      "url": "https://owasp.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://owasp.org/"
+    },
+    {
+      "name": "Australian Cyber Security Centre",
+      "category": "Exploits & Advisories",
+      "url": "https://www.cyber.gov.au/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.cyber.gov.au/"
+    },
+    {
+      "name": "Canadian Centre for Cyber Security",
+      "category": "Exploits & Advisories",
+      "url": "https://cyber.gc.ca/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.cyber.gc.ca/"
+    },
+    {
+      "name": "SecAI.ai",
+      "category": "Threat Intelligence / Phishing",
+      "url": "https://secai.ai/research",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://i.secai.ai/research"
+    },
+    {
+      "name": "https://openphish.com/feed.txt",
+      "category": "Threat Intelligence / Phishing",
+      "url": "https://raw.githubusercontent.com/openphish/public_feed/refs/heads/main/feed.txt",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://raw.githubusercontent.com/openphish/public_feed/refs/heads/main/feed.txt"
+    },
+    {
+      "name": "PhishTank",
+      "category": "Threat Intelligence / Phishing",
+      "url": "https://www.phishtank.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.phishtank.com/"
+    },
+    {
+      "name": "PhishStats",
+      "category": "Threat Intelligence / Phishing",
+      "url": "https://phishstats.info/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://phishstats.info/"
+    },
+    {
+      "name": "IBM X-Force Exchange",
+      "category": "Threat Intelligence",
+      "url": "https://exchange.xforce.ibmcloud.com/new",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://exchange.xforce.ibmcloud.com/new"
+    },
+    {
+      "name": "Malware Information Sharing Platform",
+      "category": "Threat Intelligence",
+      "url": "http://www.misp-project.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.misp-project.org/"
+    },
+    {
+      "name": "Malware Patrol",
+      "category": "Threat Intelligence",
+      "url": "https://www.malwarepatrol.net/open-source.shtml",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.malwarepatrol.net/osint-data-feeds-for-cybersecurity/"
+    },
+    {
+      "name": "AlienVault OTX",
+      "category": "Threat Intelligence",
+      "url": "https://otx.alienvault.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://otx.alienvault.com/"
+    },
+    {
+      "name": "Maltiverse",
+      "category": "Threat Intelligence",
+      "url": "https://maltiverse.com/start",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://maltiverse.com/start"
+    },
+    {
+      "name": "Malpedia",
+      "category": "Threat Intelligence",
+      "url": "https://malpedia.caad.fkie.fraunhofer.de/library",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://malpedia.caad.fkie.fraunhofer.de/library"
+    },
+    {
+      "name": "Project Honey Pot",
+      "category": "Threat Intelligence",
+      "url": "http://www.projecthoneypot.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.projecthoneypot.org/"
+    },
+    {
+      "name": "Scam Database",
+      "category": "Threat Intelligence",
+      "url": "https://www.scamdb.net",
+      "status": "error",
+      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN www.scamdb.net"
+    },
+    {
+      "name": "Bot Scout",
+      "category": "Threat Intelligence",
+      "url": "http://botscout.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://botscout.com/"
+    },
+    {
+      "name": "HoneyDB",
+      "category": "Threat Intelligence",
+      "url": "https://honeydb.io/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://honeydb.io/"
+    },
+    {
+      "name": "Pulsedive",
+      "category": "Threat Intelligence",
+      "url": "https://pulsedive.com",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://pulsedive.com/"
+    },
+    {
+      "name": "Mr.Looquer IOC Feed - 1st Dual Stack Threat Feed",
+      "category": "Threat Intelligence",
+      "url": "https://iocfeed.mrlooquer.com",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://iocfeed.mrlooquer.com/"
+    },
+    {
+      "name": "Fake Name Generator",
+      "category": "OpSec / Persona Creation",
+      "url": "http://www.fakenamegenerator.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.fakenamegenerator.com/"
+    },
+    {
+      "name": "This Person Does Not Exist",
+      "category": "OpSec / Persona Creation",
+      "url": "https://thispersondoesnotexist.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://thispersondoesnotexist.com/"
+    },
+    {
+      "name": "Random User Generator",
+      "category": "OpSec / Persona Creation",
+      "url": "https://randomuser.me/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://randomuser.me/"
+    },
+    {
+      "name": "Pexels",
+      "category": "OpSec / Persona Creation",
+      "url": "https://www.pexels.com/",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.pexels.com/"
+    },
+    {
+      "name": "UserAgentString.com",
+      "category": "OpSec / Anonymous Browsing / Spoof User-Agent",
+      "url": "http://www.useragentstring.com/pages/useragentstring.php",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.useragentstring.com/pages/useragentstring.php"
+    },
+    {
+      "name": "WhatIsMyBrowser.com",
+      "category": "OpSec / Anonymous Browsing / Spoof User-Agent",
+      "url": "https://www.whatismybrowser.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.whatismybrowser.com/"
+    },
+    {
+      "name": "User Agent String Decoder",
+      "category": "OpSec / Anonymous Browsing / Spoof User-Agent",
+      "url": "http://tools.tracemyip.org/user-agent-string-decoder/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://tools.tracemyip.org/user-agent-string-decoder/"
+    },
+    {
+      "name": "IP / DNS Leak Detection",
+      "category": "OpSec / Anonymous Browsing / VPN Tests",
+      "url": "https://ipleak.net/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ipleak.net/"
+    },
+    {
+      "name": "JonDonym",
+      "category": "OpSec / Anonymous Browsing / VPN Tests",
+      "url": "http://ip-check.info/?lang=en",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.ip-check.info/?lang=en"
+    },
+    {
+      "name": "DNS leak test",
+      "category": "OpSec / Anonymous Browsing / VPN Tests",
+      "url": "https://www.dnsleaktest.com/",
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.dnsleaktest.com:443, timeout: 10000ms)"
+    },
+    {
+      "name": "DNS Leak Tests",
+      "category": "OpSec / Anonymous Browsing / VPN Tests",
+      "url": "http://dnsleak.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://dnsleak.com/"
+    },
+    {
+      "name": "TorGuard",
+      "category": "OpSec / Anonymous Browsing / VPN Tests",
+      "url": "https://torguard.net/vpn-dns-leak-test.php",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://torguard.net/vpn-dns-leak-test.php"
+    },
+    {
+      "name": "IPv6 Leak Tests",
+      "category": "OpSec / Anonymous Browsing / VPN Tests",
+      "url": "http://ipv6leak.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://ipv6leak.com/"
+    },
+    {
+      "name": "Email Leak Tests",
+      "category": "OpSec / Anonymous Browsing / VPN Tests",
+      "url": "http://emailipleak.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://emailipleak.com/"
+    },
+    {
+      "name": "Perfect Privacy",
+      "category": "OpSec / Anonymous Browsing / VPN Tests",
+      "url": "https://www.perfect-privacy.com/check-ip/",
+      "status": "error",
+      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN www.perfect-privacy.com"
+    },
+    {
+      "name": "WebRTC Leak Test",
+      "category": "OpSec / Anonymous Browsing / VPN Tests",
+      "url": "https://www.perfect-privacy.com/webrtc-leaktest/",
+      "status": "error",
+      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN www.perfect-privacy.com"
+    },
+    {
+      "name": "LetMeCheck.it",
+      "category": "OpSec / Anonymous Browsing / VPN Tests",
+      "url": "http://letmecheck.it/",
+      "status": "error",
+      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN letmecheck.it"
+    },
+    {
+      "name": "Trace My IP",
+      "category": "OpSec / Anonymous Browsing / VPN Tests",
+      "url": "http://www.tracemyip.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.tracemyip.org/"
+    },
+    {
+      "name": "Browser Statistics",
+      "category": "OpSec / Anonymous Browsing / Browser Tests",
+      "url": "https://www.w3schools.com/browsers/default.asp",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.w3schools.com/browsers/default.asp"
+    },
+    {
+      "name": "WhatsMyBrowser.org",
+      "category": "OpSec / Anonymous Browsing / Browser Tests",
+      "url": "http://www.whatsmybrowser.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.whatsmybrowser.org/"
+    },
+    {
+      "name": "What browser am I using.co",
+      "category": "OpSec / Anonymous Browsing / Browser Tests",
+      "url": "http://www.whatbrowseramiusing.co/",
+      "status": "error",
+      "reason": "HTTP 502",
+      "finalUrl": "https://www.whatbrowseramiusing.co/"
+    },
+    {
+      "name": "BrowserSpy.dk Browser Information",
+      "category": "OpSec / Anonymous Browsing / Browser Tests",
+      "url": "http://browserspy.dk/browser.php",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://browserspy.dk/browser.php"
+    },
+    {
+      "name": "IP2Proxy",
+      "category": "OpSec / Anonymous Browsing / Proxy Tests",
+      "url": "https://www.ip2proxy.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.ip2proxy.com/"
+    },
+    {
+      "name": "Browser Leaks",
+      "category": "OpSec / Anonymous Browsing",
+      "url": "https://browserleaks.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://browserleaks.com/"
+    },
+    {
+      "name": "BrowserSpy.dk",
+      "category": "OpSec / Anonymous Browsing",
+      "url": "http://browserspy.dk/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://browserspy.dk/"
+    },
+    {
+      "name": "LocaBrowser.com",
+      "category": "OpSec / Anonymous Browsing",
+      "url": "http://www.locabrowser.com",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.locabrowser.com/"
+    },
+    {
+      "name": "Privacy Guides",
+      "category": "OpSec / Privacy / Clean Up",
+      "url": "https://www.privacyguides.org/en/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.privacyguides.org/en/"
+    },
+    {
+      "name": "Just Delete Me",
+      "category": "OpSec / Privacy / Clean Up",
+      "url": "http://backgroundchecks.org/justdeleteme/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://backgroundchecks.org/justdeleteme/"
+    },
+    {
+      "name": "OptOut Credit Prescreen",
+      "category": "OpSec / Privacy / Clean Up",
+      "url": "https://www.optoutprescreen.com/?rf=t",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.optoutprescreen.com/?rf=t"
+    },
+    {
+      "name": "Cover Your Tracks (EFF)",
+      "category": "OpSec / Privacy / Clean Up",
+      "url": "https://coveryourtracks.eff.org/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://coveryourtracks.eff.org/"
+    },
+    {
+      "name": "Intel Techniques - Hiding from the Internet",
+      "category": "OpSec / Privacy / Clean Up",
+      "url": "https://inteltechniques.com/data/workbook.pdf",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://inteltechniques.com/data/workbook.pdf"
+    },
+    {
+      "name": "The Hitchhiker’s Guide to Online Anonymity",
+      "category": "OpSec / Privacy / Clean Up",
+      "url": "https://anonymousplanet.org/",
+      "status": "dead",
+      "reason": "HTTP 404",
+      "finalUrl": "https://www.anonymousplanet.org/"
+    },
+    {
+      "name": "archive.today",
+      "category": "Documentation / Evidence Capture / Web Browsing",
+      "url": "https://archive.ph/",
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: archive.ph:443, timeout: 10000ms)"
+    },
+    {
+      "name": "Web Page Saver",
+      "category": "Documentation / Evidence Capture / Web Browsing",
+      "url": "https://www.magnetforensics.com/free-tool-web-page-saver/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.magnetforensics.com/resources/web-page-saver/"
+    },
+    {
+      "name": "ZeeMaps",
+      "category": "Documentation / Evidence Capture / Map Locations",
+      "url": "https://www.zeemaps.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.zeemaps.com/"
+    },
+    {
+      "name": "Timeline JS3",
+      "category": "Documentation / Evidence Capture",
+      "url": "http://timeline.knightlab.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://timeline.knightlab.com/"
+    },
+    {
+      "name": "GeoGuesser",
+      "category": "Training / Games",
+      "url": "https://geoguessr.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.geoguessr.com/"
+    },
+    {
+      "name": "Verif!cation Quiz Bot",
+      "category": "Training / Games",
+      "url": "https://x.com/quiztime",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://x.com/quiztime"
+    },
+    {
+      "name": "Forensic OSINT KB Guides",
+      "category": "Training",
+      "url": "https://www.forensicosint.com/osint-guide",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.forensicosint.com/osint-guide"
+    },
+    {
+      "name": "Open Source Intelligence Techniques",
+      "category": "Training",
+      "url": "https://inteltechniques.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://inteltechniques.com/"
+    },
+    {
+      "name": "SANS SEC497 Practical OSINT",
+      "category": "Training",
+      "url": "https://www.sans.org/cyber-security-courses/practical-open-source-intelligence/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.sans.org/cyber-security-courses/practical-open-source-intelligence"
+    },
+    {
+      "name": "Smart Questions",
+      "category": "Training",
+      "url": "http://www.catb.org/esr/faqs/smart-questions.html",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.catb.org/esr/faqs/smart-questions.html"
+    },
+    {
+      "name": "Bellingcat Online Investigation Toolkit",
+      "category": "Training",
+      "url": "https://bellingcat.gitbook.io/toolkit",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://bellingcat.gitbook.io/toolkit"
+    },
+    {
+      "name": "OSINT Framework",
+      "category": "Training",
+      "url": "https://osintframework.com/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://osintframework.com/"
+    },
+    {
+      "name": "IntelTechniques Tools",
+      "category": "Training",
+      "url": "https://inteltechniques.com/tools/",
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://inteltechniques.com/tools/"
+    }
+  ]
+}

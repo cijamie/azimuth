@@ -1,0 +1,6 @@
+{
+  "name": "azimuth-extension",
+  "private": true,
+  "type": "module",
+  "description": "Lets scripts/sweep.mjs import sweep-core.js as an ES module. Not used by the browser."
+}

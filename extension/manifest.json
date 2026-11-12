@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Azimuth OSINT helper",
+  "version": "1.0.0",
+  "description": "Adds 'Investigate in Azimuth' to the right-click menu and runs the 600-site username sweep for the Azimuth OSINT workbench.",
+  "permissions": ["contextMenus", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "content_scripts": [
+    {
+      "matches": ["http://127.0.0.1/*", "http://localhost/*", "https://*.github.io/*", "https://jamies.dev/*", "file:///*"],
+      "js": ["bridge.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options.html",
+  "icons": { "128": "icon.png" },
+  "action": { "default_title": "Open Azimuth", "default_icon": "icon.png" }
+}

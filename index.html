@@ -3,250 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZIMUTH | Intelligence Management System</title>
-    <meta name="description" content="AZIMUTH is a professional OSINT and Intelligence Management System for rapid asset discovery and evidence logging.">
-    <meta name="keywords" content="OSINT, Intelligence, Investigation, Cyber Security, Registry, Report Builder">
-    <meta name="author" content="AZIMUTH IMS">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourusername.github.io/Azimuth/">
-    <meta property="og:title" content="AZIMUTH | Intelligence Management System">
-    <meta property="og:description" content="Secure, rapid intelligence node discovery and investigation report builder.">
+    <title>AZIMUTH | OSINT Workbench</title>
+    <meta name="description" content="Browser-based OSINT workbench: paste a selector, get live lookups, pivots, a link chart, timeline and an exportable case report.">
+    <meta name="referrer" content="no-referrer">
+    <meta name="application-name" content="azimuth">
+    <meta property="og:title" content="AZIMUTH | OSINT Workbench">
+    <meta property="og:description" content="Paste a selector, get live lookups, pivots, a link chart, timeline and a case report. All in your browser.">
     <meta property="og:image" content="logo.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yourusername.github.io/Azimuth/">
-    <meta property="twitter:title" content="AZIMUTH | Intelligence Management System">
-    <meta property="twitter:description" content="Secure, rapid intelligence node discovery and investigation report builder.">
-    <meta property="twitter:image" content="logo.png">
-
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Mono:wght@400;500&family=Special+Elite&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/arf.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/arf.css?v=3.1">
+    <script>try { const t = JSON.parse(localStorage.getItem('azimuth_settings') || '{}').theme; if (t) document.documentElement.dataset.theme = t; } catch {}</script>
 </head>
-<body class="enterprise-theme">
-    <div class="app-wrapper">
-        <div id="sidebar-overlay" class="sidebar-overlay"></div>
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="brand">
-                    <img src="logo.png" alt="AZIMUTH" class="brand-logo-img">
-                    <span class="brand-name">AZIMUTH</span>
-                </div>
-                <div class="user-profile">
-                    <div class="user-avatar">AZ</div>
-                    <div class="user-info">
-                        <span class="user-role">ANALYST</span>
-                        <span class="user-status">SECURE SESSION</span>
-                    </div>
-                </div>
+<body>
+
+<!-- Top bar: one search box for everything -->
+<header class="topbar">
+    <button id="rail-toggle" class="icon-btn mobile-only" aria-label="Menu">☰</button>
+    <a class="brand" href="#" id="brand-home"><img src="logo.png" alt=""><span>AZIMUTH</span></a>
+    <form class="omnibox" id="omnibox" autocomplete="off">
+        <span class="omni-icon">⌕</span>
+        <input id="q" type="text" spellcheck="false" placeholder="Paste or type anything: username, email, domain, IP, link, phone, hash, wallet, name…" aria-label="What to investigate">
+        <span class="omni-type" id="q-detected"></span>
+        <select id="q-type" aria-label="Type" title="Detected automatically. Change it if the guess is wrong."></select>
+        <button class="btn primary" id="q-go" type="submit" aria-label="Investigate"><span class="go-label">Investigate</span><span class="go-arrow">→</span></button>
+    </form>
+    <button class="icon-btn" id="palette-btn" title="Commands (Ctrl+K)">⌘</button>
+    <button class="icon-btn" id="settings-btn" title="Settings">⚙</button>
+</header>
+
+<div class="layout">
+    <div id="rail-overlay" class="rail-overlay"></div>
+    <nav class="rail" id="rail">
+        <button class="rail-item active" data-view="investigate"><span class="ri">◎</span><span>Investigate</span></button>
+        <button class="rail-item" data-view="graph"><span class="ri">⟡</span><span>Link chart &amp; timeline</span></button>
+        <button class="rail-item" data-view="case"><span class="ri">▣</span><span>Case file</span><span class="badge" id="evidence-count">0</span></button>
+        <button class="rail-item" data-view="watch"><span class="ri">◷</span><span>Watchlist</span><span class="badge" id="watch-count">0</span></button>
+        <div class="rail-sep"></div>
+        <button class="rail-item" data-view="registry"><span class="ri">▤</span><span>Tool directory</span></button>
+        <button class="rail-item" data-view="dorks"><span class="ri">⌕</span><span>Search dorks</span></button>
+        <button class="rail-item" data-view="toolkit"><span class="ri">⚒</span><span>Toolkit</span></button>
+        <div class="rail-foot">
+            <div class="case-chip" id="case-chip" title="Active case (open the Case file to rename)">
+                <span class="tiny muted">Case</span>
+                <span id="case-chip-name">Untitled case</span>
             </div>
-
-            <nav class="sidebar-nav">
-                <div class="nav-group">
-                    <p class="group-label">SECURITY OPS</p>
-                    <div class="opsec-widget" id="opsec-widget">
-                        <div style="display:flex; justify-content:space-between; font-size:0.6rem; color:var(--text-dim); margin-bottom:4px;">
-                            <span>IP ADDR:</span>
-                            <span id="opsec-ip" style="color:#fff;">LOADING...</span>
-                        </div>
-                        <div style="display:flex; justify-content:space-between; font-size:0.6rem; color:var(--text-dim);">
-                            <span>STATUS:</span>
-                            <span id="opsec-status" style="color:var(--warning);">VERIFYING...</span>
-                        </div>
-                    </div>
-                    <button id="purge-session-btn" class="nav-item">[!] PURGE SESSION [!]</button>
-                </div>
-
-                <div class="nav-group">
-                    <p class="group-label">OMNI-SEARCH</p>
-                    <input type="text" id="omni-search" placeholder="Search all registries..." style="width:100%; background:rgba(0,0,0,0.3); border:1px solid var(--border); padding:0.6rem; color:#fff; font-size:0.75rem; border-radius:6px; margin-bottom:0.5rem; outline:none; transition:var(--transition);" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
-                </div>
-
-                <div class="nav-group">
-                    <p class="group-label">GLOBAL TARGET</p>
-                    <input type="text" id="global-target" placeholder="Enter Username/IP/Domain..." style="width:100%; background:rgba(0,0,0,0.4); border:1px solid var(--border); padding:0.6rem; color:var(--accent); font-size:0.75rem; border-radius:6px; margin-bottom:1rem; outline:none; font-family: 'Roboto Mono', monospace; transition:var(--transition);" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
-                </div>
-
-                <div class="nav-group">
-                    <p class="group-label">OPERATIONS</p>
-                    <div class="nav-item active" id="nav-dashboard">Operational Guidance</div>
-                    <div class="nav-item" id="nav-dorks">Dork Generator</div>
-                    <div class="nav-item" id="nav-board">Report Builder</div>
-                </div>
-
-                <div class="nav-group">
-                    <p class="group-label">PRIORITIZED</p>
-                    <div id="favorites-list" class="nav-links">
-                        <span class="no-assets">None</span>
-                    </div>
-                </div>
-
-                <div class="nav-group">
-                    <p class="group-label">REGISTRIES</p>
-                    <div id="category-list" class="nav-links"></div>
-                </div>
-            </nav>
-        </aside>
-
-        <main class="workspace">
-            <header class="workspace-header">
-                <button id="sidebar-toggle" class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <h1 id="current-view-name">Dashboard</h1>
-                <div class="mobile-search-trigger" id="mobile-search-btn">🔍</div>
-            </header>
-
-            <!-- Dashboard View -->
-            <section id="view-tools" class="view-pane">
-                <div class="mobile-category-scroller" id="mobile-category-list"></div>
-                <div id="results-grid" class="node-grid"></div>
-            </section>
-
-            <!-- Dork Generator View -->
-            <section id="view-dorks" class="view-pane hidden">
-                <div class="report-header-compact" style="max-width: 800px; margin: 0 auto;">
-                    <h2 style="font-family: 'Roboto Mono', monospace; font-size: 1.2rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 2rem;">[ DORK GENERATOR ]</h2>
-                    
-                    <div class="field-group">
-                        <label>TARGET DOMAIN / ENTITY</label>
-                        <input type="text" id="dork-target" placeholder="example.com or \"John Doe\"" style="font-family: 'Roboto Mono', monospace;">
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-                        <div class="field-group">
-                            <label>DORK TEMPLATE</label>
-                            <select id="dork-template">
-                                <option value="docs">Public Documents (PDF, DOCX)</option>
-                                <option value="login">Login Pages & Portals</option>
-                                <option value="config">Config / Backup Files</option>
-                                <option value="social">Social Media Profiles</option>
-                                <option value="index">Directory Indexing</option>
-                                <option value="paste">Pastebin & Leaks</option>
-                            </select>
-                        </div>
-                        <div class="field-group">
-                            <label>SEARCH ENGINE</label>
-                            <select id="dork-engine">
-                                <option value="google">Google</option>
-                                <option value="bing">Bing</option>
-                                <option value="duck">DuckDuckGo</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--accent); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
-                        <label style="color: var(--accent); font-size: 0.65rem; letter-spacing: 2px; margin-bottom: 12px; display: block; font-weight: 800; text-transform: uppercase;">GENERATED SYNTAX</label>
-                        <div id="dork-result" style="color: #fff; font-family: 'Roboto Mono', monospace; font-size: 0.95rem; word-break: break-all; min-height: 1.5rem;">Enter target to generate dork...</div>
-                    </div>
-
-                    <div style="display: flex; gap: 1rem;">
-                        <button id="launch-dork-btn" class="btn-action btn-confirm" style="flex: 2;">LAUNCH INVESTIGATION</button>
-                        <button id="copy-dork-btn" class="btn-action" style="flex: 1; background: var(--sidebar-bg); border: 1px solid var(--border); color: #fff;">COPY</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Report Builder View -->
-            <section id="view-board" class="view-pane hidden">
-                <div class="report-header-compact">
-                    <div class="meta-row">
-                        <div class="meta-input-group">
-                            <label>ANALYST NAME</label>
-                            <input type="text" id="report-analyst-name" placeholder="Analyst Identity">
-                        </div>
-                        <div class="meta-input-group">
-                            <label>CASE SUBJECT</label>
-                            <input type="text" id="report-case-subject" placeholder="Target/Case ID">
-                        </div>
-                        <div class="meta-input-group">
-                            <label>LOG RESOURCE</label>
-                            <input type="text" id="utilized-tool-name" placeholder="Tool used...">
-                        </div>
-                    </div>
-                    <div id="utilized-tools-tags" class="utilized-tools-list" style="margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 8px;"></div>
-                    
-                    <div class="action-bar desktop-only-actions">
-                        <button id="export-report-btn" class="btn-action btn-confirm">GENERATE PDF REPORT</button>
-                        <button id="export-case-btn" class="btn-action" style="background: var(--sidebar-bg); border: 1px solid var(--border); color: #fff;">EXPORT CASE</button>
-                        <button id="import-case-btn" class="btn-action" style="background: var(--sidebar-bg); border: 1px solid var(--border); color: #fff;">IMPORT CASE</button>
-                        <input type="file" id="import-case-input" style="display:none;" accept=".json">
-                        <button id="clear-links-btn" class="btn-action btn-ghost-danger">PURGE NOTES</button>
-                        <button id="add-note-btn" class="btn-action" style="background: var(--card-bg); border: 1px solid var(--border); color: #fff;">+ NEW EVIDENCE</button>
-                    </div>
-                </div>
-                
-                <div id="pin-board" class="note-grid">
-                    <!-- Sticky notes here -->
-                </div>
-
-                <button id="mobile-add-note-btn" class="mobile-fab">+</button>
-            </section>
-
-            <!-- Mobile Bottom Nav -->
-            <nav class="mobile-bottom-nav">
-                <div class="mobile-nav-item active" id="m-nav-dashboard">
-                    <span class="nav-icon">📊</span>
-                    <span class="nav-label">GUIDANCE</span>
-                </div>
-                <div class="mobile-nav-item" id="m-nav-dorks">
-                    <span class="nav-icon">🔍</span>
-                    <span class="nav-label">DORKS</span>
-                </div>
-                <div class="mobile-nav-item" id="m-nav-registries">
-                    <span class="nav-icon">📂</span>
-                    <span class="nav-label">REGISTRY</span>
-                </div>
-                <div class="mobile-nav-item" id="m-nav-board">
-                    <span class="nav-icon">📝</span>
-                    <span class="nav-label">REPORT</span>
-                </div>
-            </nav>
-        </main>
-    </div>
-
-    <!-- Note Modal -->
-    <div id="note-modal" class="modal-overlay hidden">
-        <div class="modal-card">
-            <h3 id="modal-title">LOG EVIDENCE</h3>
-            <div class="field-group">
-                <label>IDENTIFIER</label>
-                <input type="text" id="note-title" placeholder="Record ID">
-            </div>
-            <div class="field-group">
-                <label>SUMMARY</label>
-                <textarea id="note-text" placeholder="Intelligence findings..."></textarea>
-            </div>
-            <div class="field-group">
-                <label>EVIDENCE SNAPSHOT (PASTE IMAGE OR URL)</label>
-                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                    <input type="text" id="note-image" placeholder="https://image-link.com/photo.jpg" style="flex: 1;">
-                    <button id="upload-snapshot-btn" class="btn-action" style="background:#222; font-size: 0.6rem; padding: 0 1rem;">UPLOAD</button>
-                    <input type="file" id="note-image-file" style="display:none;" accept="image/*">
-                </div>
-                <div id="snapshot-preview-container" style="display:none; margin-top: 10px; border: 1px dashed #333; padding: 10px; text-align: center; position: relative;">
-                    <img id="snapshot-preview" style="max-width: 100%; max-height: 150px; border: 1px solid #1a1a1a;">
-                    <button id="remove-snapshot-btn" style="position: absolute; top: 0; right: 0; background: red; color: white; border: none; cursor: pointer; padding: 2px 5px; font-size: 10px;">X</button>
-                </div>
-                <p style="font-size: 0.6rem; color: #666; margin-top: 5px;">TIP: You can paste a screenshot (Ctrl+V) directly while this modal is open.</p>
-            </div>
-            <div style="display:flex; justify-content:flex-end; gap:10px;">
-                <button id="close-modal" class="btn-action" style="background:transparent; border:1px solid #333; color:#fff;">CANCEL</button>
-                <button id="save-note" class="btn-action btn-confirm">SAVE RECORD</button>
-            </div>
+            <button class="opsec-line" id="opsec-check" title="Check the IP address that websites and lookups see">
+                <span class="dot" id="opsec-dot"></span><span id="opsec-text">Check my IP</span>
+            </button>
         </div>
-    </div>
+    </nav>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="js/data.js"></script>
-    <script src="js/arf.js"></script>
+    <main class="main">
+
+        <!-- ================= INVESTIGATE ================= -->
+        <section id="view-investigate" class="view">
+            <div id="inv-empty" class="empty-state">
+                <h1>What do you want to look into?</h1>
+                <p class="lead">Paste it in the box above. Azimuth works out what it is, checks free public sources right away, and shows you what it found and where to look next.</p>
+                <div class="chip-row center" id="example-selectors">
+                    <span class="muted small">Try an example:</span>
+                    <button class="chip" data-investigate="github.com">github.com</button>
+                    <button class="chip" data-investigate="8.8.8.8">8.8.8.8</button>
+                    <button class="chip" data-investigate="torvalds">torvalds</button>
+                    <button class="chip" data-investigate="Linus Torvalds">Linus Torvalds</button>
+                    <button class="chip" data-investigate="+44 20 7946 0958">+44 20 7946 0958</button>
+                    <button class="chip" data-investigate="bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq">bitcoin wallet</button>
+                </div>
+                <div class="chip-row center" id="recent-selectors"></div>
+                <div class="how">
+                    <div><b>1. Paste anything</b><span>Pasting works anywhere on the page. Paste a whole email or report and every indicator is pulled out.</span></div>
+                    <div><b>2. Read the summary</b><span>Live checks run automatically. New leads they uncover are one click away.</span></div>
+                    <div><b>3. Keep what matters</b><span>Save findings to the case, see them on the link chart and timeline, export a report.</span></div>
+                </div>
+            </div>
+
+            <div id="inv-active" class="hidden">
+                <div class="subject-bar">
+                    <span class="type-pill" id="subj-type"></span>
+                    <h1 class="subject mono" id="subj-value"></h1>
+                    <div class="subject-actions">
+                        <button class="btn" id="subj-copy" title="Copy">⧉ Copy</button>
+                        <button class="btn" id="subj-watch" title="Re-check this automatically and flag changes">☆ Watch</button>
+                        <button class="btn" id="subj-note" title="Add a note or screenshot to the case (N)">+ Note</button>
+                        <button class="btn" id="run-lookups" title="Run the live checks again">↻ Re-check</button>
+                    </div>
+                </div>
+                <p class="crumb-trail small muted" id="subj-trail"></p>
+
+                <div class="summary-card" id="lookup-summary"></div>
+
+                <div class="card hidden" id="discovered-card">
+                    <div class="card-head"><h2>New leads found</h2><span class="muted small">Things the checks uncovered. Click one to follow it; it’s linked on the chart.</span></div>
+                    <div id="discovered"></div>
+                </div>
+
+                <div class="card start-here" id="start-here-card">
+                    <div class="card-head">
+                        <h2>Start here</h2>
+                        <span class="muted small" id="start-here-hint">The best places to check by hand, already filled in.</span>
+                        <span class="spacer"></span>
+                        <button class="btn primary" id="open-top">Open all</button>
+                    </div>
+                    <div id="popup-notice" class="notice hidden"></div>
+                    <div class="pivot-list big" id="start-here"></div>
+                </div>
+
+                <div class="tabs" id="inv-tabs">
+                    <button class="tab active" data-tab="findings">Findings <span class="count" id="tab-findings-count"></span></button>
+                    <button class="tab" data-tab="links">More places to look <span class="count" id="tab-links-count"></span></button>
+                    <button class="tab hidden" data-tab="sweep" id="tab-sweep">Username sweep</button>
+                </div>
+                <div class="tabpane" data-pane="findings">
+                    <div id="lookup-results" class="lookup-grid"></div>
+                </div>
+                <div class="tabpane hidden" data-pane="links">
+                    <div class="pane-tools"><label class="toggle"><input type="checkbox" id="pivot-log" checked> record opened links in the case</label></div>
+                    <div id="pivot-groups"></div>
+                </div>
+                <div class="tabpane hidden" data-pane="sweep">
+                    <div id="sweep-panel"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GRAPH & TIMELINE ================= -->
+        <section id="view-graph" class="view hidden">
+            <div class="card">
+                <div class="card-head">
+                    <h2>Link chart</h2>
+                    <span class="muted small">Everything you investigated and how it connects. Drag to rearrange, scroll to zoom, click a node to investigate it.</span>
+                    <span class="spacer"></span>
+                    <label class="toggle"><input type="checkbox" id="graph-leads" checked> show un-followed leads</label>
+                    <button class="btn" id="graph-relayout">Re-arrange</button>
+                    <button class="btn" id="graph-download">Download SVG</button>
+                </div>
+                <div class="graph-wrap" id="graph-wrap"><svg id="graph" role="img" aria-label="Link chart"></svg><div class="graph-empty muted" id="graph-empty">Investigate something to start the chart.</div></div>
+                <div class="legend" id="graph-legend"></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h2>Timeline</h2><span class="muted small">Dates found by the checks (registrations, account creation, archive captures, photo dates) plus your evidence.</span></div>
+                <div id="timeline" class="timeline"></div>
+            </div>
+        </section>
+
+        <!-- ================= CASE ================= -->
+        <section id="view-case" class="view hidden">
+            <div class="card">
+                <div class="grid-3">
+                    <label class="field"><span>Case name</span><input id="case-subject" class="input" placeholder="e.g. Phishing campaign against Acme"></label>
+                    <label class="field"><span>Analyst</span><input id="case-analyst" class="input" placeholder="Your name or handle"></label>
+                    <label class="field"><span>Case ID</span><input id="case-ref" class="input mono" readonly></label>
+                </div>
+                <label class="field"><span>Summary / assessment</span><textarea id="case-summary" class="input" placeholder="Objective, what you found, how confident you are…"></textarea></label>
+            </div>
+
+            <div class="card">
+                <div class="card-head"><h2>Report</h2></div>
+                <div class="report-row">
+                    <label class="field"><span>Template</span>
+                        <select id="report-template" class="input">
+                            <option value="standard">Standard investigation report</option>
+                            <option value="le">Law enforcement (exhibits &amp; chain of custody)</option>
+                            <option value="journalism">Journalism (sources &amp; verification)</option>
+                            <option value="dd">Corporate due diligence (risk findings)</option>
+                        </select>
+                    </label>
+                    <div class="btn-row">
+                        <button class="btn primary" id="export-pdf-btn">Download PDF</button>
+                        <button class="btn" id="export-md-btn">Markdown</button>
+                        <button class="btn" id="export-json-btn">JSON backup</button>
+                    </div>
+                </div>
+                <details class="more-box">
+                    <summary>Share or combine cases</summary>
+                    <p class="muted small">There is no server, so sharing works by file. Encrypted files can only be opened with the passphrase you choose.</p>
+                    <div class="btn-row">
+                        <button class="btn" id="export-enc-btn">Download encrypted case…</button>
+                        <label class="btn">Open a case file…<input type="file" id="import-case-input" accept=".json,.azcase,application/json" hidden></label>
+                        <label class="btn">Merge a teammate’s case…<input type="file" id="merge-case-input" accept=".json,.azcase,application/json" hidden></label>
+                        <button class="btn danger" id="new-case-btn">Start a new case</button>
+                    </div>
+                </details>
+            </div>
+
+            <div class="card">
+                <div class="card-head"><h2>Evidence</h2><span class="spacer"></span><input type="search" id="evidence-filter" class="input input-sm" placeholder="Filter"><button class="btn primary" id="add-note-btn">+ Add evidence</button></div>
+                <div id="pin-board" class="evidence-list"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-head"><h2>Selectors</h2></div>
+                <div id="case-selectors" class="chip-row"></div>
+            </div>
+
+            <details class="card more-box">
+                <summary><b>Activity log</b> <span class="muted small">every lookup, link and change, with UTC times</span></summary>
+                <div class="btn-row"><button class="btn small" id="clear-activity">Clear log</button></div>
+                <div id="activity-log" class="activity-log"></div>
+            </details>
+        </section>
+
+        <!-- ================= WATCHLIST ================= -->
+        <section id="view-watch" class="view hidden">
+            <div class="card">
+                <div class="card-head">
+                    <h2>Watchlist</h2>
+                    <span class="muted small" id="watch-hint"></span>
+                    <span class="spacer"></span>
+                    <button class="btn" id="watch-notify">Enable notifications</button>
+                    <button class="btn primary" id="watch-run-all">Check all now</button>
+                </div>
+                <div id="watch-list"></div>
+            </div>
+        </section>
+
+        <!-- ================= REGISTRY ================= -->
+        <section id="view-registry" class="view hidden">
+            <div class="registry-head">
+                <input type="search" id="omni-search" class="input" placeholder="Search 750 tools: whois, reverse image, telegram, flight…">
+                <label class="toggle"><input type="checkbox" id="filter-hide-down" checked> hide unhealthy links</label>
+                <label class="toggle" title="Only tools that fill in what you’re investigating"><input type="checkbox" id="filter-input"> fills in my search</label>
+            </div>
+            <div id="favorites-row" class="chip-row"></div>
+            <div class="crumbs" id="registry-crumbs"></div>
+            <div id="registry-stats" class="stat-row"></div>
+            <div id="results-grid" class="node-grid"></div>
+        </section>
+
+        <!-- ================= DORKS ================= -->
+        <section id="view-dorks" class="view hidden">
+            <div class="card">
+                <div class="grid-3">
+                    <label class="field"><span>Target</span><input type="text" id="dork-target" class="input mono" placeholder='example.com, "Jane Doe", jdoe@example.com'></label>
+                    <label class="field"><span>Target is a</span>
+                        <select id="dork-mode" class="input"><option value="domain">Website / organisation</option><option value="person">Person or keyword</option><option value="email">Email address</option><option value="username">Username</option></select></label>
+                    <label class="field"><span>Search engine</span>
+                        <select id="dork-engine" class="input"><option value="google">Google</option><option value="bing">Bing</option><option value="duck">DuckDuckGo</option><option value="yandex">Yandex</option><option value="brave">Brave</option></select></label>
+                </div>
+                <label class="field"><span>Add to every search (optional)</span><input type="text" id="dork-extra" class="input mono" placeholder='-site:example.com "confidential"'></label>
+            </div>
+            <div id="dork-list" class="dork-list"></div>
+            <details class="card more-box" id="custom-dork-box">
+                <summary><b>Save your own dork</b> <span class="muted small">use {T} where the target goes</span></summary>
+                <div class="grid-3">
+                    <label class="field"><span>Name</span><input id="cd-label" class="input" placeholder="Exposed Jenkins"></label>
+                    <label class="field span-2"><span>Query</span><input id="cd-query" class="input mono" placeholder='site:{T} intitle:"Dashboard [Jenkins]"'></label>
+                </div>
+                <div class="btn-row"><button class="btn primary" id="cd-save">Save for this target type</button></div>
+            </details>
+        </section>
+
+        <!-- ================= TOOLKIT ================= -->
+        <section id="view-toolkit" class="view hidden">
+            <div class="tabs" id="toolkit-tabs">
+                <button class="tab active" data-tab="ioc">Extract indicators</button>
+                <button class="tab" data-tab="image">Photo check</button>
+                <button class="tab" data-tab="sun">Sun &amp; shadows</button>
+                <button class="tab" data-tab="wayback">Compare archived pages</button>
+                <button class="tab" data-tab="codec">Encode / decode</button>
+                <button class="tab" data-tab="hash">Hash</button>
+                <button class="tab" data-tab="time">Timestamps</button>
+            </div>
+
+            <div class="card tabpane" data-pane="ioc">
+                <p class="hint">Paste any text: an email, a report, logs, page source. Indicators are pulled out, de-duplicated and refanged. Click one to investigate it.</p>
+                <textarea id="ioc-input" class="input mono tall" placeholder="Paste text here…"></textarea>
+                <div class="btn-row"><button class="btn" id="ioc-copy">Copy as list</button><button class="btn" id="ioc-defang">Copy defanged</button></div>
+                <div id="ioc-output"></div>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="image">
+                <p class="hint">Everything here runs on your computer; the photo is not uploaded. Reads hidden metadata (camera, date, GPS), shows an error-level analysis to spot edited areas, and helps you reverse-search it.</p>
+                <label class="dropzone" id="img-drop"><input type="file" id="img-file" accept="image/*" hidden><span>Drop a photo here or click to choose</span></label>
+                <div id="img-output"></div>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="sun">
+                <p class="hint">Where was the sun? Use it to check whether a photo’s shadows fit the claimed place and time, or to estimate the time of day from a shadow.</p>
+                <div class="grid-3">
+                    <label class="field"><span>Latitude, longitude</span><input id="sun-ll" class="input mono" placeholder="51.5007, -0.1246"></label>
+                    <label class="field"><span>Date &amp; time</span><input id="sun-dt" class="input" type="datetime-local"></label>
+                    <label class="field"><span>Time zone</span><select id="sun-tz" class="input"><option value="place">Local time at that place (estimated)</option><option value="utc">UTC</option><option value="local">My computer’s time zone</option></select></label>
+                </div>
+                <div class="grid-3">
+                    <label class="field"><span>Object height (optional)</span><input id="sun-h" class="input" type="number" step="any" placeholder="e.g. 1.8"></label>
+                    <label class="field"><span>Its shadow length (optional)</span><input id="sun-s" class="input" type="number" step="any" placeholder="e.g. 2.5"></label>
+                    <div class="field"><span>&nbsp;</span><button class="btn" id="sun-from-photo" disabled title="Load a photo with GPS in Photo check first">Use last photo’s GPS &amp; time</button></div>
+                </div>
+                <div id="sun-output"></div>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="wayback">
+                <p class="hint">See how a page changed over time. Pick two archived captures from the Wayback Machine to view them side by side.</p>
+                <div class="omni-inline"><input id="wb-url" class="input mono" placeholder="https://example.com/about"><button class="btn primary" id="wb-load">Find captures</button></div>
+                <div id="wb-output"></div>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="codec">
+                <textarea id="codec-input" class="input mono tall" placeholder="Input"></textarea>
+                <div class="btn-row" id="codec-buttons"></div>
+                <textarea id="codec-output" class="input mono tall" placeholder="Output" readonly></textarea>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="hash">
+                <textarea id="hash-input" class="input mono" placeholder="Text to hash"></textarea>
+                <div class="btn-row"><label class="btn">Hash a file instead<input type="file" id="hash-file" hidden></label><span class="muted small" id="hash-file-name"></span></div>
+                <div id="hash-output" class="kv-table"></div>
+            </div>
+
+            <div class="card tabpane hidden" data-pane="time">
+                <label class="field"><span>Unix time (s/ms), date, or an X/Twitter / Discord ID</span><input type="text" id="time-input" class="input mono" placeholder="1700000000 · 2024-05-01T12:00:00Z · 1212121212121212121"></label>
+                <div id="time-output" class="kv-table"></div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<nav class="bottom-nav">
+    <button data-view="investigate" class="active"><span>◎</span>Investigate</button>
+    <button data-view="graph"><span>⟡</span>Chart</button>
+    <button data-view="case"><span>▣</span>Case</button>
+    <button data-view="registry"><span>▤</span>Tools</button>
+    <button data-view="toolkit"><span>⚒</span>Toolkit</button>
+</nav>
+
+<!-- Evidence modal -->
+<div id="note-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+        <h3 id="modal-title">Add evidence</h3>
+        <label class="field"><span>Title</span><input type="text" id="note-title" class="input" placeholder="What is this?"></label>
+        <label class="field"><span>Source link</span><input type="url" id="note-source" class="input mono" placeholder="https://…"></label>
+        <label class="field"><span>Details</span><textarea id="note-text" class="input" placeholder="What you found and why it matters"></textarea></label>
+        <div class="grid-2">
+            <label class="field"><span>Tags</span><input type="text" id="note-tags" class="input" placeholder="comma, separated (use “risk” to flag it in due-diligence reports)"></label>
+            <label class="field"><span>Confidence</span><select id="note-confidence" class="input"><option value="">Not set</option><option>Confirmed</option><option>Probable</option><option>Possible</option><option>Doubtful</option></select></label>
+        </div>
+        <div class="field">
+            <span>Screenshot</span>
+            <label class="dropzone small" id="note-drop"><input type="file" id="note-image-file" accept="image/*" hidden><span>Paste (Ctrl+V), drop, or click to choose</span></label>
+            <div id="snapshot-preview-container" class="snapshot hidden"><img id="snapshot-preview" alt=""><div class="mono tiny muted" id="snapshot-hash"></div><button class="btn small" id="remove-snapshot-btn" type="button">Remove</button></div>
+        </div>
+        <div class="btn-row end"><button id="close-modal" class="btn">Cancel</button><button id="save-note" class="btn primary">Save <kbd>Ctrl+Enter</kbd></button></div>
+    </div>
+</div>
+
+<!-- Settings modal -->
+<div id="settings-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+    <div class="modal-card wide">
+        <h3 id="settings-title">Settings</h3>
+        <div class="settings-section">
+            <h4>Behaviour</h4>
+            <label class="toggle"><input type="checkbox" id="set-auto"> Run live checks automatically when I investigate something</label>
+            <label class="toggle"><input type="checkbox" id="set-theme-light"> Light theme</label>
+            <label class="field"><span>Default country for phone numbers without +</span><input id="set-region" class="input" maxlength="2" placeholder="US, GB, DE…"></label>
+            <label class="field"><span>Watchlist: re-check every</span><select id="set-watch-hours" class="input"><option value="1">hour</option><option value="6">6 hours</option><option value="24">day</option><option value="168">week</option></select></label>
+        </div>
+        <div class="settings-section">
+            <h4>API keys <span class="muted small">(optional; stored only in this browser and sent only to that service)</span></h4>
+            <label class="field"><span>Shodan: full host details for IPs</span><input id="key-shodan" class="input mono" type="password" autocomplete="off" placeholder="paste key"></label>
+            <label class="field"><span>VirusTotal: reputation for domains, IPs, URLs and file hashes</span><input id="key-virustotal" class="input mono" type="password" autocomplete="off" placeholder="paste key"></label>
+            <p class="muted small">Have I Been Pwned, Hunter, SecurityTrails and GreyNoise don’t allow calls from a web page, so they can’t be added here. Their links are under “More places to look”.</p>
+        </div>
+        <div class="settings-section">
+            <h4>Browser extension</h4>
+            <p class="small" id="ext-status"></p>
+            <p class="muted small">The extension adds “Investigate in Azimuth” to the right-click menu and unlocks the 600-site username sweep. Install it from the <code>extension</code> folder (instructions in the README).</p>
+        </div>
+        <div class="settings-section">
+            <h4>Data</h4>
+            <button class="btn danger" id="purge-session-btn">Delete all Azimuth data in this browser</button>
+        </div>
+        <div class="btn-row end"><button class="btn primary" id="settings-close">Done</button></div>
+    </div>
+</div>
+
+<!-- Command palette -->
+<div id="palette" class="palette hidden" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="palette-card">
+        <input id="palette-input" class="input input-lg" placeholder="Type a command, a tool name, or something to investigate…" autocomplete="off" spellcheck="false">
+        <div id="palette-list" class="palette-list"></div>
+        <div class="palette-foot muted tiny">↑↓ to move · Enter to run · Esc to close</div>
+    </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+<script src="js/data.js?v=3.1"></script>
+<script src="js/util.js?v=3.1"></script>
+<script src="js/settings.js?v=3.1"></script>
+<script src="js/selectors.js?v=3.1"></script>
+<script src="js/pivots.js?v=3.1"></script>
+<script src="js/lookups.js?v=3.1"></script>
+<script src="js/toolkit.js?v=3.1"></script>
+<script src="js/imagetools.js?v=3.1"></script>
+<script src="js/case.js?v=3.1"></script>
+<script src="js/graph.js?v=3.1"></script>
+<script src="js/watch.js?v=3.1"></script>
+<script src="js/sweep.js?v=3.1"></script>
+<script src="js/palette.js?v=3.1"></script>
+<script src="js/app.js?v=3.1"></script>
 </body>
 </html>

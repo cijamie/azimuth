@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Azimuth helper settings</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 560px; margin: 2rem auto; padding: 0 1rem; color: #15191e; }
+  input { width: 100%; padding: .5rem; font: inherit; box-sizing: border-box; }
+  button { margin-top: .8rem; padding: .5rem 1rem; font: inherit; cursor: pointer; }
+  .muted { color: #555; font-size: .9rem; }
+</style>
+</head>
+<body>
+  <h1>Azimuth helper</h1>
+  <label for="base">Where Azimuth runs (the right-click menu opens this address)</label>
+  <input id="base" type="url" placeholder="https://jamies.dev/azimuth/">
+  <p class="muted">Examples: your GitHub Pages address, or <code>http://127.0.0.1:8765/</code> if you serve it locally. To use Azimuth straight from a file on disk, also turn on “Allow access to file URLs” for this extension on the extensions page.</p>
+  <button id="save">Save</button> <span id="msg" class="muted"></span>
+  <script src="options.js"></script>
+</body>
+</html>
