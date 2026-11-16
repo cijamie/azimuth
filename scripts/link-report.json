@@ -1,11 +1,11 @@
 {
-  "checked": "2026-11-12",
+  "checked": "2026-11-16",
   "counts": {
-    "error": 36,
-    "blocked": 134,
-    "ok": 578,
+    "error": 29,
+    "blocked": 146,
+    "ok": 565,
     "dead": 2,
-    "moved": 2,
+    "moved": 1,
     "tor": 5
   },
   "results": [
@@ -165,16 +165,16 @@
       "name": "Skymem",
       "category": "Email Address / Email Search",
       "url": "http://www.skymem.info/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "http://www.skymem.info/"
     },
     {
       "name": "Epieos",
       "category": "Email Address / Email Search",
       "url": "https://epieos.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://epieos.com/"
     },
     {
@@ -197,8 +197,8 @@
       "name": "Epieos",
       "category": "Email Address / Email Search",
       "url": "https://epieos.com/?q={target}&t=email",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://epieos.com/?q=test%40example.com&t=email"
     },
     {
@@ -222,8 +222,8 @@
       "category": "Email Address / Common Email Formats",
       "url": "http://www.onelook.com/reverse-dictionary.shtml",
       "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.onelook.com/thesaurus"
+      "reason": "HTTP 202",
+      "finalUrl": "https://www.onelook.com/reverse-dictionary.shtml"
     },
     {
       "name": "Reacher Demo",
@@ -365,17 +365,17 @@
       "name": "Whoisology",
       "category": "Domain Name / Whois Records",
       "url": "https://whoisology.com/#advanced",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://whoisology.com/"
     },
     {
       "name": "DNSstuff",
       "category": "Domain Name / Whois Records",
       "url": "https://tools.dnsstuff.com/",
-      "status": "error",
-      "reason": "HTTP 502",
-      "finalUrl": "https://tools.dnsstuff.com/"
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.dnsstuff.com/freetools"
     },
     {
       "name": "Domaincrawler.com",
@@ -461,8 +461,8 @@
       "name": "SynapsInt",
       "category": "Domain Name / Subdomains",
       "url": "https://synapsint.com",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://synapsint.com/"
     },
     {
@@ -485,8 +485,8 @@
       "name": "Subdomain Center",
       "category": "Domain Name / Subdomains",
       "url": "https://api.subdomain.center/?domain={target}",
-      "status": "blocked",
-      "reason": "HTTP 503 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://api.subdomain.center/?domain=example.com"
     },
     {
@@ -516,8 +516,8 @@
       "name": "Shodan",
       "category": "Domain Name / Discovery",
       "url": "https://www.shodan.io/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://www.shodan.io/"
     },
     {
@@ -643,10 +643,10 @@
     {
       "name": "crt.sh - Certificate Search",
       "category": "Domain Name / Certificate Search",
-      "url": "https://crt.sh/?",
+      "url": "https://crt.sh/",
       "status": "dead",
       "reason": "HTTP 404",
-      "finalUrl": "https://crt.sh/?"
+      "finalUrl": "https://crt.sh/"
     },
     {
       "name": "Netlas.io",
@@ -684,8 +684,8 @@
       "name": "DNS Dumpster",
       "category": "Domain Name / PassiveDNS",
       "url": "https://dnsdumpster.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://dnsdumpster.com/"
     },
     {
@@ -930,8 +930,8 @@
       "name": "ClearWebStats.com",
       "category": "Domain Name / Analytics",
       "url": "https://www.clearwebstats.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://www.clearwebstats.com/"
     },
     {
@@ -1201,8 +1201,8 @@
       "name": "My IP Address",
       "category": "IP & MAC Address / Geolocation",
       "url": "https://www.ipaddress.my/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://www.ipaddress.my/"
     },
     {
@@ -1257,9 +1257,8 @@
       "name": "IPv4 CIDR Report",
       "category": "IP & MAC Address / IPv4",
       "url": "http://www.cidr-report.org/as2.0/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "http://www.cidr-report.org/as2.0/"
+      "status": "error",
+      "reason": "ETIMEDOUT: fetch failed"
     },
     {
       "name": "Team Cymru IP to ASN",
@@ -1289,9 +1288,8 @@
       "name": "IPv6 CIDR Report",
       "category": "IP & MAC Address / IPv6",
       "url": "http://www.cidr-report.org/v6/as2.0/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "http://www.cidr-report.org/v6/as2.0/"
+      "status": "error",
+      "reason": "ETIMEDOUT: fetch failed"
     },
     {
       "name": "Hurricane Electric BGP Toolkit",
@@ -1520,8 +1518,8 @@
       "name": "TinEye Reverse Image Search",
       "category": "Images / Videos / Docs / Images / Search",
       "url": "http://tineye.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://tineye.com/"
     },
     {
@@ -1538,7 +1536,7 @@
       "url": "https://www.yandex.com/images/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "https://www.yandex.com/images/"
+      "finalUrl": "https://www.yandex.com/showcaptcha?cc=1&form-fb-hint=2.4.9889bfc51a06607e211c1b53fe25da7cf49d229ef70e2bc12078066552d133b257fbefbd98d715823eaf382f8453a743f418e0ac0c1fb89dbecd42&mt=33294FEFC78ACECFAA527C97DF9C0653D2B21426A0DC69DDCA3DEA1BFA92AE7299F1A704BB84C7B8E243FBC868E06FB9A4B70D1ED25CD33C9D3110A33421472A1D617740C26041BED6EB6AE5A5F91BF9E8551642D4C6318851E5C601327E15E3C39193B04B7652F1282C3BBBBEC3BD41E75BA5A6CB774BEEE0B82DFB62AA8648D61D1784EA7AFD76950B8845705E2AAEF29454606254B0&retpath=aHR0cHM6Ly93d3cueWFuZGV4LmNvbS9pbWFnZXM%2C_c9adb8c177079a280b09d115af9d35e5&t=2%252F1794833051%252Ff0cd95c655c8c3c37ed585f5ad7df060&u=9768742727922632194&s=2590cdd18d2af26b5230ea6c0eec6fff"
     },
     {
       "name": "Baidu Images",
@@ -1577,7 +1575,7 @@
       "url": "http://7photos.net/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "http://7photos.net/"
+      "finalUrl": "http://ww19.7photos.net/"
     },
     {
       "name": "Current Location",
@@ -1704,15 +1702,14 @@
       "url": "http://www.mypicsmap.com/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "https://www.mypicsmap.com/"
+      "finalUrl": "http://www.mypicsmap.com/"
     },
     {
       "name": "Flickr Hive Mind",
       "category": "Images / Videos / Docs / Images / Flickr",
       "url": "http://flickrhivemind.net/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "http://flickrhivemind.net/"
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: flickrhivemind.net:80, timeout: 10000ms)"
     },
     {
       "name": "ExifEditor",
@@ -1729,14 +1726,6 @@
       "status": "ok",
       "reason": "HTTP 200",
       "finalUrl": "http://exif.regex.info/"
-    },
-    {
-      "name": "ExifViewer",
-      "category": "Images / Videos / Docs / Images / Metadata",
-      "url": "http://www.exifviewer.org/",
-      "status": "moved",
-      "reason": "redirects to sgp2.clck1.tclckrlu.com",
-      "finalUrl": "https://sgp2.clck1.tclckrlu.com/c?id=509b966b-7f90-4f07-b0f7-27d2ea29e019&t=K1ZQ6-lLuctADeOFlMmBLhCp_sbGfN6xWIOPRVKqgQDGa0ZO0eC2d_7b3MU0sAKb-v3eqmC-6ey4bYtIbA2GBJX1Aqb3M1_3_QhTKSWn3c_twOn7JxF88a1CKDz8aDGP3XRHyB_rqij71MotIBUdPi4VcPPAELWdOIzB4-fG1KDW0x22BfNFHaKj5MmrzFjFodK8vk5QwGwj2-uk4wBhoLDhXrPxub1ouGuHT8J3ZYdb1GFmlehCmTWSWDM3icKtxw6a3DrR8eEDpStOWKJZWFScPvXNl8b0Oyt6Cbb07Rs9tjozc8fBlwWGvwhGClpwD-lxx4Evl5GFDLzNR7KMBVFeLGEnIfir8PTqUyaAOOt-COmFcyUb3yUqvLA-GNKvRkW0SycrIxPLLa10Zs4NXIm9thejXyQQpK6wKhnL8Tk0ahClMdxsSee-0lhH2_5EDKzWYcBUxzEr5mfR4aMVb6YrlY20yn7-mtPWcH6XD2MuplRwPC2TxD27rm3RQYDC9yxXy1sNI_-5tq2Lj-0An0tlAYJ7O277Q_BkRbZJuNNKYNqXi9vvbjTAJWju2kk0ueg2y8LmoDAUZFcDOC0xQtK1VIOO2YoPek9RWfl3BRDugGoeFj_oInC2bYaaRcF8CIddBLYRbR3SvYMRB7KVLpDiHyUQP1gfz_F5MVeQImclW-47TD5TYoeEUtqcMqPhXlg3jRmcO2ELPdd8W02E7KAaqnQVxsyc4D2Bos8iIitK37d-ZY9dC4FIQX-v0x_6GH6cjc_v61PUbEFYrsyM00pE8wHbHuT7AJIvB8lrm47g_Jx4Iv3vjRv5JWrmMUuGdP0AtN6JMMBIrpFKGWNW4UDODJ2Tgki4sO_VUN4yKXfmGeNz5AV3BmQC8YFpofAS9P7M-ge-eDmgeeJQNhcGwpIfsELdz9PC"
     },
     {
       "name": "Search by Exif",
@@ -1774,8 +1763,8 @@
       "name": "FotoForensics",
       "category": "Images / Videos / Docs / Images / Forensics",
       "url": "http://fotoforensics.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://fotoforensics.com/"
     },
     {
@@ -1790,8 +1779,9 @@
       "name": "InVID-WeVerify plugin",
       "category": "Images / Videos / Docs / Images / Forensics",
       "url": "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/",
-      "status": "error",
-      "reason": "AbortError: This operation was aborted"
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/"
     },
     {
       "name": "ExifTool",
@@ -1862,16 +1852,16 @@
       "category": "Images / Videos / Docs / Videos / Search",
       "url": "http://www.dogpile.com/",
       "status": "ok",
-      "reason": "HTTP 202",
+      "reason": "HTTP 200",
       "finalUrl": "https://www.dogpile.com/"
     },
     {
       "name": "Geo Search Tool",
       "category": "Images / Videos / Docs / Videos / Search",
       "url": "http://www.geosearchtool.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "http://www.geosearchtool.com/"
+      "status": "blocked",
+      "reason": "HTTP 401",
+      "finalUrl": "http://ww547.geosearchtool.com/?tkn=19vnMT3S"
     },
     {
       "name": "Yahoo Video Search",
@@ -1901,8 +1891,8 @@
       "name": "TubeChop",
       "category": "Images / Videos / Docs / Videos / Analyze / Record",
       "url": "http://www.tubechop.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://tubechop.com/"
     },
     {
@@ -2045,9 +2035,9 @@
       "name": "X Advanced Search",
       "category": "Social Networks / Twitter / Search",
       "url": "https://x.com/search-advanced",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://x.com/i/jf/onboarding/web?redirect_after_login=%2Fsearch-advanced&mode=login"
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://x.com/search-advanced"
     },
     {
       "name": "TweeterID",
@@ -2149,8 +2139,9 @@
       "name": "Myspace",
       "category": "Social Networks / Other Social Networks",
       "url": "https://myspace.com/",
-      "status": "error",
-      "reason": "AbortError: This operation was aborted"
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://myspace.com/"
     },
     {
       "name": "TheHoodUp (NSFW)",
@@ -2203,9 +2194,9 @@
     {
       "name": "Threads profile",
       "category": "Social Networks / Other Social Networks",
-      "url": "https://www.threads.net/@{target}",
-      "status": "moved",
-      "reason": "redirects to www.threads.com",
+      "url": "https://www.threads.com/@{target}",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://www.threads.com/@johndoe"
     },
     {
@@ -2270,7 +2261,7 @@
       "url": "http://www.familytreenow.com/",
       "status": "blocked",
       "reason": "HTTP 403 (bot protection)",
-      "finalUrl": "http://www.familytreenow.com/"
+      "finalUrl": "https://www.familytreenow.com/"
     },
     {
       "name": "CyberBackgroundChecks",
@@ -2284,8 +2275,8 @@
       "name": "InfoFlow Public People Search In Chilean",
       "category": "People Search Engines / General People Search",
       "url": "https://infoflow.cloud/",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://infoflow.cloud/"
     },
     {
@@ -2316,8 +2307,8 @@
       "name": "Advanced Background Checks",
       "category": "People Search Engines / General People Search",
       "url": "https://www.advancedbackgroundchecks.com/",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://www.advancedbackgroundchecks.com/"
     },
     {
@@ -2388,16 +2379,9 @@
       "name": "findmypast.com",
       "category": "People Search Engines / General People Search",
       "url": "http://search.findmypast.com/search-world-records",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
-      "finalUrl": "http://search.findmypast.com/search-world-records"
-    },
-    {
-      "name": "HowManyOfMe",
-      "category": "People Search Engines / General People Search",
-      "url": "http://howmanyofme.com/search/",
-      "status": "error",
-      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN howmanyofme.com"
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://search.findmypast.com/search-world-records"
     },
     {
       "name": "FamilySearch.org",
@@ -2413,7 +2397,7 @@
       "url": "http://search.ancestry.com/",
       "status": "blocked",
       "reason": "HTTP 403 (bot protection)",
-      "finalUrl": "http://search.ancestry.com/"
+      "finalUrl": "https://search.ancestry.com/"
     },
     {
       "name": "Nuwber",
@@ -2467,8 +2451,8 @@
       "name": "Fast People Search",
       "category": "People Search Engines / General People Search",
       "url": "https://www.fastpeoplesearch.com/",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://www.fastpeoplesearch.com/"
     },
     {
@@ -2483,8 +2467,8 @@
       "name": "The Knot",
       "category": "People Search Engines / Registries",
       "url": "https://www.theknot.com/registry/couplesearch",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403",
       "finalUrl": "https://www.theknot.com/registry/couplesearch"
     },
     {
@@ -2573,7 +2557,7 @@
       "url": "http://adultfriendfinder.com/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "http://adultfriendfinder.com/"
+      "finalUrl": "https://adultfriendfinder.com/"
     },
     {
       "name": "Ashley Madison",
@@ -2595,8 +2579,8 @@
       "name": "Spark.com",
       "category": "Dating",
       "url": "https://www.spark.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://www.spark.com/"
     },
     {
@@ -2699,9 +2683,9 @@
       "name": "SpyDialer",
       "category": "Telephone Numbers",
       "url": "http://www.spydialer.com/default.aspx",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
-      "finalUrl": "https://www.spydialer.com/default.aspx"
+      "status": "moved",
+      "reason": "deep link now redirects to homepage",
+      "finalUrl": "https://www.spydialer.com/"
     },
     {
       "name": "Phone Validator",
@@ -2731,8 +2715,8 @@
       "name": "USPhoneBook",
       "category": "Telephone Numbers",
       "url": "https://www.usphonebook.com",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://www.usphonebook.com/"
     },
     {
@@ -2755,8 +2739,8 @@
       "name": "Zillow",
       "category": "Public Records / Property Records",
       "url": "http://www.zillow.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://www.zillow.com/"
     },
     {
@@ -2808,13 +2792,6 @@
       "finalUrl": "http://www.canlii.org/en/"
     },
     {
-      "name": "Most Wanted Criminal Pages",
-      "category": "Public Records / Court / Criminal Records",
-      "url": "http://ancestorhunt.com/most-wanted-criminals-and-fugitives.htm",
-      "status": "error",
-      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN ancestorhunt.com"
-    },
-    {
       "name": "Black Book Online - Criminal Search",
       "category": "Public Records / Court / Criminal Records",
       "url": "http://www.blackbookonline.info/criminalsearch.aspx",
@@ -2827,16 +2804,15 @@
       "category": "Public Records / Court / Criminal Records",
       "url": "http://www.familywatchdog.us/",
       "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.familywatchdog.us/"
+      "reason": "HTTP 202",
+      "finalUrl": "http://www.familywatchdog.us/"
     },
     {
       "name": "Felon Spy",
       "category": "Public Records / Court / Criminal Records",
       "url": "http://www.felonspy.com/search.html",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
-      "finalUrl": "https://sawsells.com/domain/hoax.com"
+      "status": "error",
+      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN hoax.com"
     },
     {
       "name": "The Inmate Locator",
@@ -2890,8 +2866,8 @@
       "name": "CourtListener",
       "category": "Public Records / Court / Criminal Records",
       "url": "https://www.courtlistener.com/",
-      "status": "blocked",
-      "reason": "HTTP 405 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://www.courtlistener.com/"
     },
     {
@@ -2906,8 +2882,8 @@
       "name": "Google Scholar Case Law",
       "category": "Public Records / Court / Criminal Records",
       "url": "https://scholar.google.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403",
       "finalUrl": "https://scholar.google.com/"
     },
     {
@@ -2922,8 +2898,8 @@
       "name": "Free Law RECAP Archive",
       "category": "Public Records / Court / Criminal Records",
       "url": "https://www.courtlistener.com/recap/",
-      "status": "blocked",
-      "reason": "HTTP 405 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://www.courtlistener.com/recap/"
     },
     {
@@ -2946,17 +2922,15 @@
       "name": "NC Salary DB",
       "category": "Public Records / Government Records",
       "url": "http://www.newsobserver.com/news/databases/state-pay/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.newsobserver.com/news/databases/state-pay/"
+      "status": "error",
+      "reason": "AbortError: This operation was aborted"
     },
     {
       "name": "CA Salary DB",
       "category": "Public Records / Government Records",
       "url": "http://www.sacbee.com/site-services/databases/state-pay/article2642161.html",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.sacbee.com/news/databases/state-pay/article229468549.html"
+      "status": "error",
+      "reason": "AbortError: This operation was aborted"
     },
     {
       "name": "BIN Base",
@@ -2981,13 +2955,6 @@
       "status": "ok",
       "reason": "HTTP 200",
       "finalUrl": "https://publicrecords.netronline.com/"
-    },
-    {
-      "name": "Sorted by Birth Date",
-      "category": "Public Records / Birth Records",
-      "url": "http://sortedbybirthdate.com/",
-      "status": "error",
-      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN sortedbybirthdate.com"
     },
     {
       "name": "Find A Grave",
@@ -3049,9 +3016,9 @@
       "name": "FollowTheMoney.org",
       "category": "Public Records / US Political Records",
       "url": "http://www.followthemoney.org/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.followthemoney.org/"
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.followthemoney.org/"
     },
     {
       "name": "OpenSecrets.org",
@@ -3169,9 +3136,9 @@
       "name": "SEC.gov - EDGAR",
       "category": "Business Records / General Info & News",
       "url": "http://www.sec.gov/edgar.shtml",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.sec.gov/submit-filings"
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://www.sec.gov/edgar.shtml"
     },
     {
       "name": "International White Pages",
@@ -3201,8 +3168,8 @@
       "name": "Ripoff Report",
       "category": "Business Records / General Info & News",
       "url": "http://www.ripoffreport.com/",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://www.ripoffreport.com/"
     },
     {
@@ -3257,8 +3224,8 @@
       "name": "Buzzfile",
       "category": "Business Records / Company Profiles",
       "url": "http://www.buzzfile.com/Home/Basic",
-      "status": "error",
-      "reason": "HTTP 500",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://www.buzzfile.com/Home/Basic"
     },
     {
@@ -3377,8 +3344,8 @@
       "name": "LinkedIn",
       "category": "Business Records / Employee Profiles & Resumes",
       "url": "https://www.linkedin.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://www.linkedin.com/"
     },
     {
@@ -3393,8 +3360,8 @@
       "name": "RBA - Business Information Resources",
       "category": "Business Records / Additional Resources",
       "url": "http://www.rba.co.uk/sources/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "http://www.rba.co.uk/sources/"
     },
     {
@@ -3441,8 +3408,8 @@
       "name": "OpenCorporates officers",
       "category": "Business Records / Sanctions & Leaks",
       "url": "https://opencorporates.com/officers?q={target}",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403",
       "finalUrl": "https://opencorporates.com/officers?q=test"
     },
     {
@@ -3473,8 +3440,8 @@
       "name": "MyAccident - traffic accident map",
       "category": "Transportation / Vehicle Records",
       "url": "https://myaccident.org/",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://myaccident.org/"
     },
     {
@@ -3744,8 +3711,8 @@
       "name": "HERE Maps",
       "category": "Geolocation Tools / Maps",
       "url": "https://maps.here.com/",
-      "status": "blocked",
-      "reason": "HTTP 403",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://maps.here.com/"
     },
     {
@@ -3810,7 +3777,7 @@
       "url": "https://yandex.com/maps/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "https://yandex.com/maps/"
+      "finalUrl": "https://yandex.com/showcaptcha?cc=1&form-fb-hint=2.25.41700c2190098a0cbf48e2f55e23b60996dd38c6089fe8a1c19ed4e8696c9a211c65ff63e8fecc248514e00603f7db6ee2f6e9f4a7536d9607a438&mt=0FCEAC5077DFCD71145CDA2BFBC818A480DD8495E169416143A18573BCB64AD20E7D03622E213809EFE28C88AC14B731D27932CDD63CCA8AEE6A1E0D89ECB8552885619135764A4F28665EDFA3FEAA8F404303263D030DFB4C49F170C30CBEB83CCC5E6DAE796D55CE54A126455F34B87FF3CEDBC9520438E6780171F2AB78159DECD9AEF76519A20D688E02DD1BAAFF24719F0BBD7658&retpath=aHR0cHM6Ly95YW5kZXguY29tL21hcHM%2C_25defb12f4e13a537548dd3c70cb8cb2&t=2%252F1794833078%252F364c440e4e29576b2fd46c1bcbce41c8&u=9768744492153188501&s=d83eb7c40507afd183a23d432d137c7e"
     },
     {
       "name": "Google Earth",
@@ -3993,7 +3960,7 @@
       "url": "http://www.bing.com/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "https://www.bing.com/?toHttps=1&redig=F6ECAA25AD114DD1982E05654C03A1F2"
+      "finalUrl": "https://www.bing.com/?toHttps=1&redig=35240056A95346449DF40B87D797F525"
     },
     {
       "name": "DuckDuckGo",
@@ -4017,7 +3984,7 @@
       "url": "https://www.yandex.com/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "https://yandex.com/"
+      "finalUrl": "https://yandex.com/showcaptcha?cc=1&form-fb-hint=2.46.8248657f6294fe3bb1d403f739e938aa64d60985d7828baf8355e95b9fb87f82f574fabe85150827b733d4c44afdec6b2257641b4ebf87e65d4060&mt=A78C357F3B02E50F95B2DB2A8504A66EB5CF409F38593732839B9D0E82C6AF344AA56CB51E706F1FCF748D0E7ED64DDFECFD37E35C0048339CEC8169052DF21FBD49FBE75511BC708B4E979D01166898A67693444174D06862B9541B5CC93A665E542F2D1AFBE4F80A8EDBD46B6DAA6CD1CC57D04B6C4693733973BF4F0900DE14424CCF49132310F607F77495BA010765FDFAD451D4E4&retpath=aHR0cHM6Ly95YW5kZXguY29tLw%2C%2C_8f6cc5693580d08de6bff31f9b7b5fcb&t=2%252F1794833080%252Ff4b05265cc3479c2090a17a72e2e4b07&u=9768744679386919007&s=0365f1c69b37c44670c4535a827dbf09"
     },
     {
       "name": "Baidu",
@@ -4095,8 +4062,8 @@
       "name": "Brave",
       "category": "Search Engines / General Search",
       "url": "https://search.brave.com/",
-      "status": "blocked",
-      "reason": "HTTP 429",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://search.brave.com/"
     },
     {
@@ -4191,8 +4158,9 @@
       "name": "Open Library",
       "category": "Search Engines / Academic / Publication Search",
       "url": "https://openlibrary.org/",
-      "status": "error",
-      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: openlibrary.org:443, timeout: 10000ms)"
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://openlibrary.org/verify_human?next=/"
     },
     {
       "name": "World Digital Library",
@@ -4238,9 +4206,9 @@
       "name": "Science Direct",
       "category": "Search Engines / Academic / Publication Search",
       "url": "http://www.sciencedirect.com/",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
-      "finalUrl": "https://www.sciencedirect.com/"
+      "status": "error",
+      "reason": "HTTP 400",
+      "finalUrl": "https://www.sciencedirect.com/user/error/ATN-20?errorContext=hpx-6be23891-ebbb-4392-ac83-09e826ca4222"
     },
     {
       "name": "Think Tank Search",
@@ -4582,8 +4550,8 @@
       "name": "Internet Archive: Wayback Machine",
       "category": "Archives / Web",
       "url": "https://web.archive.org/",
-      "status": "blocked",
-      "reason": "HTTP 429",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://web.archive.org/"
     },
     {
@@ -4591,7 +4559,7 @@
       "category": "Archives / Web",
       "url": "https://archive.ph/",
       "status": "error",
-      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: archive.ph:443, timeout: 10000ms)"
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted addresses: 171.25.158.63:443, timeout: 10000ms)"
     },
     {
       "name": "Cached View",
@@ -4662,7 +4630,7 @@
       "category": "Archives / Web",
       "url": "https://archive.ph/newest/{target}",
       "status": "error",
-      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: archive.ph:443, timeout: 10000ms)"
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted addresses: 171.25.158.63:443, timeout: 10000ms)"
     },
     {
       "name": "Wayback Machine (all captures)",
@@ -4780,8 +4748,8 @@
       "name": "Word Reference",
       "category": "Language Translation / Text",
       "url": "https://www.wordreference.com/",
-      "status": "error",
-      "reason": "HTTP 418",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://www.wordreference.com/"
     },
     {
@@ -4844,24 +4812,24 @@
       "name": "Reddit Deep Web",
       "category": "Dark Web / General Info",
       "url": "https://www.reddit.com/r/deepweb",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403",
       "finalUrl": "https://www.reddit.com/r/deepweb/"
     },
     {
       "name": "Reddit Onions",
       "category": "Dark Web / General Info",
       "url": "https://www.reddit.com/r/onions",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403",
       "finalUrl": "https://www.reddit.com/r/onions/"
     },
     {
       "name": "Reddit Darknet",
       "category": "Dark Web / General Info",
       "url": "https://www.reddit.com/r/darknet",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403",
       "finalUrl": "https://www.reddit.com/r/darknet/"
     },
     {
@@ -4998,8 +4966,8 @@
       "name": "Etherscan",
       "category": "Digital Currency / Ethereum",
       "url": "https://etherscan.io/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://etherscan.io/"
     },
     {
@@ -5056,7 +5024,7 @@
       "url": "http://craigslist.org/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "https://www.craigslist.org/area/seoul"
+      "finalUrl": "https://www.craigslist.org/area/seattle"
     },
     {
       "name": "Kijiji - Canada Classifieds",
@@ -5086,8 +5054,8 @@
       "name": "OfferUp",
       "category": "Classifieds",
       "url": "https://offerup.com/",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://offerup.com/"
     },
     {
@@ -5169,13 +5137,6 @@
       "status": "ok",
       "reason": "HTTP 200",
       "finalUrl": "http://jsnice.org/"
-    },
-    {
-      "name": "DDecode - PHP Decoder",
-      "category": "Encoding / Decoding / PHP",
-      "url": "http://ddecode.com/phpdecoder/",
-      "status": "error",
-      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN ddecode.com"
     },
     {
       "name": "Functions Online",
@@ -5433,19 +5394,12 @@
       "finalUrl": "https://fortypoundhead.com/tools_dpw.asp"
     },
     {
-      "name": "Phenoelit Default Password List",
-      "category": "Exploits & Advisories / Default Passwords",
-      "url": "http://phenoelit.org/dpl/dpl.html",
-      "status": "error",
-      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN phenoelit.org"
-    },
-    {
       "name": "Default Router Passwords",
       "category": "Exploits & Advisories / Default Passwords",
       "url": "http://routerpasswords.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.routerpasswords.com/"
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://routerpasswords.com/"
     },
     {
       "name": "Open Sez Me Default Passwords",
@@ -5539,9 +5493,8 @@
       "name": "Australian Cyber Security Centre",
       "category": "Exploits & Advisories",
       "url": "https://www.cyber.gov.au/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.cyber.gov.au/"
+      "status": "error",
+      "reason": "AbortError: This operation was aborted"
     },
     {
       "name": "Canadian Centre for Cyber Security",
@@ -5579,8 +5532,8 @@
       "name": "PhishStats",
       "category": "Threat Intelligence / Phishing",
       "url": "https://phishstats.info/",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://phishstats.info/"
     },
     {
@@ -5619,8 +5572,8 @@
       "name": "Maltiverse",
       "category": "Threat Intelligence",
       "url": "https://maltiverse.com/start",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://maltiverse.com/start"
     },
     {
@@ -5638,13 +5591,6 @@
       "status": "ok",
       "reason": "HTTP 200",
       "finalUrl": "https://www.projecthoneypot.org/"
-    },
-    {
-      "name": "Scam Database",
-      "category": "Threat Intelligence",
-      "url": "https://www.scamdb.net",
-      "status": "error",
-      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN www.scamdb.net"
     },
     {
       "name": "Bot Scout",
@@ -5682,8 +5628,8 @@
       "name": "Fake Name Generator",
       "category": "OpSec / Persona Creation",
       "url": "http://www.fakenamegenerator.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://www.fakenamegenerator.com/"
     },
     {
@@ -5754,8 +5700,9 @@
       "name": "DNS leak test",
       "category": "OpSec / Anonymous Browsing / VPN Tests",
       "url": "https://www.dnsleaktest.com/",
-      "status": "error",
-      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.dnsleaktest.com:443, timeout: 10000ms)"
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.dnsleaktest.com/"
     },
     {
       "name": "DNS Leak Tests",
@@ -5804,13 +5751,6 @@
       "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN www.perfect-privacy.com"
     },
     {
-      "name": "LetMeCheck.it",
-      "category": "OpSec / Anonymous Browsing / VPN Tests",
-      "url": "http://letmecheck.it/",
-      "status": "error",
-      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN letmecheck.it"
-    },
-    {
       "name": "Trace My IP",
       "category": "OpSec / Anonymous Browsing / VPN Tests",
       "url": "http://www.tracemyip.org/",
@@ -5838,9 +5778,8 @@
       "name": "What browser am I using.co",
       "category": "OpSec / Anonymous Browsing / Browser Tests",
       "url": "http://www.whatbrowseramiusing.co/",
-      "status": "error",
-      "reason": "HTTP 502",
-      "finalUrl": "https://www.whatbrowseramiusing.co/"
+      "status": "dead",
+      "reason": "connection refused"
     },
     {
       "name": "BrowserSpy.dk Browser Information",
@@ -5902,8 +5841,8 @@
       "name": "OptOut Credit Prescreen",
       "category": "OpSec / Privacy / Clean Up",
       "url": "https://www.optoutprescreen.com/?rf=t",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://www.optoutprescreen.com/?rf=t"
     },
     {
@@ -5923,19 +5862,11 @@
       "finalUrl": "https://inteltechniques.com/data/workbook.pdf"
     },
     {
-      "name": "The Hitchhiker’s Guide to Online Anonymity",
-      "category": "OpSec / Privacy / Clean Up",
-      "url": "https://anonymousplanet.org/",
-      "status": "dead",
-      "reason": "HTTP 404",
-      "finalUrl": "https://www.anonymousplanet.org/"
-    },
-    {
       "name": "archive.today",
       "category": "Documentation / Evidence Capture / Web Browsing",
       "url": "https://archive.ph/",
       "status": "error",
-      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: archive.ph:443, timeout: 10000ms)"
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted addresses: 171.25.158.63:443, timeout: 10000ms)"
     },
     {
       "name": "Web Page Saver",
@@ -5973,8 +5904,8 @@
       "name": "Verif!cation Quiz Bot",
       "category": "Training / Games",
       "url": "https://x.com/quiztime",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://x.com/quiztime"
     },
     {
