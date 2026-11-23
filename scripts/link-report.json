@@ -1,11 +1,11 @@
 {
-  "checked": "2026-11-16",
+  "checked": "2026-11-23",
   "counts": {
-    "error": 29,
-    "blocked": 146,
-    "ok": 565,
-    "dead": 2,
-    "moved": 1,
+    "error": 33,
+    "blocked": 144,
+    "ok": 559,
+    "dead": 4,
+    "moved": 3,
     "tor": 5
   },
   "results": [
@@ -222,8 +222,8 @@
       "category": "Email Address / Common Email Formats",
       "url": "http://www.onelook.com/reverse-dictionary.shtml",
       "status": "ok",
-      "reason": "HTTP 202",
-      "finalUrl": "https://www.onelook.com/reverse-dictionary.shtml"
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.onelook.com/thesaurus"
     },
     {
       "name": "Reacher Demo",
@@ -413,9 +413,9 @@
       "name": "ViewDNS.info",
       "category": "Domain Name / Whois Records",
       "url": "http://viewdns.info/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://viewdns.info/"
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://viewdns.info/"
     },
     {
       "name": "Daily DNS Changes",
@@ -494,7 +494,8 @@
       "category": "Domain Name / Subdomains",
       "url": "https://crt.sh/?q=%25.{target}",
       "status": "error",
-      "reason": "AbortError: This operation was aborted"
+      "reason": "HTTP 502",
+      "finalUrl": "https://crt.sh/?q=%25.example.com"
     },
     {
       "name": "subfinder (CLI)",
@@ -644,8 +645,8 @@
       "name": "crt.sh - Certificate Search",
       "category": "Domain Name / Certificate Search",
       "url": "https://crt.sh/",
-      "status": "dead",
-      "reason": "HTTP 404",
+      "status": "error",
+      "reason": "HTTP 502",
       "finalUrl": "https://crt.sh/"
     },
     {
@@ -875,8 +876,8 @@
       "name": "StatsCrop",
       "category": "Domain Name / Analytics",
       "url": "http://www.statscrop.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://www.statscrop.com/"
     },
     {
@@ -1009,9 +1010,8 @@
       "name": "KnowURL",
       "category": "Domain Name / URL Expanders",
       "url": "http://www.knowurl.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "http://www.knowurl.com/"
+      "status": "error",
+      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN www.knowurl.com"
     },
     {
       "name": "VisualPing",
@@ -1161,8 +1161,8 @@
       "name": "IP Location Finder",
       "category": "IP & MAC Address / Geolocation",
       "url": "https://www.iplocation.net/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://www.iplocation.net/"
     },
     {
@@ -1257,8 +1257,9 @@
       "name": "IPv4 CIDR Report",
       "category": "IP & MAC Address / IPv4",
       "url": "http://www.cidr-report.org/as2.0/",
-      "status": "error",
-      "reason": "ETIMEDOUT: fetch failed"
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.cidr-report.org/as2.0/"
     },
     {
       "name": "Team Cymru IP to ASN",
@@ -1288,8 +1289,9 @@
       "name": "IPv6 CIDR Report",
       "category": "IP & MAC Address / IPv6",
       "url": "http://www.cidr-report.org/v6/as2.0/",
-      "status": "error",
-      "reason": "ETIMEDOUT: fetch failed"
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.cidr-report.org/v6/as2.0/"
     },
     {
       "name": "Hurricane Electric BGP Toolkit",
@@ -1488,7 +1490,7 @@
       "url": "https://iplogger.com/",
       "status": "blocked",
       "reason": "HTTP 403 (bot protection)",
-      "finalUrl": "https://iplogger.com/"
+      "finalUrl": "https://iplogger.org/"
     },
     {
       "name": "Google Images",
@@ -1536,7 +1538,7 @@
       "url": "https://www.yandex.com/images/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "https://www.yandex.com/showcaptcha?cc=1&form-fb-hint=2.4.9889bfc51a06607e211c1b53fe25da7cf49d229ef70e2bc12078066552d133b257fbefbd98d715823eaf382f8453a743f418e0ac0c1fb89dbecd42&mt=33294FEFC78ACECFAA527C97DF9C0653D2B21426A0DC69DDCA3DEA1BFA92AE7299F1A704BB84C7B8E243FBC868E06FB9A4B70D1ED25CD33C9D3110A33421472A1D617740C26041BED6EB6AE5A5F91BF9E8551642D4C6318851E5C601327E15E3C39193B04B7652F1282C3BBBBEC3BD41E75BA5A6CB774BEEE0B82DFB62AA8648D61D1784EA7AFD76950B8845705E2AAEF29454606254B0&retpath=aHR0cHM6Ly93d3cueWFuZGV4LmNvbS9pbWFnZXM%2C_c9adb8c177079a280b09d115af9d35e5&t=2%252F1794833051%252Ff0cd95c655c8c3c37ed585f5ad7df060&u=9768742727922632194&s=2590cdd18d2af26b5230ea6c0eec6fff"
+      "finalUrl": "https://www.yandex.com/showcaptcha?cc=1&form-fb-hint=2.4.a4502975a88c9f60d6f779f696bd36ff3de3649a71a858da91ff3ed2e8ce9f6a174638df6e13c3aae09a10983243a1069b7b318f39d2e12ff80390&mt=26B1AD68F363ED6082E031766CB9FD29CA77A7A75C3083A9031EAE826DE58922E98289F1635177034FEF196B0482BB6027419D5C34AF71962B8FF0C792CD4F9F7D20AD28088AF58DE8327698AACEF1A07917411D077507C74534ED993BD1250BE5BD30B5904074D34A65A0584C34EAA3B40F5E41887FB4A2FF481B6CE3D7FA7C87D6B4A380AC9D359EDA6C4817A0DBE0E515EB7D6F117F&retpath=aHR0cHM6Ly93d3cueWFuZGV4LmNvbS9pbWFnZXM%2C_0dc71597feed10aee126050b7d820e1a&t=2%252F1795444620%252Fd052308887fc522ebbcdffa011ea27c9&u=9809784411321996400&s=b6d5479be093a56c183c8b6e94e9be6a"
     },
     {
       "name": "Baidu Images",
@@ -1613,8 +1615,8 @@
       "name": "ImageNet",
       "category": "Images / Videos / Docs / Images / Search",
       "url": "http://image-net.org/",
-      "status": "error",
-      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: image-net.org:80, timeout: 10000ms)"
+      "status": "dead",
+      "reason": "connection refused"
     },
     {
       "name": "Places2",
@@ -1709,7 +1711,7 @@
       "category": "Images / Videos / Docs / Images / Flickr",
       "url": "http://flickrhivemind.net/",
       "status": "error",
-      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: flickrhivemind.net:80, timeout: 10000ms)"
+      "reason": "UND_ERR_SOCKET: other side closed"
     },
     {
       "name": "ExifEditor",
@@ -1763,8 +1765,8 @@
       "name": "FotoForensics",
       "category": "Images / Videos / Docs / Images / Forensics",
       "url": "http://fotoforensics.com/",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://fotoforensics.com/"
     },
     {
@@ -1787,9 +1789,8 @@
       "name": "ExifTool",
       "category": "Images / Videos / Docs / Images / Forensics",
       "url": "https://exiftool.org/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://exiftool.org/"
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: exiftool.org:443, timeout: 10000ms)"
     },
     {
       "name": "i2OCR",
@@ -1859,9 +1860,9 @@
       "name": "Geo Search Tool",
       "category": "Images / Videos / Docs / Videos / Search",
       "url": "http://www.geosearchtool.com/",
-      "status": "blocked",
-      "reason": "HTTP 401",
-      "finalUrl": "http://ww547.geosearchtool.com/?tkn=19vnMT3S"
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "http://www.geosearchtool.com/"
     },
     {
       "name": "Yahoo Video Search",
@@ -2035,9 +2036,9 @@
       "name": "X Advanced Search",
       "category": "Social Networks / Twitter / Search",
       "url": "https://x.com/search-advanced",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
-      "finalUrl": "https://x.com/search-advanced"
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://x.com/i/jf/onboarding/web?redirect_after_login=%2Fsearch-advanced&mode=login"
     },
     {
       "name": "TweeterID",
@@ -2379,9 +2380,9 @@
       "name": "findmypast.com",
       "category": "People Search Engines / General People Search",
       "url": "http://search.findmypast.com/search-world-records",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://search.findmypast.com/search-world-records"
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://search.findmypast.com/search-world-records"
     },
     {
       "name": "FamilySearch.org",
@@ -2437,7 +2438,7 @@
       "url": "http://sortedbyname.com/",
       "status": "blocked",
       "reason": "HTTP 403 (bot protection)",
-      "finalUrl": "https://sortedbyname.com/"
+      "finalUrl": "http://sortedbyname.com/"
     },
     {
       "name": "True People Search",
@@ -2468,7 +2469,7 @@
       "category": "People Search Engines / Registries",
       "url": "https://www.theknot.com/registry/couplesearch",
       "status": "blocked",
-      "reason": "HTTP 403",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://www.theknot.com/registry/couplesearch"
     },
     {
@@ -2763,8 +2764,8 @@
       "name": "Redfin",
       "category": "Public Records / Property Records",
       "url": "https://www.redfin.com/",
-      "status": "blocked",
-      "reason": "HTTP 405 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://www.redfin.com/"
     },
     {
@@ -2804,15 +2805,16 @@
       "category": "Public Records / Court / Criminal Records",
       "url": "http://www.familywatchdog.us/",
       "status": "ok",
-      "reason": "HTTP 202",
-      "finalUrl": "http://www.familywatchdog.us/"
+      "reason": "HTTP 200",
+      "finalUrl": "https://www.familywatchdog.us/"
     },
     {
       "name": "Felon Spy",
       "category": "Public Records / Court / Criminal Records",
       "url": "http://www.felonspy.com/search.html",
-      "status": "error",
-      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN hoax.com"
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "https://sawsells.com/domain/hoax.com"
     },
     {
       "name": "The Inmate Locator",
@@ -2882,8 +2884,8 @@
       "name": "Google Scholar Case Law",
       "category": "Public Records / Court / Criminal Records",
       "url": "https://scholar.google.com/",
-      "status": "blocked",
-      "reason": "HTTP 403",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://scholar.google.com/"
     },
     {
@@ -2906,8 +2908,8 @@
       "name": "UniCourt",
       "category": "Public Records / Court / Criminal Records",
       "url": "https://unicourt.com/",
-      "status": "blocked",
-      "reason": "HTTP 405 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://unicourt.com/"
     },
     {
@@ -2960,9 +2962,9 @@
       "name": "Find A Grave",
       "category": "Public Records / Death Records",
       "url": "http://www.findagrave.com/index.html",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
-      "finalUrl": "http://www.findagrave.com/index.html"
+      "status": "moved",
+      "reason": "deep link now redirects to homepage",
+      "finalUrl": "https://www.findagrave.com/"
     },
     {
       "name": "GraveInfo",
@@ -3064,9 +3066,8 @@
       "name": "GOVDATA - Das Datenportal für Deutschland (German)",
       "category": "Public Records",
       "url": "https://www.govdata.de/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.govdata.de/"
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.govdata.de:443, timeout: 10000ms)"
     },
     {
       "name": "Open-Data-Portal München (German)",
@@ -3112,9 +3113,9 @@
       "name": "International Registries",
       "category": "Business Records / Annual Reports",
       "url": "https://www.gov.uk/government/publications/overseas-registries/overseas-registries",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.gov.uk/government/publications/overseas-registries/overseas-registries"
+      "status": "dead",
+      "reason": "HTTP 410",
+      "finalUrl": "https://www.gov.uk/government/publications/overseas-registries"
     },
     {
       "name": "Corporation Wiki",
@@ -3168,8 +3169,8 @@
       "name": "Ripoff Report",
       "category": "Business Records / General Info & News",
       "url": "http://www.ripoffreport.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://www.ripoffreport.com/"
     },
     {
@@ -3224,9 +3225,9 @@
       "name": "Buzzfile",
       "category": "Business Records / Company Profiles",
       "url": "http://www.buzzfile.com/Home/Basic",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.buzzfile.com/Home/Basic"
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
+      "finalUrl": "http://www.buzzfile.com/Home/Basic"
     },
     {
       "name": "LittleSis",
@@ -3360,8 +3361,8 @@
       "name": "RBA - Business Information Resources",
       "category": "Business Records / Additional Resources",
       "url": "http://www.rba.co.uk/sources/",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "http://www.rba.co.uk/sources/"
     },
     {
@@ -3456,8 +3457,8 @@
       "name": "FlightAware - Live Flight Tracker",
       "category": "Transportation / Air Traffic Records",
       "url": "http://flightaware.com/live/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "error",
+      "reason": "HTTP 402",
       "finalUrl": "https://www.flightaware.com/live/"
     },
     {
@@ -3520,8 +3521,8 @@
       "name": "OpenSeaMap - The free nautical chart",
       "category": "Transportation / Marine Records",
       "url": "http://www.openseamap.org",
-      "status": "blocked",
-      "reason": "HTTP 403",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://openseamap.org/"
     },
     {
@@ -3544,8 +3545,9 @@
       "name": "Deutsche Bahn Open-Data-Portal (German)",
       "category": "Transportation / Railway Records",
       "url": "http://data.deutschebahn.com/",
-      "status": "error",
-      "reason": "AbortError: This operation was aborted"
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://data.deutschebahn.com/opendata"
     },
     {
       "name": "OpenRailwayMap",
@@ -3777,7 +3779,7 @@
       "url": "https://yandex.com/maps/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "https://yandex.com/showcaptcha?cc=1&form-fb-hint=2.25.41700c2190098a0cbf48e2f55e23b60996dd38c6089fe8a1c19ed4e8696c9a211c65ff63e8fecc248514e00603f7db6ee2f6e9f4a7536d9607a438&mt=0FCEAC5077DFCD71145CDA2BFBC818A480DD8495E169416143A18573BCB64AD20E7D03622E213809EFE28C88AC14B731D27932CDD63CCA8AEE6A1E0D89ECB8552885619135764A4F28665EDFA3FEAA8F404303263D030DFB4C49F170C30CBEB83CCC5E6DAE796D55CE54A126455F34B87FF3CEDBC9520438E6780171F2AB78159DECD9AEF76519A20D688E02DD1BAAFF24719F0BBD7658&retpath=aHR0cHM6Ly95YW5kZXguY29tL21hcHM%2C_25defb12f4e13a537548dd3c70cb8cb2&t=2%252F1794833078%252F364c440e4e29576b2fd46c1bcbce41c8&u=9768744492153188501&s=d83eb7c40507afd183a23d432d137c7e"
+      "finalUrl": "https://yandex.com/showcaptcha?cc=1&form-fb-hint=2.25.f0ef0d6f0b5c29167635f2330b643bcd042065eca52ba19ae95b9f1d61e4736f03351d34a60fa936e8c5f5d5b9765f29e39fd921bf93d338a23f98&mt=44E74A630D4CE3451A4A139AF2F90B2609C7360551E957C73CE1EC944CE9814ABF87F82CC75EA1AA0E8603E630D71FE719E9B66F0A05CE5ABEC90B90AFEAA0F81FBBF70146C00F0A9805187E1C4ECE44475CD00585C9D884706E09397F81EB75C3511F76E38A5732BE4FD678AF91EAF075A74A70DC7224607C81B02857C3E6E2AED862E1E727316CDDCD25981AF6FCAB946574B90DA84D&retpath=aHR0cHM6Ly95YW5kZXguY29tL21hcHM%2C_d87f7cafc79748ff8d09b398abebfe5c&t=2%252F1795444644%252F402ee119fee9c7a064d16a0fdb943e3c&u=9809786041804531916&s=ff786fceae2e312f6e865213905dc6ee"
     },
     {
       "name": "Google Earth",
@@ -3831,8 +3833,8 @@
       "name": "EarthExplorer",
       "category": "Geolocation Tools / Maps",
       "url": "https://earthexplorer.usgs.gov/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 503",
       "finalUrl": "https://earthexplorer.usgs.gov/"
     },
     {
@@ -3960,7 +3962,7 @@
       "url": "http://www.bing.com/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "https://www.bing.com/?toHttps=1&redig=35240056A95346449DF40B87D797F525"
+      "finalUrl": "https://www.bing.com/?toHttps=1&redig=DEBB9A5820644CB1BD1BB074C0EAAF60"
     },
     {
       "name": "DuckDuckGo",
@@ -3984,7 +3986,7 @@
       "url": "https://www.yandex.com/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "https://yandex.com/showcaptcha?cc=1&form-fb-hint=2.46.8248657f6294fe3bb1d403f739e938aa64d60985d7828baf8355e95b9fb87f82f574fabe85150827b733d4c44afdec6b2257641b4ebf87e65d4060&mt=A78C357F3B02E50F95B2DB2A8504A66EB5CF409F38593732839B9D0E82C6AF344AA56CB51E706F1FCF748D0E7ED64DDFECFD37E35C0048339CEC8169052DF21FBD49FBE75511BC708B4E979D01166898A67693444174D06862B9541B5CC93A665E542F2D1AFBE4F80A8EDBD46B6DAA6CD1CC57D04B6C4693733973BF4F0900DE14424CCF49132310F607F77495BA010765FDFAD451D4E4&retpath=aHR0cHM6Ly95YW5kZXguY29tLw%2C%2C_8f6cc5693580d08de6bff31f9b7b5fcb&t=2%252F1794833080%252Ff4b05265cc3479c2090a17a72e2e4b07&u=9768744679386919007&s=0365f1c69b37c44670c4535a827dbf09"
+      "finalUrl": "https://yandex.com/"
     },
     {
       "name": "Baidu",
@@ -4022,9 +4024,8 @@
       "name": "Bing vs. Google",
       "category": "Search Engines / General Search",
       "url": "http://bvsg.org/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "http://bvsg.org/"
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: bvsg.org:80, timeout: 10000ms)"
     },
     {
       "name": "Advangle",
@@ -4062,8 +4063,8 @@
       "name": "Brave",
       "category": "Search Engines / General Search",
       "url": "https://search.brave.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 429",
       "finalUrl": "https://search.brave.com/"
     },
     {
@@ -4190,9 +4191,9 @@
       "name": "OpenGrey EU Papers",
       "category": "Search Engines / Academic / Publication Search",
       "url": "http://opengrey.eu/",
-      "status": "blocked",
-      "reason": "HTTP 403",
-      "finalUrl": "http://opengrey.eu/"
+      "status": "ok",
+      "reason": "HTTP 200",
+      "finalUrl": "https://opengrey.eu/"
     },
     {
       "name": "US Gov Publishing Office - FDsys",
@@ -4208,7 +4209,7 @@
       "url": "http://www.sciencedirect.com/",
       "status": "error",
       "reason": "HTTP 400",
-      "finalUrl": "https://www.sciencedirect.com/user/error/ATN-20?errorContext=hpx-6be23891-ebbb-4392-ac83-09e826ca4222"
+      "finalUrl": "https://www.sciencedirect.com/user/error/ATN-20?errorContext=hpx-afb6c388-c69e-4501-810b-b265b43452ca"
     },
     {
       "name": "Think Tank Search",
@@ -4382,8 +4383,8 @@
       "name": "Million Short",
       "category": "Search Engines / Search Tools",
       "url": "https://millionshort.com/",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://millionshort.com/"
     },
     {
@@ -4502,9 +4503,8 @@
       "name": "Verification Junkie",
       "category": "Search Engines / Fact Checking",
       "url": "http://verificationjunkie.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "http://verificationjunkie.com/"
+      "status": "error",
+      "reason": "EAI_AGAIN: getaddrinfo EAI_AGAIN verificationjunkie.com"
     },
     {
       "name": "BoardReader",
@@ -4559,7 +4559,7 @@
       "category": "Archives / Web",
       "url": "https://archive.ph/",
       "status": "error",
-      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted addresses: 171.25.158.63:443, timeout: 10000ms)"
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted addresses: 107.189.8.227:443, timeout: 10000ms)"
     },
     {
       "name": "Cached View",
@@ -4630,22 +4630,22 @@
       "category": "Archives / Web",
       "url": "https://archive.ph/newest/{target}",
       "status": "error",
-      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted addresses: 171.25.158.63:443, timeout: 10000ms)"
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted addresses: 107.189.8.227:443, timeout: 10000ms)"
     },
     {
       "name": "Wayback Machine (all captures)",
       "category": "Archives / Web",
       "url": "https://web.archive.org/web/*/{target}*",
-      "status": "blocked",
-      "reason": "HTTP 429",
-      "finalUrl": "https://web.archive.org/web//example.com"
+      "status": "moved",
+      "reason": "deep link now redirects to homepage",
+      "finalUrl": "https://web.archive.org/"
     },
     {
       "name": "Snusbase",
       "category": "Archives / Data Leaks",
       "url": "https://snusbase.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
+      "status": "blocked",
+      "reason": "HTTP 403 (bot protection)",
       "finalUrl": "https://snusbase.com/"
     },
     {
@@ -4676,9 +4676,8 @@
       "name": "UCI Spambase Data Set",
       "category": "Archives / Public Datasets",
       "url": "https://archive.ics.uci.edu/ml/datasets/Spambase",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://archive.ics.uci.edu/dataset/94/spambase"
+      "status": "error",
+      "reason": "AbortError: This operation was aborted"
     },
     {
       "name": "Stanford Large Network Dataset Collection",
@@ -4942,9 +4941,8 @@
       "name": "Bitcoin Who's Who",
       "category": "Digital Currency / Bitcoin",
       "url": "http://bitcoinwhoswho.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.bitcoinwhoswho.com/"
+      "status": "error",
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: bitcoinwhoswho.com:80, timeout: 10000ms)"
     },
     {
       "name": "mempool.space",
@@ -5024,7 +5022,7 @@
       "url": "http://craigslist.org/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "https://www.craigslist.org/area/seattle"
+      "finalUrl": "https://www.craigslist.org/area/kpr"
     },
     {
       "name": "Kijiji - Canada Classifieds",
@@ -5048,7 +5046,7 @@
       "url": "http://www.ebay.com/",
       "status": "blocked",
       "reason": "HTTP 403 (bot protection)",
-      "finalUrl": "https://www.ebay.com/"
+      "finalUrl": "http://www.ebay.com/"
     },
     {
       "name": "OfferUp",
@@ -5078,9 +5076,8 @@
       "name": "TotalCraigSearch",
       "category": "Classifieds",
       "url": "http://www.totalcraigsearch.com/",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://ww17.totalcraigsearch.com/"
+      "status": "dead",
+      "reason": "TLS: C0BC8CDA62740000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:1601:SSL alert number 80\n"
     },
     {
       "name": "Search Tempest",
@@ -5439,7 +5436,7 @@
       "url": "https://packetstorm.news/",
       "status": "ok",
       "reason": "HTTP 200",
-      "finalUrl": "https://packetstorm.news/"
+      "finalUrl": "https://packetstorm.news/blocked.html"
     },
     {
       "name": "NVD - NIST",
@@ -5692,9 +5689,9 @@
       "name": "JonDonym",
       "category": "OpSec / Anonymous Browsing / VPN Tests",
       "url": "http://ip-check.info/?lang=en",
-      "status": "ok",
-      "reason": "HTTP 200",
-      "finalUrl": "https://www.ip-check.info/?lang=en"
+      "status": "blocked",
+      "reason": "HTTP 429 (bot protection)",
+      "finalUrl": "http://www.google.com/sorry/index?continue=http://www.ip-check.info/%3Flang%3Den&q=EgQDKp1AGL-fkdgGIi0Fm1xjiJcrNsfe8bOHeF_8g6Cy_ipjGqcBeI7DxtJdCXH1gwm26IturBVXkvAyAnJSWgFDYPTSlrSugc24_AE"
     },
     {
       "name": "DNS leak test",
@@ -5866,7 +5863,7 @@
       "category": "Documentation / Evidence Capture / Web Browsing",
       "url": "https://archive.ph/",
       "status": "error",
-      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted addresses: 171.25.158.63:443, timeout: 10000ms)"
+      "reason": "UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted addresses: 107.189.8.227:443, timeout: 10000ms)"
     },
     {
       "name": "Web Page Saver",
@@ -5904,8 +5901,8 @@
       "name": "Verif!cation Quiz Bot",
       "category": "Training / Games",
       "url": "https://x.com/quiztime",
-      "status": "blocked",
-      "reason": "HTTP 403 (bot protection)",
+      "status": "ok",
+      "reason": "HTTP 200",
       "finalUrl": "https://x.com/quiztime"
     },
     {
